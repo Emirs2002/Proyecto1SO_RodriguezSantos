@@ -1,11 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package trabajadores;
 
 import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +15,7 @@ public class Developer extends Thread {
     private int dayDuration;
     private float acumulado;
     private Semaphore mutex;
-    private int totalPayment;
+    private int totalPayment = 0;
     private int payment;
     
 
@@ -36,13 +34,11 @@ public class Developer extends Thread {
             //aqui va el trabajo como tal
             
             work();
+            
             try {
-                //pago al empleado
-//                sleep((41.6);
-//                this.totalPayment += this.payment;
-               
-                
                 sleep(this.dayDuration);
+                System.out.println("dia termina");
+                
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
             }
@@ -51,18 +47,40 @@ public class Developer extends Thread {
     }
     
     public void work(){
+      
+        //pago al desarrollador
+        int x = 0;
+
+        while(x<24){
+            try {
+                sleep((long) (41.6667));
+                this.totalPayment += this.payment;
+                ++x;
+                
+            } catch (InterruptedException ex) {
+                ex.printStackTrace(System.out);
+            }
+            
+        }
+        
+        System.out.println( this.totalPayment);
+        
+        
+        //produccion del dia
         this.acumulado += this.productionPerDay;
+        
         if(this.acumulado >= 1){
             
-            System.out.println(this.acumulado);
+            //producto listo, guardar en drive
             
-                //producto listo, guardar en drive
+            System.out.println("guion hecho: " + Math.round(this.acumulado));
+            
 //            try {
                 //se activa el semaforo
 //                this.mutex.acquire(1); //equivalente a wait
 //                
 //                this.drive.addToDrive(type,1);
-//                this.acumulado = 0;
+            this.acumulado = 0;
 //                
 //                this.mutex.release(); //equivalente a signal
                         
@@ -71,7 +89,9 @@ public class Developer extends Thread {
 //            }
             
         }
-//        System.out.println(this.totalPayment);
+        
+           
+        
         
     }
     
