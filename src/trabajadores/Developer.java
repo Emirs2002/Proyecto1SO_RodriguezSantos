@@ -2,29 +2,26 @@ package trabajadores;
 
 import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author emirs
- */
+
 public class Developer extends Thread {
     private String type;//acepta guion,sprite,nivel,programador,dlc
-    private float productionPerDay;
-    private int dayDuration;
+    private final float productionPerDay;
+    private final int dayDuration;
     private float acumulado;
     private Semaphore mutex;
-    private int totalPayment = 0;
-    private int payment;
+    private int paymentPerDay = 0;
+    private final int paymentPerHour;
+    private final Drive drive;
     
 
-    public Developer(String type, float productionPerDay, int dayDuration, Semaphore mutex, int payment) {
+    public Developer(String type, float productionPerDay, int dayDuration, Semaphore mutex, int payment, Drive drive) {
         this.type = type;
         this.productionPerDay = productionPerDay;
         this.dayDuration = dayDuration;
         this.mutex = mutex;
-        this.payment = payment;
+        this.paymentPerHour = payment;
+        this.drive = drive;
     }
     
     
@@ -38,6 +35,7 @@ public class Developer extends Thread {
             try {
                 sleep(this.dayDuration);
                 System.out.println("dia termina");
+                System.out.println(" ");
                 
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -47,46 +45,29 @@ public class Developer extends Thread {
     }
     
     public void work(){
-      
-        //pago al desarrollador
-        int x = 0;
-
-        while(x<24){
-            try {
-                sleep((long) (41.6667));
-                this.totalPayment += this.payment;
-                ++x;
-                
-            } catch (InterruptedException ex) {
-                ex.printStackTrace(System.out);
-            }
-            
-        }
-        
-        System.out.println( this.totalPayment);
-        
-        
+ 
         //produccion del dia
         this.acumulado += this.productionPerDay;
         
+        this.paymentPerDay += 24 * this.paymentPerHour;//pago desarrollador
+        System.out.println("total dia: "+ this.paymentPerDay);
+        
+        //producto listo, guardar en drive
         if(this.acumulado >= 1){
             
-            //producto listo, guardar en drive
-            
-            System.out.println("guion hecho: " + Math.round(this.acumulado));
-            
-//            try {
-                //se activa el semaforo
-//                this.mutex.acquire(1); //equivalente a wait
-//                
-//                this.drive.addToDrive(type,1);
-            this.acumulado = 0;
-//                
-//                this.mutex.release(); //equivalente a signal
+            try {
+//                se activa el semaforo
+                this.mutex.acquire(1); //equivalente a wait
+                
+                this.drive.addToDrive(type,(int)this.acumulado);
+                
+                this.acumulado = 0;
+                
+                this.mutex.release(); //equivalente a signal
                         
-//            } catch (InterruptedException ex) {
-//                ex.printStackTrace(System.out);
-//            }
+            } catch (InterruptedException ex) {
+                ex.printStackTrace(System.out);
+            }
             
         }
         
