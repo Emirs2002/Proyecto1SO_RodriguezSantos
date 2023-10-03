@@ -18,21 +18,55 @@ public class Drive {
     public void addToDrive(String type, int cantidadPartes){
         switch(type){
             case "guion": 
-                this.script +=cantidadPartes;
-                System.out.println("guiones hechos: " + cantidadPartes);
+                if((this.script + cantidadPartes)<=25){
+                    this.script +=cantidadPartes;
+                    System.out.println("guiones hechos: " + cantidadPartes);
+                }else{
+                    
+                    System.out.println("Excede la capacidad del drive de guiones: " + this.script);
+                }
                 break;
+                
             case "sprite": 
-                this.sprite +=cantidadPartes;
-                System.out.println("sprites hechos: " + cantidadPartes);
+                
+                if((this.sprite + cantidadPartes)<=55){
+                    this.sprite +=cantidadPartes;
+                    System.out.println("sprites hechos: " + cantidadPartes);
+                }else{
+                    
+                    System.out.println("Excede la capacidad del drive de sprites: " + this.sprite);
+                }
                 break;
+                
             case "nivel":
-                this.level +=cantidadPartes;
+                
+                if((this.level + cantidadPartes)<=20){
+                    this.level +=cantidadPartes;
+                    System.out.println("Niveles hechos: " + cantidadPartes);
+                }else{
+                    
+                    System.out.println("Excede la capacidad del drive de niveles: " + this.level);
+                }
                 break;
+                
             case "programador":
-                this.system +=cantidadPartes;
+                if((this.system + cantidadPartes)<=35){
+                    this.system +=cantidadPartes;
+                    System.out.println("Sistemas hechos: " + cantidadPartes);
+                }else{
+                    
+                    System.out.println("Excede la capacidad del drive de sistemas: " + this.system);
+                }
                 break;
+                
             case "dlc":
-                this.dlc +=cantidadPartes;
+                if((this.dlc + cantidadPartes)<=10){
+                    this.dlc +=cantidadPartes;
+                    System.out.println("DLCs hechos: " + cantidadPartes);
+                }else{
+                    
+                    System.out.println("Excede la capacidad del drive de DLCs: " + this.dlc);
+                }
                 break;
                 
         }
