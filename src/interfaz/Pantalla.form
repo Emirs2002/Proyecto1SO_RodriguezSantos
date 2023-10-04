@@ -324,7 +324,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel45">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\alesc\Downloads\1280px-Bethesda_Game_Studios_logo.svg (1).png"/>
+                      <Image iconType="3" name="/imagenes/1280px-Bethesda_Game_Studios_logo.svg (1).png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -661,7 +661,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel67">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\alesc\Downloads\bethesda.png"/>
+                      <Image iconType="3" name="/imagenes/bethesda.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -950,9 +950,8 @@
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\alesc\Downloads\Square_Enix-Logo.wine (1).png"/>
+                  <Image iconType="3" name="/imagenes/Square_Enix-Logo.wine (1).png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="foto"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1279,7 +1278,7 @@
             <Component class="javax.swing.JLabel" name="jLabel66">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\alesc\Downloads\Sin t&#xed;tulo (1000 &#xd7; 590&#xa0;px).png"/>
+                  <Image iconType="3" name="/imagenes/Sin t&#xed;tulo (1000 &#xd7; 590&#xa0;px).png"/>
                 </Property>
               </Properties>
               <Constraints>

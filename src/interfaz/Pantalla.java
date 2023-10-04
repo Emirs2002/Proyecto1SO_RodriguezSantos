@@ -226,7 +226,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel44.setText("DEADLINE");
         SEPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, -1));
 
-        jLabel45.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\1280px-Bethesda_Game_Studios_logo.svg (1).png")); // NOI18N
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1280px-Bethesda_Game_Studios_logo.svg (1).png"))); // NOI18N
         SEPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 93));
 
         jLabel46.setText("foto");
@@ -364,7 +364,7 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel1.add(sistemasCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 40, -1));
 
-        jLabel67.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\bethesda.png")); // NOI18N
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bethesda.png"))); // NOI18N
         SEPanel1.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
 
         jLabel69.setText("foto");
@@ -443,8 +443,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel12.setText("DEADLINE");
         SEPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, -1));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\Square_Enix-Logo.wine (1).png")); // NOI18N
-        jLabel13.setText("foto");
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Square_Enix-Logo.wine (1).png"))); // NOI18N
         SEPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 400, 80));
 
         jLabel14.setText("foto");
@@ -579,7 +578,7 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(sistemasCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 40, -1));
 
-        jLabel66.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\Sin título (1000 × 590 px).png")); // NOI18N
+        jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título (1000 × 590 px).png"))); // NOI18N
         SEPanel.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
 
         jLabel68.setText("foto");
