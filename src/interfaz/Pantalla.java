@@ -15,6 +15,7 @@ public class Pantalla extends javax.swing.JFrame {
      */
     public Pantalla() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**
@@ -26,21 +27,650 @@ public class Pantalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        tab = new javax.swing.JTabbedPane();
+        confPanel = new javax.swing.JPanel();
+        BPanel = new javax.swing.JPanel();
+        SEPanel1 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        narrativaSpinner1 = new javax.swing.JSpinner();
+        spriteSpinner1 = new javax.swing.JSpinner();
+        programmerSpinner1 = new javax.swing.JSpinner();
+        dlcSpinner1 = new javax.swing.JSpinner();
+        levelSpinner1 = new javax.swing.JSpinner();
+        integradorSpinner1 = new javax.swing.JSpinner();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        listosDLC1 = new javax.swing.JTextField();
+        dlcCounter1 = new javax.swing.JTextField();
+        jSeparator14 = new javax.swing.JSeparator();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        utilidadTotal1 = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        deadlineCounter1 = new javax.swing.JTextField();
+        gananciasBruto1 = new javax.swing.JTextField();
+        costos1 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        listosStandard1 = new javax.swing.JTextField();
+        guionesCounter1 = new javax.swing.JTextField();
+        spritesCounter1 = new javax.swing.JTextField();
+        nivelesCounter1 = new javax.swing.JTextField();
+        sistemasCounter1 = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        SEPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        narrativaSpinner = new javax.swing.JSpinner();
+        spriteSpinner = new javax.swing.JSpinner();
+        programmerSpinner = new javax.swing.JSpinner();
+        dlcSpinner = new javax.swing.JSpinner();
+        levelSpinner = new javax.swing.JSpinner();
+        integradorSpinner = new javax.swing.JSpinner();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        listosDLC = new javax.swing.JTextField();
+        dlcCounter = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        utilidadTotal = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        deadlineCounter = new javax.swing.JTextField();
+        gananciasBruto = new javax.swing.JTextField();
+        costos = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        listosStandard = new javax.swing.JTextField();
+        guionesCounter = new javax.swing.JTextField();
+        spritesCounter = new javax.swing.JTextField();
+        nivelesCounter = new javax.swing.JTextField();
+        sistemasCounter = new javax.swing.JTextField();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        confPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        tab.addTab("Configuración", confPanel);
+
+        BPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        SEPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel17.setText("Desarrolladores");
+        jLabel17.setToolTipText("");
+        SEPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        SEPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 10));
+        SEPanel1.add(narrativaSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, -1));
+        SEPanel1.add(spriteSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 50, -1));
+        SEPanel1.add(programmerSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 50, -1));
+        SEPanel1.add(dlcSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 50, -1));
+        SEPanel1.add(levelSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 50, -1));
+        SEPanel1.add(integradorSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 50, -1));
+        SEPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 430, 10));
+        SEPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 430, 10));
+        SEPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, -1, -1));
+        SEPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 430, 10));
+        SEPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 430, 10));
+
+        jLabel34.setText("Programadores");
+        SEPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        jLabel35.setText("DLCs");
+        SEPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, -1, -1));
+
+        jLabel36.setText("Desarrolladores de niveles");
+        SEPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel37.setText("Artistas de Sprites");
+        SEPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel38.setText("Desarrollador de DLCs");
+        SEPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
+
+        jLabel39.setText("Integradores");
+        SEPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel40.setText("DRIVE");
+        SEPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel41.setText("Datos:");
+        SEPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
+
+        jLabel42.setText("Estandar");
+        SEPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
+
+        jLabel43.setText("Con DLC");
+        SEPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
+
+        listosDLC1.setText("jTextField1");
+        SEPanel1.add(listosDLC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 40, 20));
+
+        dlcCounter1.setText("jTextField2");
+        dlcCounter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dlcCounter1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(dlcCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 550, 40, -1));
+
+        jSeparator14.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        SEPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 10, 550));
+
+        jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel44.setText("DEADLINE");
+        SEPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, -1));
+
+        jLabel45.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\1280px-Bethesda_Game_Studios_logo.svg (1).png")); // NOI18N
+        SEPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 93));
+
+        jLabel46.setText("foto");
+        SEPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 180, 110));
+
+        utilidadTotal1.setText("DEADLINE");
+        utilidadTotal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utilidadTotal1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(utilidadTotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 460, 80, 90));
+
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel47.setText("¿Qué hace el Director?");
+        SEPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 210, 30));
+
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel48.setText("¿Qué hace el Project Manager?");
+        SEPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 220, 50));
+
+        jLabel49.setText("foto");
+        SEPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, 110));
+
+        jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel50.setText("Juegos listos:");
+        SEPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel51.setText("Ganacias en bruto:");
+        SEPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
+
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel52.setText("Costos operativos");
+        SEPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, -1, -1));
+
+        jLabel53.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel53.setText("Utilidad total del estudio");
+        SEPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, -1, -1));
+
+        deadlineCounter1.setText("DEADLINE");
+        deadlineCounter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deadlineCounter1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(deadlineCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 50, 100, 110));
+
+        gananciasBruto1.setText("DEADLINE");
+        gananciasBruto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gananciasBruto1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(gananciasBruto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 80, 90));
+
+        costos1.setText("DEADLINE");
+        costos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                costos1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(costos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 80, 90));
+
+        jLabel54.setText("foto");
+        SEPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
+
+        jLabel55.setText("foto");
+        SEPanel1.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 40, 40));
+
+        jLabel56.setText("Guionistas");
+        SEPanel1.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel57.setText("Guiones");
+        SEPanel1.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
+
+        jLabel58.setText("Sprites");
+        SEPanel1.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, -1, -1));
+
+        jLabel59.setText("Niveles");
+        SEPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
+
+        jLabel60.setText("Sistemas");
+        SEPanel1.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, -1, -1));
+
+        jLabel61.setText("foto");
+        SEPanel1.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 40, 40));
+
+        jLabel62.setText("foto");
+        SEPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 40, 40));
+
+        jLabel63.setText("foto");
+        SEPanel1.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 40, 40));
+
+        jLabel64.setText("foto");
+        SEPanel1.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 40, 40));
+
+        listosStandard1.setText("jTextField2");
+        listosStandard1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listosStandard1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(listosStandard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 40, -1));
+
+        guionesCounter1.setText("jTextField2");
+        guionesCounter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionesCounter1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(guionesCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 40, -1));
+
+        spritesCounter1.setText("jTextField2");
+        spritesCounter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spritesCounter1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(spritesCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, 40, -1));
+
+        nivelesCounter1.setText("jTextField2");
+        nivelesCounter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nivelesCounter1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(nivelesCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 550, 40, -1));
+
+        sistemasCounter1.setText("jTextField2");
+        sistemasCounter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sistemasCounter1ActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(sistemasCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 40, -1));
+
+        jLabel67.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\bethesda.png")); // NOI18N
+        SEPanel1.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
+
+        jLabel69.setText("foto");
+        SEPanel1.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 80, 60));
+
+        BPanel.add(SEPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 590));
+
+        tab.addTab("Bethesda", BPanel);
+
+        SEPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Desarrolladores");
+        jLabel1.setToolTipText("");
+        SEPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        SEPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 10));
+        SEPanel.add(narrativaSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, -1));
+        SEPanel.add(spriteSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 50, -1));
+        SEPanel.add(programmerSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 50, -1));
+        SEPanel.add(dlcSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 50, -1));
+        SEPanel.add(levelSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 50, -1));
+        SEPanel.add(integradorSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 50, -1));
+        SEPanel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 430, 10));
+        SEPanel.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 430, 10));
+        SEPanel.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, -1, -1));
+        SEPanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 430, 10));
+        SEPanel.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 430, 10));
+
+        jLabel3.setText("Programadores");
+        SEPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+
+        jLabel4.setText("DLCs");
+        SEPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, -1, -1));
+
+        jLabel5.setText("Desarrolladores de niveles");
+        SEPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel6.setText("Artistas de Sprites");
+        SEPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        jLabel2.setText("Desarrollador de DLCs");
+        SEPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
+
+        jLabel7.setText("Integradores");
+        SEPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("DRIVE");
+        SEPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setText("Datos:");
+        SEPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
+
+        jLabel10.setText("Estandar");
+        SEPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
+
+        jLabel11.setText("Con DLC");
+        SEPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
+
+        listosDLC.setText("jTextField1");
+        SEPanel.add(listosDLC, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 40, 20));
+
+        dlcCounter.setText("jTextField2");
+        dlcCounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dlcCounterActionPerformed(evt);
+            }
+        });
+        SEPanel.add(dlcCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 550, 40, -1));
+
+        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        SEPanel.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 10, 550));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setText("DEADLINE");
+        SEPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\Square_Enix-Logo.wine (1).png")); // NOI18N
+        jLabel13.setText("foto");
+        SEPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 400, 80));
+
+        jLabel14.setText("foto");
+        SEPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 180, 110));
+
+        utilidadTotal.setText("DEADLINE");
+        utilidadTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utilidadTotalActionPerformed(evt);
+            }
+        });
+        SEPanel.add(utilidadTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, 80, 90));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel15.setText("¿Qué hace el Director?");
+        SEPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 210, 30));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel16.setText("¿Qué hace el Project Manager?");
+        SEPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 200, 50));
+
+        jLabel18.setText("foto");
+        SEPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, 110));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel19.setText("Juegos listos:");
+        SEPanel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+
+        jLabel20.setText("Ganacias en bruto:");
+        SEPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
+
+        jLabel21.setText("Costos operativos");
+        SEPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, -1, -1));
+
+        jLabel22.setText("Utilidad total del estudio");
+        SEPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, -1, -1));
+
+        deadlineCounter.setText("DEADLINE");
+        deadlineCounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deadlineCounterActionPerformed(evt);
+            }
+        });
+        SEPanel.add(deadlineCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 60, 100, 110));
+
+        gananciasBruto.setText("DEADLINE");
+        gananciasBruto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gananciasBrutoActionPerformed(evt);
+            }
+        });
+        SEPanel.add(gananciasBruto, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 80, 90));
+
+        costos.setText("DEADLINE");
+        costos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                costosActionPerformed(evt);
+            }
+        });
+        SEPanel.add(costos, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 80, 90));
+
+        jLabel23.setText("foto");
+        SEPanel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
+
+        jLabel24.setText("foto");
+        SEPanel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 40, 40));
+
+        jLabel28.setText("Guionistas");
+        SEPanel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel29.setText("Guiones");
+        SEPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
+
+        jLabel30.setText("Sprites");
+        SEPanel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, -1, -1));
+
+        jLabel31.setText("Niveles");
+        SEPanel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
+
+        jLabel32.setText("Sistemas");
+        SEPanel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, -1, -1));
+
+        jLabel25.setText("foto");
+        SEPanel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 40, 40));
+
+        jLabel26.setText("foto");
+        SEPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 40, 40));
+
+        jLabel27.setText("foto");
+        SEPanel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 40, 40));
+
+        jLabel33.setText("foto");
+        SEPanel.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 40, 40));
+
+        listosStandard.setText("jTextField2");
+        listosStandard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listosStandardActionPerformed(evt);
+            }
+        });
+        SEPanel.add(listosStandard, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 40, -1));
+
+        guionesCounter.setText("jTextField2");
+        guionesCounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionesCounterActionPerformed(evt);
+            }
+        });
+        SEPanel.add(guionesCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 40, -1));
+
+        spritesCounter.setText("jTextField2");
+        spritesCounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spritesCounterActionPerformed(evt);
+            }
+        });
+        SEPanel.add(spritesCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, 40, -1));
+
+        nivelesCounter.setText("jTextField2");
+        nivelesCounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nivelesCounterActionPerformed(evt);
+            }
+        });
+        SEPanel.add(nivelesCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 550, 40, -1));
+
+        sistemasCounter.setText("jTextField2");
+        sistemasCounter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sistemasCounterActionPerformed(evt);
+            }
+        });
+        SEPanel.add(sistemasCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 40, -1));
+
+        jLabel66.setIcon(new javax.swing.ImageIcon("C:\\Users\\alesc\\Downloads\\Sin título (1000 × 590 px).png")); // NOI18N
+        SEPanel.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
+
+        jLabel68.setText("foto");
+        SEPanel.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 80, 60));
+
+        tab.addTab("Square Enix", SEPanel);
+
+        getContentPane().add(tab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void dlcCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dlcCounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dlcCounterActionPerformed
+
+    private void utilidadTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilidadTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_utilidadTotalActionPerformed
+
+    private void deadlineCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deadlineCounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deadlineCounterActionPerformed
+
+    private void gananciasBrutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gananciasBrutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gananciasBrutoActionPerformed
+
+    private void costosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_costosActionPerformed
+
+    private void listosStandardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listosStandardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listosStandardActionPerformed
+
+    private void guionesCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionesCounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionesCounterActionPerformed
+
+    private void spritesCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spritesCounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spritesCounterActionPerformed
+
+    private void nivelesCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nivelesCounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nivelesCounterActionPerformed
+
+    private void sistemasCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemasCounterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sistemasCounterActionPerformed
+
+    private void dlcCounter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dlcCounter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dlcCounter1ActionPerformed
+
+    private void utilidadTotal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilidadTotal1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_utilidadTotal1ActionPerformed
+
+    private void deadlineCounter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deadlineCounter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deadlineCounter1ActionPerformed
+
+    private void gananciasBruto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gananciasBruto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gananciasBruto1ActionPerformed
+
+    private void costos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costos1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_costos1ActionPerformed
+
+    private void listosStandard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listosStandard1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listosStandard1ActionPerformed
+
+    private void guionesCounter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionesCounter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionesCounter1ActionPerformed
+
+    private void spritesCounter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spritesCounter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spritesCounter1ActionPerformed
+
+    private void nivelesCounter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nivelesCounter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nivelesCounter1ActionPerformed
+
+    private void sistemasCounter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemasCounter1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sistemasCounter1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +708,126 @@ public class Pantalla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BPanel;
+    private javax.swing.JPanel SEPanel;
+    private javax.swing.JPanel SEPanel1;
+    private javax.swing.JPanel confPanel;
+    private javax.swing.JTextField costos;
+    private javax.swing.JTextField costos1;
+    private javax.swing.JTextField deadlineCounter;
+    private javax.swing.JTextField deadlineCounter1;
+    private javax.swing.JTextField dlcCounter;
+    private javax.swing.JTextField dlcCounter1;
+    private javax.swing.JSpinner dlcSpinner;
+    private javax.swing.JSpinner dlcSpinner1;
+    private javax.swing.JTextField gananciasBruto;
+    private javax.swing.JTextField gananciasBruto1;
+    private javax.swing.JTextField guionesCounter;
+    private javax.swing.JTextField guionesCounter1;
+    private javax.swing.JSpinner integradorSpinner;
+    private javax.swing.JSpinner integradorSpinner1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JSpinner levelSpinner;
+    private javax.swing.JSpinner levelSpinner1;
+    private javax.swing.JTextField listosDLC;
+    private javax.swing.JTextField listosDLC1;
+    private javax.swing.JTextField listosStandard;
+    private javax.swing.JTextField listosStandard1;
+    private javax.swing.JSpinner narrativaSpinner;
+    private javax.swing.JSpinner narrativaSpinner1;
+    private javax.swing.JTextField nivelesCounter;
+    private javax.swing.JTextField nivelesCounter1;
+    private javax.swing.JSpinner programmerSpinner;
+    private javax.swing.JSpinner programmerSpinner1;
+    private javax.swing.JTextField sistemasCounter;
+    private javax.swing.JTextField sistemasCounter1;
+    private javax.swing.JSpinner spriteSpinner;
+    private javax.swing.JSpinner spriteSpinner1;
+    private javax.swing.JTextField spritesCounter;
+    private javax.swing.JTextField spritesCounter1;
+    private javax.swing.JTabbedPane tab;
+    private javax.swing.JTextField utilidadTotal;
+    private javax.swing.JTextField utilidadTotal1;
     // End of variables declaration//GEN-END:variables
 }
