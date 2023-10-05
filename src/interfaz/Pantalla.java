@@ -29,6 +29,53 @@ public class Pantalla extends javax.swing.JFrame {
 
         tab = new javax.swing.JTabbedPane();
         confPanel = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel76 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel78 = new javax.swing.JLabel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField14 = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jTextField16 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel88 = new javax.swing.JLabel();
+        jTextField20 = new javax.swing.JTextField();
+        jTextField21 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jLabel89 = new javax.swing.JLabel();
+        jTextField25 = new javax.swing.JTextField();
+        jLabel90 = new javax.swing.JLabel();
         BPanel = new javax.swing.JPanel();
         SEPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -153,12 +200,172 @@ public class Pantalla extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         confPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField1.setText("jTextField1");
+        confPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, -1, -1));
+
+        jLabel72.setText("Deadline de entrega:");
+        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+
+        jLabel71.setText("Duración de un día:");
+        confPanel.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        jTextField3.setText("jTextField1");
+        confPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+
+        jLabel65.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setText("SQUARE ENIX");
+        jLabel65.setToolTipText("");
+        confPanel.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 210, 40));
+
+        jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel73.setText("CONFIGURACIÓN GENERAL");
+        jLabel73.setToolTipText("");
+        confPanel.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 370, 40));
+
+        jLabel74.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel74.setText("BETHESDA");
+        jLabel74.setToolTipText("");
+        confPanel.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 210, 40));
+
+        jTextField2.setText("jTextField1");
+        confPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel75.setText("Cantidad máxima de desarrolladores:");
+        jLabel75.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        confPanel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 210, 20));
+
+        jLabel70.setText("Desarrollador DLC");
+        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, -1));
+
+        jTextField4.setText("jTextField1");
+        confPanel.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+
+        jTextField5.setText("jTextField1");
+        confPanel.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+
+        jTextField6.setText("jTextField1");
+        confPanel.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
+
+        jTextField7.setText("jTextField1");
+        confPanel.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
+
+        jTextField8.setText("jTextField1");
+        confPanel.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
+
+        jTextField9.setText("jTextField1");
+        confPanel.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, -1, -1));
+
+        jLabel76.setText("Guionistas");
+        confPanel.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+
+        jLabel77.setText("Artistas de sprites");
+        confPanel.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
+
+        jLabel78.setText("Diseñador niveles");
+        confPanel.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
+
+        jLabel79.setText("Programador lógica");
+        confPanel.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, -1));
+
+        jLabel80.setText("Producción diaria");
+        confPanel.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+
+        jLabel81.setText("Cantidad");
+        confPanel.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
+
+        jTextField10.setText("jTextField1");
+        confPanel.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+
+        jTextField11.setText("jTextField1");
+        confPanel.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+
+        jTextField12.setText("jTextField1");
+        confPanel.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, -1, -1));
+
+        jTextField13.setText("jTextField1");
+        confPanel.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, -1, -1));
+
+        jTextField14.setText("jTextField1");
+        confPanel.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, -1, -1));
+
+        jLabel82.setText("Guionistas");
+        confPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, -1, -1));
+
+        jLabel83.setText("Artistas de sprites");
+        confPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, -1, -1));
+
+        jLabel84.setText("Diseñador niveles");
+        confPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, -1, -1));
+
+        jLabel85.setText("Programador lógica");
+        confPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, -1));
+
+        jLabel86.setText("Desarrollador DLC");
+        confPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, -1, -1));
+
+        jLabel87.setText("Cantidad");
+        confPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 340, -1, -1));
+
+        jTextField15.setText("jTextField1");
+        confPanel.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, -1, -1));
+
+        jTextField16.setText("jTextField1");
+        confPanel.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 410, -1, -1));
+
+        jTextField17.setText("jTextField1");
+        confPanel.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
+
+        jTextField18.setText("jTextField1");
+        confPanel.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, -1, -1));
+
+        jTextField19.setText("jTextField1");
+        confPanel.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, -1, -1));
+
+        jLabel88.setText("Producción diaria");
+        confPanel.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
+
+        jTextField20.setText("jTextField1");
+        confPanel.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, -1, -1));
+
+        jTextField21.setText("jTextField1");
+        confPanel.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, -1, -1));
+
+        jTextField22.setText("jTextField1");
+        confPanel.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, -1, -1));
+
+        jTextField23.setText("jTextField1");
+        confPanel.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 490, -1, -1));
+
+        jTextField24.setText("jTextField1");
+        confPanel.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, -1, -1));
+
+        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel89.setText("Cantidad máxima de desarrolladores:");
+        jLabel89.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        confPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 210, 20));
+
+        jTextField25.setText("jTextField1");
+        confPanel.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, -1, -1));
+
+        jLabel90.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wallhaven-zmzqjg.png"))); // NOI18N
+        jLabel90.setText("jLabel90");
+        confPanel.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(-450, -330, -1, -1));
+
         tab.addTab("Configuración", confPanel);
 
         BPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SEPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel17.setBackground(new java.awt.Color(102, 102, 102));
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel17.setText("Desarrolladores");
         jLabel17.setToolTipText("");
@@ -786,13 +993,35 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -807,6 +1036,31 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JSpinner levelSpinner;
     private javax.swing.JSpinner levelSpinner1;
     private javax.swing.JTextField listosDLC;
