@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/emirs/Desktop/UNIVERSIDAD/TRIMESTRE%2010/OPERATIVOS/Proyecto1SO_RodriguezSantos/src/trabajadores/Developer.java</file>
-            <file>file:/C:/Users/emirs/Desktop/UNIVERSIDAD/TRIMESTRE%2010/OPERATIVOS/Proyecto1SO_RodriguezSantos/src/test/Main.java</file>
-            <file>file:/C:/Users/emirs/Desktop/UNIVERSIDAD/TRIMESTRE%2010/OPERATIVOS/Proyecto1SO_RodriguezSantos/src/trabajadores/Drive.java</file>
-=======
             <file>file:/C:/Users/alesc/OneDrive/Escritorio/Proyecto1SO_RodriguezSantos/src/test/Main.java</file>
+            <file>file:/C:/Users/alesc/OneDrive/Escritorio/Proyecto1SO_RodriguezSantos/src/trabajadores/Developer.java</file>
+            <file>file:/C:/Users/alesc/OneDrive/Escritorio/Proyecto1SO_RodriguezSantos/src/trabajadores/Integrator.java</file>
             <file>file:/C:/Users/alesc/OneDrive/Escritorio/Proyecto1SO_RodriguezSantos/src/interfaz/Pantalla.java</file>
->>>>>>> 0d993190dd7c0bc26e5192f466b9ce928b2ac8e6
+            <file>file:/C:/Users/alesc/OneDrive/Escritorio/Proyecto1SO_RodriguezSantos/src/trabajadores/Game.java</file>
+            <file>file:/C:/Users/alesc/OneDrive/Escritorio/Proyecto1SO_RodriguezSantos/src/trabajadores/Drive.java</file>
         </group>
     </open-files>
 </project-private>
