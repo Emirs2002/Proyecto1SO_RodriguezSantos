@@ -36,7 +36,6 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel65 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
@@ -72,6 +71,8 @@ public class Pantalla extends javax.swing.JFrame {
         jTextField21 = new javax.swing.JTextField();
         jTextField22 = new javax.swing.JTextField();
         jTextField23 = new javax.swing.JTextField();
+        jLabel92 = new javax.swing.JLabel();
+        jTextField26 = new javax.swing.JTextField();
         jTextField24 = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
         jTextField25 = new javax.swing.JTextField();
@@ -126,6 +127,9 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
+        listosDLC3 = new javax.swing.JTextField();
+        jLabel94 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
@@ -193,8 +197,10 @@ public class Pantalla extends javax.swing.JFrame {
         spritesCounter = new javax.swing.JTextField();
         nivelesCounter = new javax.swing.JTextField();
         sistemasCounter = new javax.swing.JTextField();
-        jLabel66 = new javax.swing.JLabel();
+        listosDLC2 = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -202,23 +208,27 @@ public class Pantalla extends javax.swing.JFrame {
         confPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setText("jTextField1");
-        confPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, -1, -1));
+        confPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
 
+        jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(255, 255, 255));
         jLabel72.setText("Deadline de entrega:");
-        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, -1));
 
+        jLabel71.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
         jLabel71.setText("Duración de un día:");
         confPanel.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
         jTextField3.setText("jTextField1");
-        confPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+        confPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, 40));
 
         jLabel65.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(204, 204, 204));
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel65.setText("SQUARE ENIX");
         jLabel65.setToolTipText("");
-        confPanel.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 210, 40));
+        confPanel.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 210, 40));
 
         jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(204, 204, 204));
@@ -232,128 +242,149 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel74.setText("BETHESDA");
         jLabel74.setToolTipText("");
-        confPanel.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 210, 40));
+        confPanel.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 210, 40));
 
-        jTextField2.setText("jTextField1");
-        confPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
-
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
         jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel75.setText("Cantidad máxima de desarrolladores:");
         jLabel75.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        confPanel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 210, 20));
+        confPanel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 210, 20));
 
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
         jLabel70.setText("Desarrollador DLC");
-        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, -1));
+        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
 
         jTextField4.setText("jTextField1");
-        confPanel.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        confPanel.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, -1, 40));
 
         jTextField5.setText("jTextField1");
-        confPanel.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+        confPanel.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
 
         jTextField6.setText("jTextField1");
-        confPanel.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
+        confPanel.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
 
         jTextField7.setText("jTextField1");
-        confPanel.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
+        confPanel.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
 
         jTextField8.setText("jTextField1");
-        confPanel.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
+        confPanel.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, -1));
 
         jTextField9.setText("jTextField1");
-        confPanel.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, -1, -1));
+        confPanel.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
 
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
         jLabel76.setText("Guionistas");
-        confPanel.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+        confPanel.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
+        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
         jLabel77.setText("Artistas de sprites");
-        confPanel.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
+        confPanel.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
 
+        jLabel78.setForeground(new java.awt.Color(255, 255, 255));
         jLabel78.setText("Diseñador niveles");
-        confPanel.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
+        confPanel.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
 
+        jLabel79.setForeground(new java.awt.Color(255, 255, 255));
         jLabel79.setText("Programador lógica");
-        confPanel.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, -1));
+        confPanel.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
 
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
         jLabel80.setText("Producción diaria");
-        confPanel.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, -1, -1));
+        confPanel.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
 
+        jLabel81.setForeground(new java.awt.Color(255, 255, 255));
         jLabel81.setText("Cantidad");
-        confPanel.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
+        confPanel.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         jTextField10.setText("jTextField1");
-        confPanel.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+        confPanel.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, -1));
 
         jTextField11.setText("jTextField1");
-        confPanel.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+        confPanel.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
 
         jTextField12.setText("jTextField1");
-        confPanel.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, -1, -1));
+        confPanel.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
 
         jTextField13.setText("jTextField1");
-        confPanel.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, -1, -1));
+        confPanel.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
 
         jTextField14.setText("jTextField1");
-        confPanel.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, -1, -1));
+        confPanel.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, -1, -1));
 
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
         jLabel82.setText("Guionistas");
-        confPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, -1, -1));
+        confPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, -1, -1));
 
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
         jLabel83.setText("Artistas de sprites");
-        confPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, -1, -1));
+        confPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, -1, -1));
 
+        jLabel84.setForeground(new java.awt.Color(255, 255, 255));
         jLabel84.setText("Diseñador niveles");
-        confPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, -1, -1));
+        confPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
 
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
         jLabel85.setText("Programador lógica");
-        confPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, -1));
+        confPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, -1, -1));
 
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
         jLabel86.setText("Desarrollador DLC");
-        confPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, -1, -1));
+        confPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 470, -1, -1));
 
+        jLabel87.setForeground(new java.awt.Color(255, 255, 255));
         jLabel87.setText("Cantidad");
-        confPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 340, -1, -1));
+        confPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, -1, -1));
 
         jTextField15.setText("jTextField1");
-        confPanel.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, -1, -1));
+        confPanel.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 310, -1, -1));
 
         jTextField16.setText("jTextField1");
-        confPanel.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 410, -1, -1));
+        confPanel.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, -1, -1));
 
         jTextField17.setText("jTextField1");
-        confPanel.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, -1, -1));
+        confPanel.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 390, -1, -1));
 
         jTextField18.setText("jTextField1");
-        confPanel.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, -1, -1));
+        confPanel.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 430, -1, -1));
 
         jTextField19.setText("jTextField1");
-        confPanel.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, -1, -1));
+        confPanel.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 470, -1, -1));
 
+        jLabel88.setForeground(new java.awt.Color(255, 255, 255));
         jLabel88.setText("Producción diaria");
-        confPanel.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
+        confPanel.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 280, -1, -1));
 
         jTextField20.setText("jTextField1");
-        confPanel.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, -1, -1));
+        confPanel.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 310, -1, -1));
 
         jTextField21.setText("jTextField1");
-        confPanel.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, -1, -1));
+        confPanel.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, -1, -1));
 
         jTextField22.setText("jTextField1");
-        confPanel.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 450, -1, -1));
+        confPanel.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 390, -1, -1));
 
         jTextField23.setText("jTextField1");
-        confPanel.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 490, -1, -1));
+        confPanel.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, -1, -1));
+
+        jLabel92.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel92.setText("Deadline de entrega:");
+        confPanel.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, -1, -1));
+
+        jTextField26.setText("jTextField1");
+        confPanel.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, -1, 40));
 
         jTextField24.setText("jTextField1");
-        confPanel.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, -1, -1));
+        confPanel.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 470, -1, -1));
 
+        jLabel89.setForeground(new java.awt.Color(255, 255, 255));
         jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel89.setText("Cantidad máxima de desarrolladores:");
         jLabel89.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        confPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 210, 20));
+        confPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 210, 20));
 
         jTextField25.setText("jTextField1");
-        confPanel.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, -1, -1));
+        confPanel.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, -1, -1));
 
         jLabel90.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wallhaven-zmzqjg.png"))); // NOI18N
         jLabel90.setText("jLabel90");
@@ -367,9 +398,10 @@ public class Pantalla extends javax.swing.JFrame {
 
         jLabel17.setBackground(new java.awt.Color(102, 102, 102));
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Desarrolladores");
         jLabel17.setToolTipText("");
-        SEPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        SEPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
         SEPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 10));
         SEPanel1.add(narrativaSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, -1));
         SEPanel1.add(spriteSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 50, -1));
@@ -383,35 +415,45 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 430, 10));
         SEPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 430, 10));
 
+        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setText("Programadores");
         SEPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
+        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("DLCs");
         SEPanel1.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, -1, -1));
 
+        jLabel36.setForeground(new java.awt.Color(0, 0, 0));
         jLabel36.setText("Desarrolladores de niveles");
         SEPanel1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
+        jLabel37.setForeground(new java.awt.Color(0, 0, 0));
         jLabel37.setText("Artistas de Sprites");
         SEPanel1.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
+        jLabel38.setForeground(new java.awt.Color(0, 0, 0));
         jLabel38.setText("Desarrollador de DLCs");
         SEPanel1.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
+        jLabel39.setForeground(new java.awt.Color(0, 0, 0));
         jLabel39.setText("Integradores");
         SEPanel1.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setText("DRIVE");
-        SEPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+        SEPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Datos:");
         SEPanel1.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
 
+        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("Estandar");
-        SEPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
+        SEPanel1.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
 
+        jLabel43.setForeground(new java.awt.Color(0, 0, 0));
         jLabel43.setText("Con DLC");
         SEPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
 
@@ -436,8 +478,9 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1280px-Bethesda_Game_Studios_logo.svg (1).png"))); // NOI18N
         SEPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 93));
 
+        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setText("foto");
-        SEPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 180, 110));
+        SEPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 160, 100));
 
         utilidadTotal1.setText("DEADLINE");
         utilidadTotal1.addActionListener(new java.awt.event.ActionListener() {
@@ -448,29 +491,37 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(utilidadTotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 460, 80, 90));
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
         jLabel47.setText("¿Qué hace el Director?");
-        SEPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 210, 30));
+        SEPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 240, 30));
 
+        jLabel48.setBackground(new java.awt.Color(0, 0, 0));
         jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setText("¿Qué hace el Project Manager?");
-        SEPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 220, 50));
+        SEPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 270, 50));
 
+        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
         jLabel49.setText("foto");
-        SEPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, 110));
+        SEPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 160, 100));
 
-        jLabel50.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
         jLabel50.setText("Juegos listos:");
-        SEPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+        SEPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
         jLabel51.setText("Ganacias en bruto:");
         SEPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
 
         jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 0, 0));
         jLabel52.setText("Costos operativos");
         SEPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, -1, -1));
 
         jLabel53.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
         jLabel53.setText("Utilidad total del estudio");
         SEPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, -1, -1));
 
@@ -498,36 +549,59 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel1.add(costos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 80, 90));
 
+        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
         jLabel54.setText("foto");
-        SEPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
+        SEPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 80, 60));
 
+        jLabel55.setForeground(new java.awt.Color(0, 0, 0));
         jLabel55.setText("foto");
         SEPanel1.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 40, 40));
 
+        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
         jLabel56.setText("Guionistas");
         SEPanel1.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
+        jLabel57.setForeground(new java.awt.Color(0, 0, 0));
         jLabel57.setText("Guiones");
         SEPanel1.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
 
+        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
         jLabel58.setText("Sprites");
         SEPanel1.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, -1, -1));
 
+        jLabel59.setForeground(new java.awt.Color(0, 0, 0));
         jLabel59.setText("Niveles");
         SEPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
 
+        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
         jLabel60.setText("Sistemas");
         SEPanel1.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, -1, -1));
 
+        jLabel61.setForeground(new java.awt.Color(0, 0, 0));
         jLabel61.setText("foto");
         SEPanel1.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 40, 40));
 
+        jLabel93.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel93.setText("Faltas: ");
+        SEPanel1.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, -1, -1));
+
+        listosDLC3.setText("jTextField1");
+        SEPanel1.add(listosDLC3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 40, 20));
+
+        jLabel94.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel94.setText("foto");
+        SEPanel1.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
+
+        jLabel62.setForeground(new java.awt.Color(0, 0, 0));
         jLabel62.setText("foto");
         SEPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 40, 40));
 
+        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
         jLabel63.setText("foto");
         SEPanel1.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 40, 40));
 
+        jLabel64.setForeground(new java.awt.Color(0, 0, 0));
         jLabel64.setText("foto");
         SEPanel1.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 40, 40));
 
@@ -537,7 +611,7 @@ public class Pantalla extends javax.swing.JFrame {
                 listosStandard1ActionPerformed(evt);
             }
         });
-        SEPanel1.add(listosStandard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 40, -1));
+        SEPanel1.add(listosStandard1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 40, -1));
 
         guionesCounter1.setText("jTextField2");
         guionesCounter1.addActionListener(new java.awt.event.ActionListener() {
@@ -584,9 +658,10 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Desarrolladores");
         jLabel1.setToolTipText("");
-        SEPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        SEPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
         SEPanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 10));
         SEPanel.add(narrativaSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, -1));
         SEPanel.add(spriteSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 50, -1));
@@ -600,35 +675,45 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 430, 10));
         SEPanel.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 430, 10));
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Programadores");
         SEPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("DLCs");
         SEPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, -1, -1));
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Desarrolladores de niveles");
         SEPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Artistas de Sprites");
         SEPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Desarrollador de DLCs");
         SEPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Integradores");
         SEPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("DRIVE");
-        SEPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+        SEPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Datos:");
         SEPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, -1, -1));
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Estandar");
         SEPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, -1, -1));
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Con DLC");
         SEPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
 
@@ -647,14 +732,16 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 10, 550));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("DEADLINE");
         SEPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Square_Enix-Logo.wine (1).png"))); // NOI18N
         SEPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 400, 80));
 
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
         jLabel14.setText("foto");
-        SEPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, 180, 110));
+        SEPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 180, 90));
 
         utilidadTotal.setText("DEADLINE");
         utilidadTotal.addActionListener(new java.awt.event.ActionListener() {
@@ -664,27 +751,35 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(utilidadTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, 80, 90));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("¿Qué hace el Director?");
         SEPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 210, 30));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("¿Qué hace el Project Manager?");
-        SEPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 200, 50));
+        SEPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 210, 50));
 
+        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
         jLabel18.setText("foto");
-        SEPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, 110));
+        SEPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 180, 90));
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Juegos listos:");
-        SEPanel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+        SEPanel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
 
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("Ganacias en bruto:");
         SEPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
 
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("Costos operativos");
         SEPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, -1, -1));
 
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Utilidad total del estudio");
         SEPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, -1, -1));
 
@@ -715,33 +810,43 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel23.setText("foto");
         SEPanel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
 
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("foto");
         SEPanel.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 40, 40));
 
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Guionistas");
         SEPanel.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Guiones");
         SEPanel.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, -1, -1));
 
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Sprites");
         SEPanel.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, -1, -1));
 
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Niveles");
         SEPanel.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, -1, -1));
 
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("Sistemas");
         SEPanel.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, -1, -1));
 
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("foto");
         SEPanel.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 40, 40));
 
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("foto");
         SEPanel.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 40, 40));
 
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
         jLabel27.setText("foto");
         SEPanel.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 40, 40));
 
+        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("foto");
         SEPanel.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 40, 40));
 
@@ -785,11 +890,19 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(sistemasCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 40, -1));
 
-        jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título (1000 × 590 px).png"))); // NOI18N
-        SEPanel.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
+        listosDLC2.setText("jTextField1");
+        SEPanel.add(listosDLC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 40, 20));
 
         jLabel68.setText("foto");
         SEPanel.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 80, 60));
+
+        jLabel91.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel91.setText("Faltas: ");
+        SEPanel.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 360, -1, -1));
+
+        jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título (1000 × 590 px).png"))); // NOI18N
+        SEPanel.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
 
         tab.addTab("Square Enix", SEPanel);
 
@@ -1022,6 +1135,10 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -1047,13 +1164,13 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
@@ -1065,6 +1182,8 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JSpinner levelSpinner1;
     private javax.swing.JTextField listosDLC;
     private javax.swing.JTextField listosDLC1;
+    private javax.swing.JTextField listosDLC2;
+    private javax.swing.JTextField listosDLC3;
     private javax.swing.JTextField listosStandard;
     private javax.swing.JTextField listosStandard1;
     private javax.swing.JSpinner narrativaSpinner;
