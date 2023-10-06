@@ -3,7 +3,10 @@ package trabajadores;
 import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
 
-
+/**
+ *
+ * @author emirs
+ */
 public class Developer extends Thread {
     private String type;//acepta guion,sprite,nivel,programador,dlc
     private final float productionPerDay;
