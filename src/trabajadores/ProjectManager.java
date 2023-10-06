@@ -12,6 +12,7 @@ public class ProjectManager extends Thread {
     private final int dayDuration;
     private final int paymentPerHour;
     private int paymentPerDay = 0;
+    private int fault=0;
     
 
     public ProjectManager(int deadline, int paymentPerHour, int dayDuration) {
@@ -77,5 +78,39 @@ public class ProjectManager extends Thread {
             this.daysLeft--;
             System.out.println("deadline: " + this.daysLeft);
         }
+        
+        
+    }
+
+    public int getDaysLeft() {
+        return daysLeft;
+    }
+
+    public void setDaysLeft(int daysLeft) {
+        this.daysLeft = daysLeft;
+    }
+
+    public boolean isWorking() {
+        return isWorking;
+    }
+
+    public void setIsWorking(boolean isWorking) {
+        this.isWorking = isWorking;
+    }
+
+    public int getFault() {
+        return fault;
+    }
+
+    public void setFault(int fault) {
+        this.fault = fault;
+    }
+    
+    public int getPaymentPerDay(){
+        return paymentPerDay;
+    }
+    
+    public void setPaymentPerDay(int payment){
+        this.paymentPerDay = payment;
     }
 }
