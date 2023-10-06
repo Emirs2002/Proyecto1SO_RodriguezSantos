@@ -232,7 +232,12 @@ public class Pantalla extends javax.swing.JFrame {
         confPanel.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         jTextField3.setText("jTextField1");
-        confPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, 40));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        confPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 40, 30));
 
         jLabel65.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(204, 204, 204));
@@ -460,6 +465,12 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel17.setToolTipText("");
         SEPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
         SEPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 430, 10));
+
+        narrativaSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                narrativaSpinner1StateChanged(evt);
+            }
+        });
         SEPanel1.add(narrativaSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 50, -1));
         SEPanel1.add(spriteSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 50, -1));
         SEPanel1.add(programmerSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 50, -1));
@@ -529,8 +540,9 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 10, 550));
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(51, 51, 51));
         jLabel44.setText("DEADLINE");
-        SEPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 20, -1, -1));
+        SEPanel1.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, -1, -1));
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1280px-Bethesda_Game_Studios_logo.svg (1).png"))); // NOI18N
         SEPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 93));
@@ -588,7 +600,7 @@ public class Pantalla extends javax.swing.JFrame {
                 deadlineCounter1ActionPerformed(evt);
             }
         });
-        SEPanel1.add(deadlineCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 50, 100, 110));
+        SEPanel1.add(deadlineCounter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 60, 100, 110));
 
         gananciasBruto1.setText("DEADLINE");
         gananciasBruto1.addActionListener(new java.awt.event.ActionListener() {
@@ -1051,6 +1063,13 @@ public class Pantalla extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+       
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void narrativaSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_narrativaSpinner1StateChanged
+    }//GEN-LAST:event_narrativaSpinner1StateChanged
 
     /**
      * @param args the command line arguments
