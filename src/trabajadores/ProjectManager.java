@@ -1,6 +1,8 @@
 
 package trabajadores;
 
+import java.util.concurrent.Semaphore;
+
 /**
  *
  * @author emirs
@@ -13,14 +15,16 @@ public class ProjectManager extends Thread {
     private final int paymentPerHour;
     private int paymentPerDay = 0;
     private int fault=0;
+    private Semaphore mutexStudio;
     
 
-    public ProjectManager(int deadline, int paymentPerHour, int dayDuration) {
+    public ProjectManager(int deadline, int paymentPerHour, int dayDuration, Semaphore mutexStudio) {
         this.daysLeft = deadline;
         this.deadline = deadline;
         this.isWorking = true;
         this.paymentPerHour = paymentPerHour;
         this.dayDuration = dayDuration;
+        this.mutexStudio = mutexStudio;
     }
     
     @Override

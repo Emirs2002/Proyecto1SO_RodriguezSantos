@@ -15,15 +15,17 @@ public class Director extends Thread {
     private final int paymentPerHour;
     private int paymentPerDay = 0;
     private boolean isWorking;
-    private Semaphore mutex;
+    private Semaphore mutexDrive;
+    private Semaphore mutexStudio;
 
-    public Director(ProjectManager manager, int dayDuration, int paymentPerHour, Drive drive, Semaphore mutex) {
+    public Director(ProjectManager manager, int dayDuration, int paymentPerHour, Drive drive, Semaphore mutexDrive, Semaphore mutexStudio) {
         this.manager = manager;
         this.dayDuration = dayDuration;
         this.paymentPerHour = paymentPerHour;
         this.drive = drive;
         this.isWorking = true;
-        this.mutex = mutex;
+        this.mutexDrive = mutexDrive;
+        this.mutexStudio = mutexStudio;
     }
 
     @Override
@@ -52,11 +54,11 @@ public class Director extends Thread {
             //mandar todos los juegos al desguace
             try {
 //          se activa el semaforo para editar los juegos
-                this.mutex.acquire(1); //wait
+                this.mutexDrive.acquire(1); //wait
 
                 this.drive.launchGames();
 
-                this.mutex.release(); //signal
+                this.mutexDrive.release(); //signal
                 System.out.println("juegos enviados");
                 sleep(this.dayDuration); //spends 24 hours
 
