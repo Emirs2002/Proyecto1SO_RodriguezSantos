@@ -56,7 +56,7 @@ public class Pantalla extends javax.swing.JFrame {
         BspritaProduction = new javax.swing.JTextField();
         BnivelesProduction = new javax.swing.JTextField();
         BsystemsProduction = new javax.swing.JTextField();
-        BdlcProduction = new javax.swing.JTextField();
+        SintegradoresProduction = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
@@ -90,7 +90,7 @@ public class Pantalla extends javax.swing.JFrame {
         BlevelTXTspinner = new javax.swing.JSpinner();
         BProgramadorTXT = new javax.swing.JTextField();
         SdeadlineSpinner = new javax.swing.JSpinner();
-        BDLCsTXT = new javax.swing.JTextField();
+        SintegradoresTXT = new javax.swing.JTextField();
         SguionistasTXT = new javax.swing.JTextField();
         SspritesTXT = new javax.swing.JTextField();
         SlevelsTXT = new javax.swing.JTextField();
@@ -98,7 +98,7 @@ public class Pantalla extends javax.swing.JFrame {
         SDLCsTXT = new javax.swing.JTextField();
         BguionistasTXTspinner = new javax.swing.JSpinner();
         dayDurationSpinner = new javax.swing.JSpinner();
-        BdlcsTXTspinner = new javax.swing.JSpinner();
+        SintegradoresTXTspinner = new javax.swing.JSpinner();
         BdeadlineSpinner = new javax.swing.JSpinner();
         BGuionistasTXT = new javax.swing.JTextField();
         changeVALUES = new javax.swing.JButton();
@@ -108,7 +108,15 @@ public class Pantalla extends javax.swing.JFrame {
         SsystemsTXTspinner1 = new javax.swing.JSpinner();
         SlevelTXTspinner1 = new javax.swing.JSpinner();
         SspritesTXTspinner1 = new javax.swing.JSpinner();
+        jLabel90 = new javax.swing.JLabel();
+        BintegradoresTXTspinner = new javax.swing.JSpinner();
+        BintegradoresTXT = new javax.swing.JTextField();
+        BintegradorProduction = new javax.swing.JTextField();
         SguionistasTXTspinner1 = new javax.swing.JSpinner();
+        jLabel116 = new javax.swing.JLabel();
+        BdlcsTXTspinner2 = new javax.swing.JSpinner();
+        BDLCsTXT2 = new javax.swing.JTextField();
+        BdlcProduction2 = new javax.swing.JTextField();
         FONDO3 = new javax.swing.JLabel();
         BPanel = new javax.swing.JPanel();
         SEPanel1 = new javax.swing.JPanel();
@@ -267,7 +275,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(255, 255, 255));
         jLabel72.setText("Deadline de entrega:");
-        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, -1, 30));
+        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, 30));
 
         jLabel71.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(255, 255, 255));
@@ -311,12 +319,12 @@ public class Pantalla extends javax.swing.JFrame {
         confPanel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 210, 20));
 
         jLabel70.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel70.setText("Desarrollador DLC");
-        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
+        jLabel70.setText("Integradores");
+        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, -1));
 
         BdeadlineTXT.setEditable(false);
         BdeadlineTXT.setText("jTextField1");
-        confPanel.add(BdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 50, 40));
+        confPanel.add(BdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 50, 20));
 
         BmaxDesarrolladoresTXT.setEditable(false);
         BmaxDesarrolladoresTXT.setText("jTextField1");
@@ -366,9 +374,9 @@ public class Pantalla extends javax.swing.JFrame {
         BsystemsProduction.setText("jTextField1");
         confPanel.add(BsystemsProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
 
-        BdlcProduction.setEditable(false);
-        BdlcProduction.setText("jTextField1");
-        confPanel.add(BdlcProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
+        SintegradoresProduction.setEditable(false);
+        SintegradoresProduction.setText("jTextField1");
+        confPanel.add(SintegradoresProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 460, -1, -1));
 
         jLabel82.setForeground(new java.awt.Color(255, 255, 255));
         jLabel82.setText("Guionistas");
@@ -482,7 +490,7 @@ public class Pantalla extends javax.swing.JFrame {
                 SdeadlineTXTActionPerformed(evt);
             }
         });
-        confPanel.add(SdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 480, 50, 40));
+        confPanel.add(SdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 490, 50, 20));
 
         SdlcPriceTXT.setEditable(false);
         SdlcPriceTXT.setText("jTextField1");
@@ -512,9 +520,9 @@ public class Pantalla extends javax.swing.JFrame {
         SdeadlineSpinner.setModel(new javax.swing.SpinnerNumberModel());
         confPanel.add(SdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, 50, -1));
 
-        BDLCsTXT.setEditable(false);
-        BDLCsTXT.setText("jTextField1");
-        confPanel.add(BDLCsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 40, -1));
+        SintegradoresTXT.setEditable(false);
+        SintegradoresTXT.setText("jTextField1");
+        confPanel.add(SintegradoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 460, 40, -1));
 
         SguionistasTXT.setEditable(false);
         SguionistasTXT.setText("jTextField1");
@@ -542,11 +550,11 @@ public class Pantalla extends javax.swing.JFrame {
         dayDurationSpinner.setModel(new javax.swing.SpinnerNumberModel(1000, 1000, null, 100));
         confPanel.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
 
-        BdlcsTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BdlcsTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 50, -1));
+        SintegradoresTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
+        confPanel.add(SintegradoresTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 460, 50, -1));
 
         BdeadlineSpinner.setModel(new javax.swing.SpinnerNumberModel());
-        confPanel.add(BdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, 50, -1));
+        confPanel.add(BdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 50, -1));
 
         BGuionistasTXT.setEditable(false);
         BGuionistasTXT.setText("jTextField1");
@@ -588,8 +596,38 @@ public class Pantalla extends javax.swing.JFrame {
         SspritesTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         confPanel.add(SspritesTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 310, 50, -1));
 
+        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel90.setText("Integradores");
+        confPanel.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
+
+        BintegradoresTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
+        confPanel.add(BintegradoresTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 50, -1));
+
+        BintegradoresTXT.setEditable(false);
+        BintegradoresTXT.setText("jTextField1");
+        confPanel.add(BintegradoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 40, -1));
+
+        BintegradorProduction.setEditable(false);
+        BintegradorProduction.setText("jTextField1");
+        confPanel.add(BintegradorProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, -1, -1));
+
         SguionistasTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         confPanel.add(SguionistasTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 50, -1));
+
+        jLabel116.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel116.setText("Desarrollador DLC");
+        confPanel.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
+
+        BdlcsTXTspinner2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
+        confPanel.add(BdlcsTXTspinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 50, -1));
+
+        BDLCsTXT2.setEditable(false);
+        BDLCsTXT2.setText("jTextField1");
+        confPanel.add(BDLCsTXT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 40, -1));
+
+        BdlcProduction2.setEditable(false);
+        BdlcProduction2.setText("jTextField1");
+        confPanel.add(BdlcProduction2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
 
         FONDO3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wallhaven-zmzqjg.png"))); // NOI18N
         FONDO3.setText("jLabel90");
@@ -1528,7 +1566,7 @@ public class Pantalla extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BDLCpriceTXT;
-    private javax.swing.JTextField BDLCsTXT;
+    private javax.swing.JTextField BDLCsTXT2;
     private javax.swing.JTextField BGuionistasTXT;
     private javax.swing.JTextField BLevelsTXT;
     private javax.swing.JPanel BPanel;
@@ -1536,10 +1574,13 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField BSpritesTXT;
     private javax.swing.JSpinner BdeadlineSpinner;
     private javax.swing.JTextField BdeadlineTXT;
-    private javax.swing.JTextField BdlcProduction;
-    private javax.swing.JSpinner BdlcsTXTspinner;
+    private javax.swing.JTextField BdlcProduction2;
+    private javax.swing.JSpinner BdlcsTXTspinner2;
     private javax.swing.JTextField BguionesProduction;
     private javax.swing.JSpinner BguionistasTXTspinner;
+    private javax.swing.JTextField BintegradorProduction;
+    private javax.swing.JTextField BintegradoresTXT;
+    private javax.swing.JSpinner BintegradoresTXTspinner;
     private javax.swing.JSpinner BlevelTXTspinner;
     private javax.swing.JTextField BmaxDesarrolladoresTXT;
     private javax.swing.JTextField BnivelesProduction;
@@ -1569,6 +1610,9 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField SguionesProduction;
     private javax.swing.JTextField SguionistasTXT;
     private javax.swing.JSpinner SguionistasTXTspinner1;
+    private javax.swing.JTextField SintegradoresProduction;
+    private javax.swing.JTextField SintegradoresTXT;
+    private javax.swing.JSpinner SintegradoresTXTspinner;
     private javax.swing.JSpinner SlevelTXTspinner1;
     private javax.swing.JTextField SlevelsTXT;
     private javax.swing.JTextField SlevesProduction;
@@ -1637,6 +1681,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1706,6 +1751,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
