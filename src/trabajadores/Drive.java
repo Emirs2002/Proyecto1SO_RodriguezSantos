@@ -41,7 +41,6 @@ public class Drive {
             case "guion": 
                 if((this.script + cantidadPartes)<=25){
                     this.script +=cantidadPartes;
-                    System.out.println("guiones hechos: " + cantidadPartes);
                 }else{
                     
                     System.out.println("Excede la capacidad del drive de guiones: " + this.script);
@@ -52,7 +51,6 @@ public class Drive {
                 
                 if((this.sprite + cantidadPartes)<=55){
                     this.sprite +=cantidadPartes;
-                    System.out.println("sprites hechos: " + cantidadPartes);
                 }else{
                     
                     System.out.println("Excede la capacidad del drive de sprites: " + this.sprite);
@@ -63,7 +61,6 @@ public class Drive {
                 
                 if((this.level + cantidadPartes)<=20){
                     this.level +=cantidadPartes;
-                    System.out.println("Niveles hechos: " + cantidadPartes);
                 }else{
                     
                     System.out.println("Excede la capacidad del drive de niveles: " + this.level);
@@ -73,7 +70,6 @@ public class Drive {
             case "programador":
                 if((this.system + cantidadPartes)<=35){
                     this.system +=cantidadPartes;
-                    System.out.println("Sistemas hechos: " + cantidadPartes);
                 }else{
                     
                     System.out.println("Excede la capacidad del drive de sistemas: " + this.system);
@@ -83,7 +79,6 @@ public class Drive {
             case "dlc":
                 if((this.dlc + cantidadPartes)<=10){
                     this.dlc +=cantidadPartes;
-                    System.out.println("DLCs hechos: " + cantidadPartes);
                 }else{
                     
                     System.out.println("Excede la capacidad del drive de DLCs: " + this.dlc);
@@ -125,7 +120,6 @@ public class Drive {
                 this.gameParts += 1;
                 this.script -= game.getNeededScripts();
                 this.hasScripts = true;
-                System.out.println("Scripts left " + this.script);
             }
         }
         

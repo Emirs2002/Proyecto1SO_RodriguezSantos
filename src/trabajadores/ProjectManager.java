@@ -26,6 +26,7 @@ public class ProjectManager extends Thread {
     @Override
     public void run(){
         while(true){
+            System.out.println("pago manager inicio: " + this.paymentPerDay);
             
             //primeras 16 horas
             int hour = 0;
@@ -35,12 +36,10 @@ public class ProjectManager extends Thread {
 
                     //mira streams
                     this.isWorking = false;
-                    System.out.println("viendo streams");
                     sleep((this.dayDuration/24)/2); //30 min
 
                     //trabaja
                     this.isWorking = true;
-                    System.out.println("trabajandooo");
                     sleep((this.dayDuration/24)/2); //30 min
                     
                     hour++;
@@ -57,9 +56,8 @@ public class ProjectManager extends Thread {
                 this.isWorking = true;
                 sleep((8*this.dayDuration)/24);
                 
-                System.out.println("dia termina manager");
                 this.paymentPerDay += 24 * this.paymentPerHour; //pago
-                System.out.println("total dia manager" + this.paymentPerDay);
+                System.out.println("Pago manager final: " + this.paymentPerDay);
             
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -72,7 +70,7 @@ public class ProjectManager extends Thread {
     
     public void changeDeadline(){
         if (this.daysLeft == 0){
-            this.daysLeft = this.deadline;
+            this.daysLeft = this.deadline; //esto lo tiene que hacer el director
             System.out.println("Nueva deadline: " + this.daysLeft);
         }else{
             this.daysLeft--;

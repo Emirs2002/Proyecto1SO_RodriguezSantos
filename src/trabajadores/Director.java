@@ -17,7 +17,7 @@ public class Director extends Thread {
     private boolean isWorking;
     private Semaphore mutex;
 
-    public Director(ProjectManager manager, int dayDuration, int paymentPerHour, int daysleft, Drive drive, Semaphore mutex) {
+    public Director(ProjectManager manager, int dayDuration, int paymentPerHour, Drive drive, Semaphore mutex) {
         this.manager = manager;
         this.dayDuration = dayDuration;
         this.paymentPerHour = paymentPerHour;
@@ -28,16 +28,19 @@ public class Director extends Thread {
 
     @Override
     public void run() {
-        try {
-            work();
-            sleep(this.dayDuration);
+        while (true) {
 
-            //pago
-            this.paymentPerDay += 24 * this.paymentPerHour;
-            System.out.println("total dia director" + this.paymentPerDay);
+            try {
+                work();
+                sleep(this.dayDuration);
 
-        } catch (InterruptedException ex) {
-            ex.printStackTrace(System.out);
+                //pago
+                this.paymentPerDay += 24 * this.paymentPerHour;
+                System.out.println("total dia director" + this.paymentPerDay);
+
+            } catch (InterruptedException ex) {
+                ex.printStackTrace(System.out);
+            }
         }
     }
 
@@ -45,22 +48,21 @@ public class Director extends Thread {
 
         int daysLeft = this.manager.getDaysLeft();
         if (daysLeft == 0) {
-            
-        //mandar todos los juegos al desguace
-            
-        try {
-//          se activa el semaforo para editar los juegos
-            this.mutex.acquire(1); //wait
-            
-            this.drive.launchGames();
-            
-            this.mutex.release(); //signal
 
-            sleep(this.dayDuration); //spends 24 hours
-            
-        } catch (InterruptedException ex) {
-            ex.printStackTrace(System.out);
-        }
+            //mandar todos los juegos al desguace
+            try {
+//          se activa el semaforo para editar los juegos
+                this.mutex.acquire(1); //wait
+
+                this.drive.launchGames();
+
+                this.mutex.release(); //signal
+                System.out.println("juegos enviados");
+                sleep(this.dayDuration); //spends 24 hours
+
+            } catch (InterruptedException ex) {
+                ex.printStackTrace(System.out);
+            }
 
         } else {
             //hora random para checar que hace el PM
@@ -68,13 +70,14 @@ public class Director extends Thread {
 
             try {
                 this.isWorking = true;
+                System.out.println("director trabaja");
                 sleep(hour);//trabaja normal hasta esta hora
 
                 //revisa que hace el PM
                 checkOnPM();
-                int checkingMinutes=(25*(this.dayDuration/24))/60; //
-                
-                sleep(this.dayDuration - hour -checkingMinutes); //duerme el resto del tiempo del dia
+                int checkingMinutes = (25 * (this.dayDuration / 24)) / 60; //
+
+                sleep(this.dayDuration - hour - checkingMinutes); //duerme el resto del tiempo del dia
                 System.out.println("dia termina director");
 
             } catch (InterruptedException ex) {
@@ -86,36 +89,41 @@ public class Director extends Thread {
     }
 
     public void checkOnPM() {
+        System.out.println("director va a chismear al PM");
         this.isWorking = false;
         int minute = 0;
-        
+        int faults = 0;
+
         //bucle para asegurar que lo vigile durante los 25 minutos
         while (minute < 25) {
 
             try {
 
-                if (this.manager.isWorking()) {
+                if (this.manager.isWorking() == true) {
 
                     System.out.println("pm esta trabajando");
 
                 } else {
-
                     //penalizar al PM
+                    faults++;
                     this.manager.setFault(this.manager.getFault() + 1);
-                    int descuentoPM = this.manager.getPaymentPerDay() - 50; //restar de su salario
-                    this.manager.setPaymentPerDay(descuentoPM);
 
-                    System.out.println("Descuento " + descuentoPM);
+                    System.out.println("PM VIENDO STREAMS");
+                    System.out.println("FALTAS: " + this.manager.getFault());
+                    
                 }
-
+                
                 sleep((this.dayDuration / 24) / 60); //dormir un minuto
                 minute++;
-                
+
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
             }
 
         }
+        int descuentoPM = faults *50;
+        this.manager.setPaymentPerDay(this.manager.getPaymentPerDay() - descuentoPM);
+        
     }
 
     public int getRandomHour() {

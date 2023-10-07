@@ -40,8 +40,6 @@ public class Integrator extends Thread
             
             try {
                 sleep(this.dayDuration);
-                System.out.println("dia termina");
-                System.out.println(" ");
                 
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -56,7 +54,6 @@ public class Integrator extends Thread
         this.acumulado += this.productionPerDay;
         
         this.paymentPerDay += 24 * this.paymentPerHour;//pago integrador
-        System.out.println("total dia integrador: "+ this.paymentPerDay);
         
         //producto listo, guardar en drive
         if(this.acumulado >= 1){

@@ -37,8 +37,6 @@ public class Developer extends Thread {
             
             try {
                 sleep(this.dayDuration);
-                System.out.println("dia termina");
-                System.out.println(" ");
                 
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -53,7 +51,6 @@ public class Developer extends Thread {
         this.acumulado += this.productionPerDay;
         
         this.paymentPerDay += 24 * this.paymentPerHour;//pago desarrollador
-        System.out.println("total dia "+ this.type+ ": " + this.paymentPerDay);
         
         //producto listo, guardar en drive
         if(this.acumulado >= 1){

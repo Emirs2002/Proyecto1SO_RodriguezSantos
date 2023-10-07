@@ -21,7 +21,8 @@ public class Main {
         Developer dev4 = new Developer("programador",1,1000,mutex,10,drive);
         Developer dev5 = new Developer("dlc",1,1000,mutex,10,drive);
         Integrator integrador1 = new Integrator(0.5f, 1000, mutex, 10, drive, game1);
-        ProjectManager manager = new ProjectManager(9,30,1000);
+        ProjectManager manager = new ProjectManager(9,20,1000);
+        Director director = new Director(manager, 1000,30,drive, mutex);
         
         dev1.start();
         dev2.start();
@@ -30,6 +31,7 @@ public class Main {
         dev5.start();
         integrador1.start();
         manager.start();
+        director.start();
 
     }
 }
