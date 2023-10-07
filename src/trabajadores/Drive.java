@@ -111,7 +111,8 @@ public class Drive {
     }
     
 //para integrador
-    public int glueParts(Studio game) //requerimientos de cada recurso para crear el juego
+
+    public int glueParts(Game game) //requerimientos de cada recurso para crear el juego
     {
         if(this.hasScripts == false)
         {

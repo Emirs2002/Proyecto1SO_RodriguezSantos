@@ -16,11 +16,11 @@ public class Integrator extends Thread
     private int paymentPerDay = 0;
     private final int paymentPerHour;
     private final Drive drive;
-    private final Studio companyName;
+    private final Game companyName;
 
     
 
-    public Integrator(float productionPerDay, int dayDuration, Semaphore mutex, int payment, Drive drive, Studio companyName) {
+    public Integrator(float productionPerDay, int dayDuration, Semaphore mutex, int payment, Drive drive, Game companyName) {
         this.productionPerDay = productionPerDay;
         this.dayDuration = dayDuration;
         this.mutex = mutex;

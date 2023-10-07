@@ -14,7 +14,7 @@ public class Main {
 
         Drive drive = new Drive();
         Semaphore mutex = new Semaphore(1);
-        Studio game1 = new Studio(2, 2, 2, 2, 2, 2);
+        Game game1 = new Game(2, 2, 2, 2, 2, 2);
         Developer dev1 = new Developer("guion",1,1000,mutex,10, drive);
         Developer dev2 = new Developer("nivel",1,1000,mutex,10,drive);
         Developer dev3 = new Developer("sprite",1,1000,mutex,10,drive);
