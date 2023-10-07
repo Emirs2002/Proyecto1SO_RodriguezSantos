@@ -182,6 +182,7 @@ public class Pantalla extends javax.swing.JFrame {
         programadoresCounter = new javax.swing.JTextField();
         DesaDLCsCounter = new javax.swing.JTextField();
         integradoresCounter = new javax.swing.JTextField();
+        spriteSpinner2 = new javax.swing.JSpinner();
         guionesCounter7 = new javax.swing.JTextField();
         FONDO1 = new javax.swing.JLabel();
         SEPanel = new javax.swing.JPanel();
@@ -609,7 +610,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 210, 10));
 
         spriteSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel1.add(spriteSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
+        SEPanel1.add(spriteSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 50, -1));
 
         programmerSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         SEPanel1.add(programmerSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 50, -1));
@@ -942,6 +943,9 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
         SEPanel1.add(integradoresCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 40, -1));
+
+        spriteSpinner2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
+        SEPanel1.add(spriteSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
 
         guionesCounter7.setEditable(false);
         guionesCounter7.setText("jTextField2");
@@ -1741,6 +1745,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField sistemasCounter1;
     private javax.swing.JTextField sistemasCounterS;
     private javax.swing.JSpinner spriteSpinner1;
+    private javax.swing.JSpinner spriteSpinner2;
     private javax.swing.JSpinner spriteSpinnerS;
     private javax.swing.JTextField spritesCounter1;
     private javax.swing.JTextField spritesCounterS;
