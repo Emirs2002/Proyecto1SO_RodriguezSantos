@@ -115,7 +115,7 @@ public class Drive {
     
     }
     
-
+//para integrador
     public int glueParts(Studio game) //requerimientos de cada recurso para crear el juego
     {
         if(this.hasScripts == false)
@@ -173,8 +173,20 @@ public class Drive {
     }   
     
 
-
-
+//para director
+public void launchGames(){ //pasar Studio como parametro
+    
+    //ganancia de los juegos
+    
+//    int standardGameBenefit = this.standardGame*Studio.getstandardGamePrice;
+//    int dlcGameBenefit = this.dlcGame*dlcGamePrice;
+//    int totalBenefit = standardGameBenefit + dlcGameBenefit;
+    
+    //enviar juegos a tiendas
+    this.standardGame = 0;
+    this.dlcGame = 0;
+            
+}
 
 
 }

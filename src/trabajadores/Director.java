@@ -2,8 +2,6 @@ package trabajadores;
 
 import java.util.Random;
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +34,7 @@ public class Director extends Thread {
 
             //pago
             this.paymentPerDay += 24 * this.paymentPerHour;
-            System.out.println("total dia manager" + this.paymentPerDay);
+            System.out.println("total dia director" + this.paymentPerDay);
 
         } catch (InterruptedException ex) {
             ex.printStackTrace(System.out);
@@ -47,7 +45,22 @@ public class Director extends Thread {
 
         int daysLeft = this.manager.getDaysLeft();
         if (daysLeft == 0) {
-            //mandar todos los juegos al desguace
+            
+        //mandar todos los juegos al desguace
+            
+        try {
+//          se activa el semaforo para editar los juegos
+            this.mutex.acquire(1); //wait
+            
+            this.drive.launchGames();
+            
+            this.mutex.release(); //signal
+
+            sleep(this.dayDuration); //spends 24 hours
+            
+        } catch (InterruptedException ex) {
+            ex.printStackTrace(System.out);
+        }
 
         } else {
             //hora random para checar que hace el PM
@@ -59,7 +72,9 @@ public class Director extends Thread {
 
                 //revisa que hace el PM
                 checkOnPM();
-                sleep(this.dayDuration - hour); //se consume el resto del tiempo del dia
+                int checkingMinutes=(25*(this.dayDuration/24))/60; //
+                
+                sleep(this.dayDuration - hour -checkingMinutes); //duerme el resto del tiempo del dia
                 System.out.println("dia termina director");
 
             } catch (InterruptedException ex) {
