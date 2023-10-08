@@ -35,7 +35,7 @@ public class Studio {
         this.DLCprice = DLCprice;
         this.deadline = deadline;
         this.size = size;
-        this.workerList = new Lista();
+        this.workerList = new Lista(size);
         this.numGuionista = numGuionista;
         this.numSpriter = numSpriter;
         this.numNiveler = numNiveler;
@@ -101,10 +101,10 @@ public class Studio {
         int i=0;
         Lista workers = this.workerList;
         Nodo temp = workers.getPfirst();
+        
         while(i < workers.getTamanho()){
             
             Thread dev = (Thread)temp.getData();
-//            System.out.println(dev.getClass().getSimpleName() );
             dev.start();
             temp = workers.proximoNodo(temp);
             i++;
@@ -112,7 +112,16 @@ public class Studio {
         
         this.manager.start();
         this.director.start();
+        
+        //pruebas lista
+        System.out.println("ANTES ELIMINAR");
         System.out.println(workers.ObtenerInfo());
+        
+        System.out.println("");
+        workers.deleteNode("guion");
+        System.out.println("DESPUES ELIMINAR");
+        System.out.println(workers.ObtenerInfo());
+        
         
     }
 
@@ -171,9 +180,5 @@ public class Studio {
     public void setWorkerList(Lista workerList) {
         this.workerList = workerList;
     }
-    
-    
-    
-    
     
 }

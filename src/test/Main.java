@@ -19,10 +19,10 @@ public class Main {
         float[] produccionArr = {0.34f,0.34f,2,3,0.34f};
         
         
-        Studio studio1 = new Studio(600,700,9,10,1,2,
+        Studio studio1 = new Studio(600,700,9,13,4,2,
                 3,1,1,2,game1,1000,mutexCounter,mutexDrive, drive, produccionArr);
         studio1.startWorkers();
-        
+       
         
        }
 }

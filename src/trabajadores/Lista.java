@@ -12,6 +12,7 @@ public class Lista {
     private Nodo pfirst;
     private Nodo plast;
     private int tamanho;
+    private int limit;
 
 //GETTERS Y SETTERS 
     
@@ -59,9 +60,10 @@ public class Lista {
 
 
  //CONSTRUCTOR
-    public Lista() {
+    public Lista(int limit) {
         this.pfirst = null;
-        this.tamanho = 0;    
+        this.tamanho = 0;
+        this.limit = limit;
     }
  
  //FUNCIONES PRIMITIVAS
@@ -127,12 +129,20 @@ public class Lista {
             String print = "";             
 
             for (int i = 0; i< this.getTamanho(); i++ ){               
-
-                print += temp.getData() + "\n";
+                
+                if((temp.getData().getClass().getSimpleName()).equals("Developer")){
+                    
+                    print += ((Developer) temp.getData()).getType() + "\n";
+                    
+                }else{
+                    print += ((Integrator) temp.getData()).getType() + "\n";
+                    
+                }
                 
                 temp = proximoNodo(temp);               
                 
                }
+            
             return print;
    
             }
@@ -150,24 +160,60 @@ public class Lista {
         }
     }
     
+    //BORRAR
+    public void deleteNode(String type){
+        if (!isEmpty()){
+            Nodo temp = this.getPfirst();
+            Nodo nodoBorrar = Buscar(type);
+            Nodo nodoProximo = nodoBorrar.getPnext();
+            int actual = this.getIndex(nodoBorrar);
+            
+            if(actual>0){
+                int anterior = actual - 1;
+                for(int i = 0; i <= anterior ; i++){
+                    if(i == anterior)
+                    {
+                        temp.setPnext(nodoProximo);
+                        nodoBorrar.setPnext(null);
+                    }
+                temp = temp.getPnext();
+                }
+
+                tamanho -= 1;
+            }else{
+                deleteAtStart();
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"La lista está vacía");
+        }
+    }
+    
     //AÑADIR AL FINAL
     public void addAtEnd(Nodo nodito){
         
-        if(!this.isEmpty()){ 
-            Nodo temp = plast;
-            temp.setPnext(nodito);
-            plast = nodito;
-        }
-        else{
-            pfirst = plast = nodito;
+        if(this.tamanho < this.limit){
+            if(!this.isEmpty()){ 
+                Nodo temp = plast;
+                temp.setPnext(nodito);
+                plast = nodito;
+            }
+            else{
+                pfirst = plast = nodito;
+            }
+
+            tamanho++; 
+        
+        }else{
+            JOptionPane.showMessageDialog(null,"Numero de trabajadores excedido");
         }
         
-        tamanho++;        
+               
         
     }
 
     //BUSCAR ELEMENTO EN LA LISTA 
-    public Nodo Buscar(Object valor){
+    public Nodo Buscar(String type){
         if(isEmpty()){
             JOptionPane.showMessageDialog(null,"Lista vacía");
             return null;
@@ -175,12 +221,19 @@ public class Lista {
             Nodo temp = pfirst;
             for (int i = 0; i < this.getTamanho(); i++) {
                 
-                if(valor== temp.getData()){
+                if(temp.getData().getClass().getSimpleName() == "Developer"){
+                    
+                    if(type == ((Developer)temp.getData()).getType()){
+                        return temp;
+                    }
+                    else{
+                        temp = temp.getPnext();
+                    }
+                }else{
                     return temp;
+                    
                 }
-                else{
-                    temp = temp.getPnext();
-                }
+                
             }
         }
             return null;
