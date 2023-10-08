@@ -107,7 +107,7 @@ public class Lista {
 
             for (int i = 0; i< this.getTamanho(); i++ ){               
 
-                print += temp.getData();
+                print += temp.getData()+ "\n";
                 
                 temp = proximoNodo(temp);               
                 

@@ -71,9 +71,25 @@ public class Developer extends Thread {
             
         }
         
-           
         
         
+        
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getPaymentPerDay() {
+        return paymentPerDay;
+    }
+
+    public void setPaymentPerDay(int paymentPerDay) {
+        this.paymentPerDay = paymentPerDay;
     }
     
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package trabajadores;
 
 import java.util.concurrent.Semaphore;
@@ -11,6 +7,7 @@ import java.util.concurrent.Semaphore;
  * @author alesc
  */
 public class Studio {
+    private int dayDuration;
     private int standardPrice;
     private int DLCprice;
     private int costo;
@@ -26,63 +23,73 @@ public class Studio {
     private int numDlc;
     private int numIntegrador;
     private Semaphore mutexDrive;
+    private Semaphore mutexCounter;
     private Drive drive;
-//    private ProjectManager pm;
-//    private Director director;
-//    private Developer guionista;
-//    private Developer nivelista;
-//    private Developer artista;
-//    private Developer programador;
-//    private Developer dlc;
-//    private Integrator integrator;
+    private Game game;
+    private ProjectManager manager;
+    private Director director;
 
-//    public Studio(int standardPrice, int DLCprice, int deadline, ProjectManager pm, Director director, int size, Developer guionista, Developer nivelista, Developer artista, Developer programador, Developer dlc, Integrator integrator) {
-//        this.standardPrice = standardPrice;
-//        this.DLCprice = DLCprice;
-//        this.deadline = deadline;
-////        this.pm = pm;
-////        this.director = director;
-//        this.size = size;
-////        this.guionista = guionista;
-////        this.nivelista = nivelista;
-////        this.artista = artista;
-////        this.programador = programador;
-////        this.dlc = dlc;
-////        this.integrator = integrator;
-//    }
-
-    public Studio(int standardPrice, int DLCprice, int deadline, int size, Lista workerList, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador) {
+    public Studio(int standardPrice, int DLCprice, int deadline, int size,int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, Semaphore mutexCounter, Semaphore mutexDrive, Drive drive) {
         this.standardPrice = standardPrice;
         this.DLCprice = DLCprice;
         this.deadline = deadline;
         this.size = size;
-        this.workerList = workerList;
+        this.workerList = new Lista();
         this.numGuionista = numGuionista;
         this.numSpriter = numSpriter;
         this.numNiveler = numNiveler;
         this.numSystem = numSystem;
         this.numDlc = numDlc;
         this.numIntegrador = numIntegrador;
+        this.game=game;
+        this.mutexDrive = mutexDrive;
+        this.mutexCounter = mutexCounter;
+        this.drive = drive;
+        this.dayDuration = dayDuration;
+        
     }
     
     public void createWorkList(){
         
-        for (int i = 0; i < this.numSpriter; i++) {
+        for (int i = 0; i < this.numSpriter; i++) { //pasar productionperday por parametro
             Developer dev = new Developer("sprite",1,1000,this.mutexDrive,10,this.drive);
             Nodo nodito = new Nodo(dev);
+            System.out.println("spriter creado");
             this.workerList.addAtEnd(nodito);
         }
         for (int i = 0; i < this.numGuionista; i++) {
             Developer dev = new Developer("guion",1,1000,this.mutexDrive,20,this.drive);
             Nodo nodito = new Nodo(dev);
+            System.out.println("guionista creado");
             this.workerList.addAtEnd(nodito);
         }
         for (int i = 0; i < this.numNiveler; i++) {
             Developer dev = new Developer("nivel",1,1000,this.mutexDrive,40,this.drive);
             Nodo nodito = new Nodo(dev);
+            System.out.println("niveler creado");
             this.workerList.addAtEnd(nodito);
         }
-         
+        for (int i = 0; i < this.numSystem; i++) {
+            Developer dev = new Developer("programador",1,1000,this.mutexDrive,10,this.drive);
+            Nodo nodito = new Nodo(dev);
+            System.out.println("programador creado");
+            this.workerList.addAtEnd(nodito);
+        }
+        for (int i = 0; i < this.numDlc; i++) {
+            Developer dev = new Developer("dlc",1,1000,this.mutexDrive,10,this.drive);
+            Nodo nodito = new Nodo(dev);
+            System.out.println("dlcer creado");
+            this.workerList.addAtEnd(nodito);
+        }
+        for (int i = 0; i < this.numIntegrador; i++) {
+            Integrator integrador = new Integrator(0.5f, 1000, this.mutexDrive, 10, this.drive, this.game);
+            Nodo nodito = new Nodo(integrador);
+            System.out.println("integrador creado");
+            this.workerList.addAtEnd(nodito);
+        }
+        
+        this.manager = new ProjectManager(this.deadline, 20, this.dayDuration,this.mutexCounter);
+        this.director = new Director(this.manager, this.dayDuration,50,this.drive,this.mutexDrive,this.mutexCounter);
     }
     
     public void startWorkers(){
@@ -94,11 +101,17 @@ public class Studio {
         Nodo temp = workers.getPfirst();
         while(i < workers.getTamanho()){
             
-            Developer dev = (Developer) temp.getData();
+            Thread dev = (Thread)temp.getData();
+//            System.out.println(dev.getClass().getSimpleName() );
             dev.start();
             temp = workers.proximoNodo(temp);
             i++;
         }
+        
+        this.manager.start();
+        this.director.start();
+        
+        workers.imprimirLista();
     }
 
     public int getStandardPrice() {

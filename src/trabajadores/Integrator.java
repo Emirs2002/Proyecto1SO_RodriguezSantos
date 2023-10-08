@@ -17,6 +17,7 @@ public class Integrator extends Thread
     private final int paymentPerHour;
     private final Drive drive;
     private final Game companyName;
+    private final String type;
 
     
 
@@ -27,6 +28,7 @@ public class Integrator extends Thread
         this.paymentPerHour = payment;
         this.drive = drive;
         this.companyName = companyName;
+        this.type="integrador";
 
     }
     
@@ -75,10 +77,10 @@ public class Integrator extends Thread
             
         }
         
-           
-        
-        
     }
     
+    public String getType() {
+        return type;
+    }
     
 }

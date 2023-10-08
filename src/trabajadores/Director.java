@@ -77,7 +77,7 @@ public class Director extends Thread {
 
                 //revisa que hace el PM
                 checkOnPM();
-                int checkingMinutes = (25 * (this.dayDuration / 24)) / 60; //
+                int checkingMinutes = (25 * (this.dayDuration / 24)) / 60; 
 
                 sleep(this.dayDuration - hour - checkingMinutes); //duerme el resto del tiempo del dia
                 System.out.println("dia termina director");
