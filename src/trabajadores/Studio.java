@@ -118,7 +118,7 @@ public class Studio {
         System.out.println(workers.ObtenerInfo());
         
         System.out.println("");
-        workers.deleteNode("guion");
+        workers.deleteNode("nivel");
         System.out.println("DESPUES ELIMINAR");
         System.out.println(workers.ObtenerInfo());
         

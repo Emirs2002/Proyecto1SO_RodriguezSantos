@@ -221,9 +221,9 @@ public class Lista {
             Nodo temp = pfirst;
             for (int i = 0; i < this.getTamanho(); i++) {
                 
-                if(temp.getData().getClass().getSimpleName() == "Developer"){
+                if((temp.getData().getClass().getSimpleName()).equals("Developer")){
                     
-                    if(type == ((Developer)temp.getData()).getType()){
+                    if((((Developer)temp.getData()).getType()).equals(type)){
                         return temp;
                     }
                     else{

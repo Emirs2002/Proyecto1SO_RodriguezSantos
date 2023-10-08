@@ -28,7 +28,7 @@ public class Integrator extends Thread
         this.paymentPerHour = payment;
         this.drive = drive;
         this.companyName = companyName;
-        this.type="integrador";
+        this.type= "integrador";
 
     }
     
