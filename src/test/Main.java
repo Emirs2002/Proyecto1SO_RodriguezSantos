@@ -16,8 +16,11 @@ public class Main {
         Semaphore mutexDrive = new Semaphore(1);
         Semaphore mutexCounter = new Semaphore(1);
         Game game1 = new Game(2, 2, 2, 2, 2, 2);
+        float[] produccionArr = {0.34f,0.34f,2,3,0.34f};
         
-        Studio studio1 = new Studio(600,700,9,10,1,2,3,1,1,2,game1,2000,mutexCounter,mutexDrive, drive);
+        
+        Studio studio1 = new Studio(600,700,9,10,1,2,
+                3,1,1,2,game1,1000,mutexCounter,mutexDrive, drive, produccionArr);
         studio1.startWorkers();
         
         

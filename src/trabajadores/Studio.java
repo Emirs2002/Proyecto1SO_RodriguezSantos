@@ -28,8 +28,9 @@ public class Studio {
     private Game game;
     private ProjectManager manager;
     private Director director;
+    private float[] produccionArr;
 
-    public Studio(int standardPrice, int DLCprice, int deadline, int size,int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, Semaphore mutexCounter, Semaphore mutexDrive, Drive drive) {
+    public Studio(int standardPrice, int DLCprice, int deadline, int size,int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, Semaphore mutexCounter, Semaphore mutexDrive, Drive drive, float[] produccionArr) {
         this.standardPrice = standardPrice;
         this.DLCprice = DLCprice;
         this.deadline = deadline;
@@ -46,43 +47,44 @@ public class Studio {
         this.mutexCounter = mutexCounter;
         this.drive = drive;
         this.dayDuration = dayDuration;
-        
+        this.produccionArr = produccionArr;
+       
     }
     
     public void createWorkList(){
         
-        for (int i = 0; i < this.numSpriter; i++) { //pasar productionperday por parametro
-            Developer dev = new Developer("sprite",1,1000,this.mutexDrive,10,this.drive);
-            Nodo nodito = new Nodo(dev);
-            System.out.println("spriter creado");
-            this.workerList.addAtEnd(nodito);
-        }
         for (int i = 0; i < this.numGuionista; i++) {
-            Developer dev = new Developer("guion",1,1000,this.mutexDrive,20,this.drive);
+            Developer dev = new Developer("guion",this.produccionArr[0],this.dayDuration,this.mutexDrive,10,this.drive);
             Nodo nodito = new Nodo(dev);
             System.out.println("guionista creado");
             this.workerList.addAtEnd(nodito);
         }
         for (int i = 0; i < this.numNiveler; i++) {
-            Developer dev = new Developer("nivel",1,1000,this.mutexDrive,40,this.drive);
+            Developer dev = new Developer("nivel",this.produccionArr[1],this.dayDuration,this.mutexDrive,13,this.drive);
             Nodo nodito = new Nodo(dev);
             System.out.println("niveler creado");
             this.workerList.addAtEnd(nodito);
         }
+        for (int i = 0; i < this.numSpriter; i++) { 
+            Developer dev = new Developer("sprite",this.produccionArr[2],this.dayDuration,this.mutexDrive,20,this.drive);
+            Nodo nodito = new Nodo(dev);
+            System.out.println("spriter creado");
+            this.workerList.addAtEnd(nodito);
+        }
         for (int i = 0; i < this.numSystem; i++) {
-            Developer dev = new Developer("programador",1,1000,this.mutexDrive,10,this.drive);
+            Developer dev = new Developer("programador",this.produccionArr[3],this.dayDuration,this.mutexDrive,8,this.drive);
             Nodo nodito = new Nodo(dev);
             System.out.println("programador creado");
             this.workerList.addAtEnd(nodito);
         }
         for (int i = 0; i < this.numDlc; i++) {
-            Developer dev = new Developer("dlc",1,1000,this.mutexDrive,10,this.drive);
+            Developer dev = new Developer("dlc",this.produccionArr[4],this.dayDuration,this.mutexDrive,17,this.drive);
             Nodo nodito = new Nodo(dev);
             System.out.println("dlcer creado");
             this.workerList.addAtEnd(nodito);
         }
         for (int i = 0; i < this.numIntegrador; i++) {
-            Integrator integrador = new Integrator(0.5f, 1000, this.mutexDrive, 10, this.drive, this.game);
+            Integrator integrador = new Integrator(0.5f, this.dayDuration, this.mutexDrive, 25, this.drive, this.game);
             Nodo nodito = new Nodo(integrador);
             System.out.println("integrador creado");
             this.workerList.addAtEnd(nodito);
@@ -110,8 +112,8 @@ public class Studio {
         
         this.manager.start();
         this.director.start();
+        System.out.println(workers.ObtenerInfo());
         
-        workers.imprimirLista();
     }
 
     public int getStandardPrice() {

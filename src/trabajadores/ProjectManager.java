@@ -37,14 +37,18 @@ public class ProjectManager extends Thread {
             while(hour < 16){ 
             
                 try {
-
+                    int timeSleep = (this.dayDuration/24)/2;//30 min
+                    
+                    
                     //mira streams
                     this.isWorking = false;
-                    sleep((this.dayDuration/24)/2); //30 min
+                    
+                    sleep(timeSleep); 
+                    
 
                     //trabaja
                     this.isWorking = true;
-                    sleep((this.dayDuration/24)/2); //30 min
+                    sleep(timeSleep); 
                     
                     hour++;
                 } catch (InterruptedException ex) {

@@ -32,17 +32,12 @@ public class Director extends Thread {
     public void run() {
         while (true) {
 
-            try {
-                work();
-                sleep(this.dayDuration);
+            work();
 
-                //pago
-                this.paymentPerDay += 24 * this.paymentPerHour;
-                System.out.println("total dia director" + this.paymentPerDay);
+            //pago
+            this.paymentPerDay += 24 * this.paymentPerHour;
+            System.out.println("total dia director" + this.paymentPerDay);
 
-            } catch (InterruptedException ex) {
-                ex.printStackTrace(System.out);
-            }
         }
     }
 
@@ -51,7 +46,7 @@ public class Director extends Thread {
         int daysLeft = this.manager.getDaysLeft();
         if (daysLeft == 0) {
 
-            //mandar todos los juegos al desguace
+            //mandar todos los juegos a las tiendas
             try {
 //          se activa el semaforo para editar los juegos
                 this.mutexDrive.acquire(1); //wait
@@ -77,7 +72,7 @@ public class Director extends Thread {
 
                 //revisa que hace el PM
                 checkOnPM();
-                int checkingMinutes = (25 * (this.dayDuration / 24)) / 60; 
+                int checkingMinutes = (25 * (this.dayDuration / 24))/60; //25 min
 
                 sleep(this.dayDuration - hour - checkingMinutes); //duerme el resto del tiempo del dia
                 System.out.println("dia termina director");
@@ -123,7 +118,7 @@ public class Director extends Thread {
             }
 
         }
-        int descuentoPM = faults *50;
+        int descuentoPM = faults *50; //total de descuento por cada falta
         this.manager.setPaymentPerDay(this.manager.getPaymentPerDay() - descuentoPM);
         
     }

@@ -5,8 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ERodríguez
- * @version 27/06/22
+ * @author alesc
  */
 public class Lista {
     
