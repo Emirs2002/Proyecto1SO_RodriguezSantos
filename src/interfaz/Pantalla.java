@@ -4,7 +4,13 @@
  */
 package interfaz;
 import java.awt.Image;
+import java.awt.event.ActionListener;
+import java.util.concurrent.Semaphore;
+import javax.swing.Action;
 import javax.swing.ImageIcon;
+import trabajadores.Developer;
+import trabajadores.Drive;
+import trabajadores.Game;
 
 /**
  *
@@ -16,10 +22,18 @@ public class Pantalla extends javax.swing.JFrame {
      * Creates new form Pantalla
      */
     ImageIcon guionistaImage;
+    Drive drive;
+    Semaphore mutex;
+    Game game1;
+    
     
     public Pantalla() {
         initComponents();
         this.setVisible(true);
+        this.drive = new Drive();
+        this.mutex = new Semaphore(1);
+        this.game1 = new Game(2, 2, 2, 2, 2, 2);
+        this.guionesCounterB.setText("");
         
 
     }
@@ -159,7 +173,6 @@ public class Pantalla extends javax.swing.JFrame {
         deadlineCounterB = new javax.swing.JTextField();
         gananciasBrutoB = new javax.swing.JTextField();
         costosB = new javax.swing.JTextField();
-        jLabel54 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
@@ -183,6 +196,7 @@ public class Pantalla extends javax.swing.JFrame {
         icon2 = new javax.swing.JLabel();
         icon3 = new javax.swing.JLabel();
         icon4 = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
         icon5 = new javax.swing.JLabel();
         icon6 = new javax.swing.JLabel();
         guionistasCounterB = new javax.swing.JTextField();
@@ -191,6 +205,9 @@ public class Pantalla extends javax.swing.JFrame {
         DesaDLCsCounterB = new javax.swing.JTextField();
         integradoresCounterB = new javax.swing.JTextField();
         spriteSpinnerB = new javax.swing.JSpinner();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
         guionesCounterB = new javax.swing.JTextField();
         FONDO1 = new javax.swing.JLabel();
         SEPanel = new javax.swing.JPanel();
@@ -213,11 +230,9 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         deadlineCounterS = new javax.swing.JTextField();
         gananciasBrutoS = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
         costosS = new javax.swing.JTextField();
         listosStandardS = new javax.swing.JTextField();
         faltasS = new javax.swing.JTextField();
-        jLabel68 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
@@ -245,25 +260,29 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel104 = new javax.swing.JLabel();
         integradoresCounterS = new javax.swing.JTextField();
         jLabel105 = new javax.swing.JLabel();
-        jLabel106 = new javax.swing.JLabel();
-        jLabel107 = new javax.swing.JLabel();
-        jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
         guionesCounterS = new javax.swing.JTextField();
         spritesCounterS = new javax.swing.JTextField();
-        jLabel110 = new javax.swing.JLabel();
-        jLabel111 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
         jLabel113 = new javax.swing.JLabel();
         nivelesCounterS = new javax.swing.JTextField();
         sistemasCounterS = new javax.swing.JTextField();
-        jLabel114 = new javax.swing.JLabel();
         jLabel115 = new javax.swing.JLabel();
         dlcCounterS = new javax.swing.JTextField();
         integradorSpinnerS = new javax.swing.JSpinner();
         dlcSpinnerS = new javax.swing.JSpinner();
         programmerSpinnerS = new javax.swing.JSpinner();
+        jLabel117 = new javax.swing.JLabel();
         levelSpinnerS = new javax.swing.JSpinner();
+        jLabel205 = new javax.swing.JLabel();
+        jLabel206 = new javax.swing.JLabel();
+        jLabel207 = new javax.swing.JLabel();
+        jLabel208 = new javax.swing.JLabel();
+        jLabel209 = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel210 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
         spriteSpinnerS = new javax.swing.JSpinner();
         FONDO = new javax.swing.JLabel();
 
@@ -648,6 +667,11 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 210, 10));
 
         guionSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
+        guionSpinnerB.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                guionSpinnerBStateChanged(evt);
+            }
+        });
         SEPanel1.add(guionSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 50, -1));
 
         programmerSpinner1B.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
@@ -694,7 +718,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 0, 0));
         jLabel40.setText("DRIVE");
-        SEPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
+        SEPanel1.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(0, 0, 0));
@@ -759,7 +783,7 @@ public class Pantalla extends javax.swing.JFrame {
 
         jLabel49.setForeground(new java.awt.Color(0, 0, 0));
         jLabel49.setText("foto");
-        SEPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 160, 100));
+        SEPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 160, 100));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(0, 0, 0));
@@ -782,13 +806,12 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, -1, -1));
 
         deadlineCounterB.setEditable(false);
-        deadlineCounterB.setText("DEADLINE");
         deadlineCounterB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deadlineCounterBActionPerformed(evt);
             }
         });
-        SEPanel1.add(deadlineCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 60, 100, 110));
+        SEPanel1.add(deadlineCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 80, 40, 30));
 
         gananciasBrutoB.setEditable(false);
         gananciasBrutoB.setText("DEADLINE");
@@ -807,10 +830,6 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
         SEPanel1.add(costosB, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 80, 90));
-
-        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel54.setText("foto");
-        SEPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 80, 60));
 
         jLabel56.setForeground(new java.awt.Color(0, 0, 0));
         jLabel56.setText("Guionistas");
@@ -833,8 +852,8 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
 
         jLabel61.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel61.setText("foto");
-        SEPanel1.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 40, 40));
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guiones.png"))); // NOI18N
+        SEPanel1.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 60, 40));
 
         jLabel93.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel93.setForeground(new java.awt.Color(0, 0, 0));
@@ -846,20 +865,20 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(faltasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 40, 20));
 
         jLabel94.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel94.setText("foto");
-        SEPanel1.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
+        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Calendar.png"))); // NOI18N
+        SEPanel1.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 40, 100, 100));
 
         jLabel62.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel62.setText("foto");
-        SEPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 40, 40));
+        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sprites.png"))); // NOI18N
+        SEPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 60, 40));
 
         jLabel63.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel63.setText("foto");
-        SEPanel1.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 40, 40));
+        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/niveles.png"))); // NOI18N
+        SEPanel1.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 60, 40));
 
         jLabel64.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel64.setText("foto");
-        SEPanel1.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 40, 40));
+        jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/systemass.png"))); // NOI18N
+        SEPanel1.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 60, 40));
 
         listosStandardB.setEditable(false);
         listosStandardB.setText("jTextField2");
@@ -907,8 +926,8 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(sistemasCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 40, -1));
 
         jLabel102.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel102.setText("foto");
-        SEPanel1.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 40, 40));
+        jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dlc.png"))); // NOI18N
+        SEPanel1.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 60, 40));
 
         guionistaB5.setForeground(new java.awt.Color(0, 0, 0));
         SEPanel1.add(guionistaB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 40, 40));
@@ -928,6 +947,11 @@ public class Pantalla extends javax.swing.JFrame {
         icon4.setForeground(new java.awt.Color(0, 0, 0));
         icon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/niveles_maker.png"))); // NOI18N
         SEPanel1.add(icon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 40, 40));
+
+        jLabel119.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel119.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel119.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        SEPanel1.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, -1, -1));
 
         icon5.setForeground(new java.awt.Color(0, 0, 0));
         icon5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sprite_artist.png"))); // NOI18N
@@ -985,8 +1009,30 @@ public class Pantalla extends javax.swing.JFrame {
         spriteSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         SEPanel1.add(spriteSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
 
+        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
+        SEPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 100, 100));
+
+        jLabel107.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel107.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Calendar.png"))); // NOI18N
+        SEPanel1.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 40, 100, 100));
+
+        jLabel111.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel111.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
+        SEPanel1.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 100, 100));
+
         guionesCounterB.setEditable(false);
         guionesCounterB.setText("jTextField2");
+        guionesCounterB.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                guionesCounterBComponentAdded(evt);
+            }
+        });
+        guionesCounterB.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                guionesCounterBCaretUpdate(evt);
+            }
+        });
         guionesCounterB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guionesCounterBActionPerformed(evt);
@@ -1084,7 +1130,7 @@ public class Pantalla extends javax.swing.JFrame {
                 deadlineCounterSActionPerformed(evt);
             }
         });
-        SEPanel.add(deadlineCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 60, 100, 110));
+        SEPanel.add(deadlineCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 40, 30));
 
         gananciasBrutoS.setEditable(false);
         gananciasBrutoS.setText("DEADLINE");
@@ -1094,9 +1140,6 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
         SEPanel.add(gananciasBrutoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 80, 90));
-
-        jLabel23.setText("foto");
-        SEPanel.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 80, 60));
 
         costosS.setEditable(false);
         costosS.setText("DEADLINE");
@@ -1119,9 +1162,6 @@ public class Pantalla extends javax.swing.JFrame {
         faltasS.setEditable(false);
         faltasS.setText("jTextField1");
         SEPanel.add(faltasS, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 40, 20));
-
-        jLabel68.setText("foto");
-        SEPanel.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, 80, 60));
 
         jLabel91.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel91.setForeground(new java.awt.Color(0, 0, 0));
@@ -1255,18 +1295,6 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel105.setText("DRIVE");
         SEPanel.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
 
-        jLabel106.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel106.setText("foto");
-        SEPanel.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 40, 40));
-
-        jLabel107.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel107.setText("foto");
-        SEPanel.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 40, 40));
-
-        jLabel108.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel108.setText("Guiones");
-        SEPanel.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
-
         jLabel109.setForeground(new java.awt.Color(0, 0, 0));
         jLabel109.setText("Sprites");
         SEPanel.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
@@ -1288,14 +1316,6 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
         SEPanel.add(spritesCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 40, -1));
-
-        jLabel110.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel110.setText("foto");
-        SEPanel.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 40, 40));
-
-        jLabel111.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel111.setText("foto");
-        SEPanel.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 40, 40));
 
         jLabel112.setForeground(new java.awt.Color(0, 0, 0));
         jLabel112.setText("Niveles");
@@ -1323,10 +1343,6 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(sistemasCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 40, -1));
 
-        jLabel114.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel114.setText("foto");
-        SEPanel.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 420, 40, 40));
-
         jLabel115.setForeground(new java.awt.Color(0, 0, 0));
         jLabel115.setText("DLCs");
         SEPanel.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, -1, -1));
@@ -1349,8 +1365,49 @@ public class Pantalla extends javax.swing.JFrame {
         programmerSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         SEPanel.add(programmerSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 50, -1));
 
+        jLabel117.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel117.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel117.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
+        SEPanel.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, -1, -1));
+
         levelSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         SEPanel.add(levelSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 50, -1));
+
+        jLabel205.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel205.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guiones.png"))); // NOI18N
+        SEPanel.add(jLabel205, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 60, 40));
+
+        jLabel206.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel206.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sprites2.png"))); // NOI18N
+        SEPanel.add(jLabel206, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 60, 40));
+
+        jLabel207.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel207.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/niveles.png"))); // NOI18N
+        SEPanel.add(jLabel207, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 60, 40));
+
+        jLabel208.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel208.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/systemass.png"))); // NOI18N
+        SEPanel.add(jLabel208, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 60, 40));
+
+        jLabel209.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel209.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dlc.png"))); // NOI18N
+        SEPanel.add(jLabel209, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 60, 40));
+
+        jLabel110.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel110.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Calendar.png"))); // NOI18N
+        SEPanel.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 100, 100));
+
+        jLabel114.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel114.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
+        SEPanel.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 100, 100));
+
+        jLabel210.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel210.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
+        SEPanel.add(jLabel210, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 100, 100));
+
+        jLabel118.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel118.setText("Guiones");
+        SEPanel.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
 
         spriteSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         SEPanel.add(spriteSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
@@ -1366,7 +1423,9 @@ public class Pantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guionesCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionesCounterBActionPerformed
-        // TODO add your handling code here:
+        
+       
+
     }//GEN-LAST:event_guionesCounterBActionPerformed
 
     private void integradoresCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresCounterBActionPerformed
@@ -1529,6 +1588,18 @@ public class Pantalla extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void guionSpinnerBStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_guionSpinnerBStateChanged
+  
+    }//GEN-LAST:event_guionSpinnerBStateChanged
+
+    private void guionesCounterBCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_guionesCounterBCaretUpdate
+     
+    }//GEN-LAST:event_guionesCounterBCaretUpdate
+
+    private void guionesCounterBComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_guionesCounterBComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionesCounterBComponentAdded
+
     /**
      * @param args the command line arguments
      */
@@ -1670,9 +1741,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
@@ -1682,6 +1751,9 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
     private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1691,9 +1763,14 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel205;
+    private javax.swing.JLabel jLabel206;
+    private javax.swing.JLabel jLabel207;
+    private javax.swing.JLabel jLabel208;
+    private javax.swing.JLabel jLabel209;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel210;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
@@ -1728,7 +1805,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
