@@ -141,11 +141,6 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
-        guionSpinnerB = new javax.swing.JSpinner();
-        programmerSpinner1B = new javax.swing.JSpinner();
-        dlcSpinnerB = new javax.swing.JSpinner();
-        levelSpinnerB = new javax.swing.JSpinner();
-        integradorSpinnerB = new javax.swing.JSpinner();
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
         jSeparator11 = new javax.swing.JSeparator();
@@ -191,12 +186,11 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         listosStandardB = new javax.swing.JTextField();
-        artistasCounterB = new javax.swing.JTextField();
-        spritesCounterB = new javax.swing.JTextField();
+        artistasSpinnerB = new javax.swing.JTextField();
+        spritesSpinnerB = new javax.swing.JTextField();
         nivelesCounterB = new javax.swing.JTextField();
         sistemasCounterB = new javax.swing.JTextField();
         jLabel102 = new javax.swing.JLabel();
-        guionistaB5 = new javax.swing.JLabel();
         icon1 = new javax.swing.JLabel();
         icon2 = new javax.swing.JLabel();
         icon3 = new javax.swing.JLabel();
@@ -204,18 +198,28 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel119 = new javax.swing.JLabel();
         icon5 = new javax.swing.JLabel();
         icon6 = new javax.swing.JLabel();
-        guionistasCounterB = new javax.swing.JTextField();
-        DesaNivelesCounterB = new javax.swing.JTextField();
-        programadoresCounterB = new javax.swing.JTextField();
-        DesaDLCsCounterB = new javax.swing.JTextField();
-        integradoresCounterB = new javax.swing.JTextField();
-        spriteSpinnerB = new javax.swing.JSpinner();
+        guionistasSpinnerB = new javax.swing.JTextField();
+        DesaNivelesSpinnerB = new javax.swing.JTextField();
+        programadoresSpinnerB = new javax.swing.JTextField();
+        DesaDLCsSpinnerB = new javax.swing.JTextField();
+        integradoresSpinnerB = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
+        guionistaSpinnerUpB = new javax.swing.JButton();
+        guionistaSpinnerDownB = new javax.swing.JButton();
+        artistasSpinnerUpB = new javax.swing.JButton();
+        artistasSpinnerDownB = new javax.swing.JButton();
         guionesCounterB = new javax.swing.JTextField();
+        DesaNivelesSpinnerUpB = new javax.swing.JButton();
+        DesaNivelesSpinnerDownB = new javax.swing.JButton();
+        programadoresSpinnerUpB = new javax.swing.JButton();
+        programadoresSpinnerDownB = new javax.swing.JButton();
+        DesaDLCsSpinnerUpB = new javax.swing.JButton();
+        DesaDLCsSpinnerDownB = new javax.swing.JButton();
+        integradoresSpinnerUpB = new javax.swing.JButton();
+        integradoresSpinnerDownB = new javax.swing.JButton();
         FONDO1 = new javax.swing.JLabel();
-        guionistasAuxCountB = new javax.swing.JTextField();
         SEPanel = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
@@ -243,28 +247,21 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         icon7 = new javax.swing.JLabel();
-        narrativaSpinnerS = new javax.swing.JSpinner();
-        guionistasCounterS = new javax.swing.JTextField();
         jSeparator15 = new javax.swing.JSeparator();
         jLabel67 = new javax.swing.JLabel();
         icon8 = new javax.swing.JLabel();
-        artistasCounterS = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
         icon9 = new javax.swing.JLabel();
-        DesaNivelesCounterS = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
         jSeparator17 = new javax.swing.JSeparator();
         icon10 = new javax.swing.JLabel();
-        programadoresCounterS = new javax.swing.JTextField();
         jSeparator18 = new javax.swing.JSeparator();
         jLabel101 = new javax.swing.JLabel();
         icon11 = new javax.swing.JLabel();
-        DesaDLCsCounterS = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
         jLabel103 = new javax.swing.JLabel();
         icon12 = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
-        integradoresCounterS = new javax.swing.JTextField();
         jLabel105 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
         guionesCounterS = new javax.swing.JTextField();
@@ -275,21 +272,34 @@ public class Pantalla extends javax.swing.JFrame {
         sistemasCounterS = new javax.swing.JTextField();
         jLabel115 = new javax.swing.JLabel();
         dlcCounterS = new javax.swing.JTextField();
-        integradorSpinnerS = new javax.swing.JSpinner();
-        dlcSpinnerS = new javax.swing.JSpinner();
-        programmerSpinnerS = new javax.swing.JSpinner();
         jLabel117 = new javax.swing.JLabel();
-        levelSpinnerS = new javax.swing.JSpinner();
         jLabel205 = new javax.swing.JLabel();
         jLabel206 = new javax.swing.JLabel();
         jLabel207 = new javax.swing.JLabel();
         jLabel208 = new javax.swing.JLabel();
         jLabel209 = new javax.swing.JLabel();
         jLabel110 = new javax.swing.JLabel();
+        narrativaSpinnerS = new javax.swing.JTextField();
+        guionistaSpinnerUpS = new javax.swing.JButton();
+        guionistaSpinnerDownS = new javax.swing.JButton();
+        spriteSpinnerS = new javax.swing.JTextField();
+        artistasSpinnerUpS = new javax.swing.JButton();
+        artistasSpinnerDownS = new javax.swing.JButton();
+        DesaNivelesSpinnerS = new javax.swing.JTextField();
+        DesaNivelesSpinnerUpS = new javax.swing.JButton();
+        DesaNivelesSpinnerDownS = new javax.swing.JButton();
+        programadoresSpinnerS = new javax.swing.JTextField();
+        programadoresSpinnerUpS = new javax.swing.JButton();
+        programadoresSpinnerDownS = new javax.swing.JButton();
+        DesaDLCsSpinnerS = new javax.swing.JTextField();
+        integradoresSpinnerS = new javax.swing.JTextField();
+        DesaDLCsSpinnerUpS = new javax.swing.JButton();
+        DesaDLCsSpinnerDownS = new javax.swing.JButton();
+        integradoresSpinnerUpS = new javax.swing.JButton();
+        integradoresSpinnerDownS = new javax.swing.JButton();
         jLabel114 = new javax.swing.JLabel();
         jLabel210 = new javax.swing.JLabel();
         jLabel118 = new javax.swing.JLabel();
-        spriteSpinnerS = new javax.swing.JSpinner();
         FONDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -671,26 +681,6 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel17.setToolTipText("");
         SEPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
         SEPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 210, 10));
-
-        guionSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        guionSpinnerB.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                guionSpinnerBStateChanged(evt);
-            }
-        });
-        SEPanel1.add(guionSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 50, -1));
-
-        programmerSpinner1B.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel1.add(programmerSpinner1B, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 50, -1));
-
-        dlcSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel1.add(dlcSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 50, -1));
-
-        levelSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel1.add(levelSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 50, -1));
-
-        integradorSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel1.add(integradorSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 50, -1));
         SEPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, 10));
         SEPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 20));
         SEPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, -1, -1));
@@ -895,23 +885,22 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel1.add(listosStandardB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 40, -1));
 
-        artistasCounterB.setEditable(false);
-        artistasCounterB.setText("jTextField2");
-        artistasCounterB.addActionListener(new java.awt.event.ActionListener() {
+        artistasSpinnerB.setEditable(false);
+        artistasSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                artistasCounterBActionPerformed(evt);
+                artistasSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(artistasCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 40, -1));
+        SEPanel1.add(artistasSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 40, 40));
 
-        spritesCounterB.setEditable(false);
-        spritesCounterB.setText("jTextField2");
-        spritesCounterB.addActionListener(new java.awt.event.ActionListener() {
+        spritesSpinnerB.setEditable(false);
+        spritesSpinnerB.setText("jTextField2");
+        spritesSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                spritesCounterBActionPerformed(evt);
+                spritesSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(spritesCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 40, -1));
+        SEPanel1.add(spritesSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 40, -1));
 
         nivelesCounterB.setEditable(false);
         nivelesCounterB.setText("jTextField2");
@@ -934,9 +923,6 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel102.setForeground(new java.awt.Color(0, 0, 0));
         jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dlc.png"))); // NOI18N
         SEPanel1.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 60, 40));
-
-        guionistaB5.setForeground(new java.awt.Color(0, 0, 0));
-        SEPanel1.add(guionistaB5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 40, 40));
 
         icon1.setForeground(new java.awt.Color(0, 0, 0));
         icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/integrador.png"))); // NOI18N
@@ -967,53 +953,45 @@ public class Pantalla extends javax.swing.JFrame {
         icon6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guinista_pixel_art.png"))); // NOI18N
         SEPanel1.add(icon6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 40, 40));
 
-        guionistasCounterB.setEditable(false);
-        guionistasCounterB.setText("jTextField2");
-        guionistasCounterB.addActionListener(new java.awt.event.ActionListener() {
+        guionistasSpinnerB.setEditable(false);
+        guionistasSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guionistasCounterBActionPerformed(evt);
+                guionistasSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(guionistasCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 40, -1));
+        SEPanel1.add(guionistasSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 40, 40));
 
-        DesaNivelesCounterB.setEditable(false);
-        DesaNivelesCounterB.setText("jTextField2");
-        DesaNivelesCounterB.addActionListener(new java.awt.event.ActionListener() {
+        DesaNivelesSpinnerB.setEditable(false);
+        DesaNivelesSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DesaNivelesCounterBActionPerformed(evt);
+                DesaNivelesSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(DesaNivelesCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 40, -1));
+        SEPanel1.add(DesaNivelesSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 40, 40));
 
-        programadoresCounterB.setEditable(false);
-        programadoresCounterB.setText("jTextField2");
-        programadoresCounterB.addActionListener(new java.awt.event.ActionListener() {
+        programadoresSpinnerB.setEditable(false);
+        programadoresSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programadoresCounterBActionPerformed(evt);
+                programadoresSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(programadoresCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 40, -1));
+        SEPanel1.add(programadoresSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 40, 40));
 
-        DesaDLCsCounterB.setEditable(false);
-        DesaDLCsCounterB.setText("jTextField2");
-        DesaDLCsCounterB.addActionListener(new java.awt.event.ActionListener() {
+        DesaDLCsSpinnerB.setEditable(false);
+        DesaDLCsSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DesaDLCsCounterBActionPerformed(evt);
+                DesaDLCsSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(DesaDLCsCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 40, -1));
+        SEPanel1.add(DesaDLCsSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 40, 40));
 
-        integradoresCounterB.setEditable(false);
-        integradoresCounterB.setText("jTextField2");
-        integradoresCounterB.addActionListener(new java.awt.event.ActionListener() {
+        integradoresSpinnerB.setEditable(false);
+        integradoresSpinnerB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                integradoresCounterBActionPerformed(evt);
+                integradoresSpinnerBActionPerformed(evt);
             }
         });
-        SEPanel1.add(integradoresCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 40, -1));
-
-        spriteSpinnerB.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel1.add(spriteSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
+        SEPanel1.add(integradoresSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 40, 40));
 
         jLabel54.setForeground(new java.awt.Color(0, 0, 0));
         jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
@@ -1026,6 +1004,18 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel111.setForeground(new java.awt.Color(0, 0, 0));
         jLabel111.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
         SEPanel1.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 100, 100));
+
+        guionistaSpinnerUpB.setText("∧");
+        SEPanel1.add(guionistaSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 20));
+
+        guionistaSpinnerDownB.setText("∨");
+        SEPanel1.add(guionistaSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 30, 20));
+
+        artistasSpinnerUpB.setText("∧");
+        SEPanel1.add(artistasSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 30, 20));
+
+        artistasSpinnerDownB.setText("∨");
+        SEPanel1.add(artistasSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
 
         guionesCounterB.setEditable(false);
         guionesCounterB.setText("jTextField2");
@@ -1046,16 +1036,32 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel1.add(guionesCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 40, -1));
 
+        DesaNivelesSpinnerUpB.setText("∧");
+        SEPanel1.add(DesaNivelesSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 30, 20));
+
+        DesaNivelesSpinnerDownB.setText("∨");
+        SEPanel1.add(DesaNivelesSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 30, 20));
+
+        programadoresSpinnerUpB.setText("∧");
+        SEPanel1.add(programadoresSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 30, 20));
+
+        programadoresSpinnerDownB.setText("∨");
+        SEPanel1.add(programadoresSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 30, 20));
+
+        DesaDLCsSpinnerUpB.setText("∧");
+        SEPanel1.add(DesaDLCsSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 30, 20));
+
+        DesaDLCsSpinnerDownB.setText("∨");
+        SEPanel1.add(DesaDLCsSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 30, 20));
+
+        integradoresSpinnerUpB.setText("∧");
+        SEPanel1.add(integradoresSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 30, 20));
+
+        integradoresSpinnerDownB.setText("∨");
+        SEPanel1.add(integradoresSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 30, 20));
+
         FONDO1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bethesda.png"))); // NOI18N
         SEPanel1.add(FONDO1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
-
-        guionistasAuxCountB.setText("jTextField1");
-        guionistasAuxCountB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guionistasAuxCountBActionPerformed(evt);
-            }
-        });
-        SEPanel1.add(guionistasAuxCountB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
 
         BPanel.add(SEPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 590));
 
@@ -1196,23 +1202,6 @@ public class Pantalla extends javax.swing.JFrame {
         icon7.setForeground(new java.awt.Color(0, 0, 0));
         icon7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guinista_pixel_art.png"))); // NOI18N
         SEPanel.add(icon7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 40, 40));
-
-        narrativaSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        narrativaSpinnerS.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                narrativaSpinnerSStateChanged(evt);
-            }
-        });
-        SEPanel.add(narrativaSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 50, -1));
-
-        guionistasCounterS.setEditable(false);
-        guionistasCounterS.setText("jTextField2");
-        guionistasCounterS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guionistasCounterSActionPerformed(evt);
-            }
-        });
-        SEPanel.add(guionistasCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 40, -1));
         SEPanel.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 210, 10));
 
         jLabel67.setForeground(new java.awt.Color(0, 0, 0));
@@ -1222,29 +1211,11 @@ public class Pantalla extends javax.swing.JFrame {
         icon8.setForeground(new java.awt.Color(0, 0, 0));
         icon8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/sprite_artist.png"))); // NOI18N
         SEPanel.add(icon8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 40, 40));
-
-        artistasCounterS.setEditable(false);
-        artistasCounterS.setText("jTextField2");
-        artistasCounterS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                artistasCounterSActionPerformed(evt);
-            }
-        });
-        SEPanel.add(artistasCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 40, -1));
         SEPanel.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 20));
 
         icon9.setForeground(new java.awt.Color(0, 0, 0));
         icon9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/niveles_maker.png"))); // NOI18N
         SEPanel.add(icon9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 40, 40));
-
-        DesaNivelesCounterS.setEditable(false);
-        DesaNivelesCounterS.setText("jTextField2");
-        DesaNivelesCounterS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DesaNivelesCounterSActionPerformed(evt);
-            }
-        });
-        SEPanel.add(DesaNivelesCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 40, -1));
 
         jLabel69.setForeground(new java.awt.Color(0, 0, 0));
         jLabel69.setText("Programadores");
@@ -1254,15 +1225,6 @@ public class Pantalla extends javax.swing.JFrame {
         icon10.setForeground(new java.awt.Color(0, 0, 0));
         icon10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/programador.png"))); // NOI18N
         SEPanel.add(icon10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 40, 40));
-
-        programadoresCounterS.setEditable(false);
-        programadoresCounterS.setText("jTextField2");
-        programadoresCounterS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                programadoresCounterSActionPerformed(evt);
-            }
-        });
-        SEPanel.add(programadoresCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 40, -1));
         SEPanel.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 210, 10));
 
         jLabel101.setForeground(new java.awt.Color(0, 0, 0));
@@ -1272,15 +1234,6 @@ public class Pantalla extends javax.swing.JFrame {
         icon11.setForeground(new java.awt.Color(0, 0, 0));
         icon11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dlc_maker.png"))); // NOI18N
         SEPanel.add(icon11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 40, 40));
-
-        DesaDLCsCounterS.setEditable(false);
-        DesaDLCsCounterS.setText("jTextField2");
-        DesaDLCsCounterS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DesaDLCsCounterSActionPerformed(evt);
-            }
-        });
-        SEPanel.add(DesaDLCsCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 40, -1));
         SEPanel.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 210, 10));
 
         jLabel103.setForeground(new java.awt.Color(0, 0, 0));
@@ -1294,15 +1247,6 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel104.setForeground(new java.awt.Color(0, 0, 0));
         jLabel104.setText("Desarrolladores de niveles");
         SEPanel.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
-
-        integradoresCounterS.setEditable(false);
-        integradoresCounterS.setText("jTextField2");
-        integradoresCounterS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                integradoresCounterSActionPerformed(evt);
-            }
-        });
-        SEPanel.add(integradoresCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 40, -1));
 
         jLabel105.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel105.setForeground(new java.awt.Color(0, 0, 0));
@@ -1370,22 +1314,10 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(dlcCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, 40, -1));
 
-        integradorSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel.add(integradorSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 50, -1));
-
-        dlcSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel.add(dlcSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 50, -1));
-
-        programmerSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel.add(programmerSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 50, -1));
-
         jLabel117.setBackground(new java.awt.Color(0, 0, 0));
         jLabel117.setForeground(new java.awt.Color(0, 0, 0));
         jLabel117.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/mas.png"))); // NOI18N
         SEPanel.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, -1, -1));
-
-        levelSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel.add(levelSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 50, -1));
 
         jLabel205.setForeground(new java.awt.Color(0, 0, 0));
         jLabel205.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guiones.png"))); // NOI18N
@@ -1411,6 +1343,90 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel110.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Calendar.png"))); // NOI18N
         SEPanel.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 100, 100));
 
+        narrativaSpinnerS.setEditable(false);
+        narrativaSpinnerS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                narrativaSpinnerSActionPerformed(evt);
+            }
+        });
+        SEPanel.add(narrativaSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 40, 40));
+
+        guionistaSpinnerUpS.setText("∧");
+        SEPanel.add(guionistaSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 20));
+
+        guionistaSpinnerDownS.setText("∨");
+        SEPanel.add(guionistaSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 30, 20));
+
+        spriteSpinnerS.setEditable(false);
+        spriteSpinnerS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spriteSpinnerSActionPerformed(evt);
+            }
+        });
+        SEPanel.add(spriteSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 40, 40));
+
+        artistasSpinnerUpS.setText("∧");
+        SEPanel.add(artistasSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 30, 20));
+
+        artistasSpinnerDownS.setText("∨");
+        SEPanel.add(artistasSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
+
+        DesaNivelesSpinnerS.setEditable(false);
+        DesaNivelesSpinnerS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerSActionPerformed(evt);
+            }
+        });
+        SEPanel.add(DesaNivelesSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 40, 40));
+
+        DesaNivelesSpinnerUpS.setText("∧");
+        SEPanel.add(DesaNivelesSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 30, 20));
+
+        DesaNivelesSpinnerDownS.setText("∨");
+        SEPanel.add(DesaNivelesSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 30, 20));
+
+        programadoresSpinnerS.setEditable(false);
+        programadoresSpinnerS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerSActionPerformed(evt);
+            }
+        });
+        SEPanel.add(programadoresSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 40, 40));
+
+        programadoresSpinnerUpS.setText("∧");
+        SEPanel.add(programadoresSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 30, 20));
+
+        programadoresSpinnerDownS.setText("∨");
+        SEPanel.add(programadoresSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 30, 20));
+
+        DesaDLCsSpinnerS.setEditable(false);
+        DesaDLCsSpinnerS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerSActionPerformed(evt);
+            }
+        });
+        SEPanel.add(DesaDLCsSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 440, 40, 40));
+
+        integradoresSpinnerS.setEditable(false);
+        integradoresSpinnerS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerSActionPerformed(evt);
+            }
+        });
+        SEPanel.add(integradoresSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 40, 40));
+
+        DesaDLCsSpinnerUpS.setText("∧");
+        SEPanel.add(DesaDLCsSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 30, 20));
+
+        DesaDLCsSpinnerDownS.setText("∨");
+        SEPanel.add(DesaDLCsSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 30, 20));
+
+        integradoresSpinnerUpS.setText("∧");
+        SEPanel.add(integradoresSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 30, 20));
+
+        integradoresSpinnerDownS.setText("∨");
+        SEPanel.add(integradoresSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 30, 20));
+
         jLabel114.setForeground(new java.awt.Color(0, 0, 0));
         jLabel114.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
         SEPanel.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 100, 100));
@@ -1422,9 +1438,6 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel118.setForeground(new java.awt.Color(0, 0, 0));
         jLabel118.setText("Guiones");
         SEPanel.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
-
-        spriteSpinnerS.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        SEPanel.add(spriteSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 50, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sin título (1000 × 590 px).png"))); // NOI18N
         SEPanel.add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
@@ -1441,26 +1454,25 @@ public class Pantalla extends javax.swing.JFrame {
 
     }//GEN-LAST:event_guionesCounterBActionPerformed
 
-    private void integradoresCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresCounterBActionPerformed
+    private void integradoresSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_integradoresCounterBActionPerformed
+    }//GEN-LAST:event_integradoresSpinnerBActionPerformed
 
-    private void DesaDLCsCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsCounterBActionPerformed
+    private void DesaDLCsSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DesaDLCsCounterBActionPerformed
+    }//GEN-LAST:event_DesaDLCsSpinnerBActionPerformed
 
-    private void programadoresCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresCounterBActionPerformed
+    private void programadoresSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_programadoresCounterBActionPerformed
+    }//GEN-LAST:event_programadoresSpinnerBActionPerformed
 
-    private void DesaNivelesCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesCounterBActionPerformed
+    private void DesaNivelesSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DesaNivelesCounterBActionPerformed
+    }//GEN-LAST:event_DesaNivelesSpinnerBActionPerformed
 
-    private void guionistasCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasCounterBActionPerformed
+    private void guionistasSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasSpinnerBActionPerformed
         // TODO add your handling code here:
-       this.guionSpinnerB.setValue(Integer.parseInt(this.guionistasCounterB.getText()));
-    }//GEN-LAST:event_guionistasCounterBActionPerformed
+    }//GEN-LAST:event_guionistasSpinnerBActionPerformed
 
     private void sistemasCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemasCounterBActionPerformed
         // TODO add your handling code here:
@@ -1470,13 +1482,13 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nivelesCounterBActionPerformed
 
-    private void spritesCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spritesCounterBActionPerformed
+    private void spritesSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spritesSpinnerBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_spritesCounterBActionPerformed
+    }//GEN-LAST:event_spritesSpinnerBActionPerformed
 
-    private void artistasCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasCounterBActionPerformed
+    private void artistasSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_artistasCounterBActionPerformed
+    }//GEN-LAST:event_artistasSpinnerBActionPerformed
 
     private void listosStandardBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listosStandardBActionPerformed
         // TODO add your handling code here:
@@ -1530,34 +1542,6 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_utilidadTotalSActionPerformed
 
-    private void narrativaSpinnerSStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_narrativaSpinnerSStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_narrativaSpinnerSStateChanged
-
-    private void guionistasCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasCounterSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_guionistasCounterSActionPerformed
-
-    private void artistasCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasCounterSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_artistasCounterSActionPerformed
-
-    private void DesaNivelesCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesCounterSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DesaNivelesCounterSActionPerformed
-
-    private void programadoresCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresCounterSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_programadoresCounterSActionPerformed
-
-    private void DesaDLCsCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsCounterSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DesaDLCsCounterSActionPerformed
-
-    private void integradoresCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresCounterSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_integradoresCounterSActionPerformed
-
     private void guionesCounterSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionesCounterSActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_guionesCounterSActionPerformed
@@ -1604,11 +1588,6 @@ public class Pantalla extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void guionSpinnerBStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_guionSpinnerBStateChanged
-       
- 
-    }//GEN-LAST:event_guionSpinnerBStateChanged
-
     private void guionesCounterBCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_guionesCounterBCaretUpdate
 
     }//GEN-LAST:event_guionesCounterBCaretUpdate
@@ -1617,9 +1596,29 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_guionesCounterBComponentAdded
 
-    private void guionistasAuxCountBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasAuxCountBActionPerformed
+    private void narrativaSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_narrativaSpinnerSActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_guionistasAuxCountBActionPerformed
+    }//GEN-LAST:event_narrativaSpinnerSActionPerformed
+
+    private void spriteSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spriteSpinnerSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spriteSpinnerSActionPerformed
+
+    private void DesaNivelesSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerSActionPerformed
+
+    private void programadoresSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_programadoresSpinnerSActionPerformed
+
+    private void DesaDLCsSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaDLCsSpinnerSActionPerformed
+
+    private void integradoresSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_integradoresSpinnerSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1682,10 +1681,18 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField BsystemsProduction;
     private javax.swing.JSpinner BsystemsTXTspinner;
     private javax.swing.JButton CargarTxt;
-    private javax.swing.JTextField DesaDLCsCounterB;
-    private javax.swing.JTextField DesaDLCsCounterS;
-    private javax.swing.JTextField DesaNivelesCounterB;
-    private javax.swing.JTextField DesaNivelesCounterS;
+    private javax.swing.JTextField DesaDLCsSpinnerB;
+    private javax.swing.JButton DesaDLCsSpinnerDownB;
+    private javax.swing.JButton DesaDLCsSpinnerDownS;
+    private javax.swing.JTextField DesaDLCsSpinnerS;
+    private javax.swing.JButton DesaDLCsSpinnerUpB;
+    private javax.swing.JButton DesaDLCsSpinnerUpS;
+    private javax.swing.JTextField DesaNivelesSpinnerB;
+    private javax.swing.JButton DesaNivelesSpinnerDownB;
+    private javax.swing.JButton DesaNivelesSpinnerDownS;
+    private javax.swing.JTextField DesaNivelesSpinnerS;
+    private javax.swing.JButton DesaNivelesSpinnerUpB;
+    private javax.swing.JButton DesaNivelesSpinnerUpS;
     private javax.swing.JLabel FONDO;
     private javax.swing.JLabel FONDO1;
     private javax.swing.JLabel FONDO3;
@@ -1715,8 +1722,11 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField SstandardPriceTXT;
     private javax.swing.JTextField SsystemProduction;
     private javax.swing.JSpinner SsystemsTXTspinner1;
-    private javax.swing.JTextField artistasCounterB;
-    private javax.swing.JTextField artistasCounterS;
+    private javax.swing.JTextField artistasSpinnerB;
+    private javax.swing.JButton artistasSpinnerDownB;
+    private javax.swing.JButton artistasSpinnerDownS;
+    private javax.swing.JButton artistasSpinnerUpB;
+    private javax.swing.JButton artistasSpinnerUpS;
     private javax.swing.JButton changeVALUES;
     private javax.swing.JPanel confPanel;
     private javax.swing.JTextField costosB;
@@ -1727,19 +1737,17 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField deadlineCounterS;
     private javax.swing.JTextField dlcCounterB;
     private javax.swing.JTextField dlcCounterS;
-    private javax.swing.JSpinner dlcSpinnerB;
-    private javax.swing.JSpinner dlcSpinnerS;
     private javax.swing.JTextField faltasB;
     private javax.swing.JTextField faltasS;
     private javax.swing.JTextField gananciasBrutoB;
     private javax.swing.JTextField gananciasBrutoS;
-    private javax.swing.JSpinner guionSpinnerB;
     private javax.swing.JTextField guionesCounterB;
     private javax.swing.JTextField guionesCounterS;
-    private javax.swing.JLabel guionistaB5;
-    private javax.swing.JTextField guionistasAuxCountB;
-    private javax.swing.JTextField guionistasCounterB;
-    private javax.swing.JTextField guionistasCounterS;
+    private javax.swing.JButton guionistaSpinnerDownB;
+    private javax.swing.JButton guionistaSpinnerDownS;
+    private javax.swing.JButton guionistaSpinnerUpB;
+    private javax.swing.JButton guionistaSpinnerUpS;
+    private javax.swing.JTextField guionistasSpinnerB;
     private javax.swing.JLabel icon1;
     private javax.swing.JLabel icon10;
     private javax.swing.JLabel icon11;
@@ -1752,10 +1760,12 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel icon7;
     private javax.swing.JLabel icon8;
     private javax.swing.JLabel icon9;
-    private javax.swing.JSpinner integradorSpinnerB;
-    private javax.swing.JSpinner integradorSpinnerS;
-    private javax.swing.JTextField integradoresCounterB;
-    private javax.swing.JTextField integradoresCounterS;
+    private javax.swing.JTextField integradoresSpinnerB;
+    private javax.swing.JButton integradoresSpinnerDownB;
+    private javax.swing.JButton integradoresSpinnerDownS;
+    private javax.swing.JTextField integradoresSpinnerS;
+    private javax.swing.JButton integradoresSpinnerUpB;
+    private javax.swing.JButton integradoresSpinnerUpS;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
@@ -1873,25 +1883,24 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JSpinner levelSpinnerB;
-    private javax.swing.JSpinner levelSpinnerS;
     private javax.swing.JTextField listosDLCB;
     private javax.swing.JTextField listosDLCS;
     private javax.swing.JTextField listosStandardB;
     private javax.swing.JTextField listosStandardS;
-    private javax.swing.JSpinner narrativaSpinnerS;
+    private javax.swing.JTextField narrativaSpinnerS;
     private javax.swing.JTextField nivelesCounterB;
     private javax.swing.JTextField nivelesCounterS;
-    private javax.swing.JTextField programadoresCounterB;
-    private javax.swing.JTextField programadoresCounterS;
-    private javax.swing.JSpinner programmerSpinner1B;
-    private javax.swing.JSpinner programmerSpinnerS;
+    private javax.swing.JTextField programadoresSpinnerB;
+    private javax.swing.JButton programadoresSpinnerDownB;
+    private javax.swing.JButton programadoresSpinnerDownS;
+    private javax.swing.JTextField programadoresSpinnerS;
+    private javax.swing.JButton programadoresSpinnerUpB;
+    private javax.swing.JButton programadoresSpinnerUpS;
     private javax.swing.JTextField sistemasCounterB;
     private javax.swing.JTextField sistemasCounterS;
-    private javax.swing.JSpinner spriteSpinnerB;
-    private javax.swing.JSpinner spriteSpinnerS;
-    private javax.swing.JTextField spritesCounterB;
+    private javax.swing.JTextField spriteSpinnerS;
     private javax.swing.JTextField spritesCounterS;
+    private javax.swing.JTextField spritesSpinnerB;
     private javax.swing.JTabbedPane tab;
     private javax.swing.JButton updateTXT;
     private javax.swing.JTextField utilidadTotalB;
