@@ -1,6 +1,8 @@
 package trabajadores;
 
+import interfaz.Pantalla;
 import java.util.concurrent.Semaphore;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,7 +31,7 @@ public class Studio {
     private ProjectManager manager;
     private Director director;
     private float[] produccionArr;
-
+    
     public Studio(int standardPrice, int DLCprice, int deadline, int size,int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, Semaphore mutexCounter, Semaphore mutexDrive, Drive drive, float[] produccionArr) {
         this.standardPrice = standardPrice;
         this.DLCprice = DLCprice;
@@ -94,9 +96,10 @@ public class Studio {
         this.director = new Director(this.manager, this.dayDuration,50,this.drive,this.mutexDrive,this.mutexCounter);
     }
     
-    public void startWorkers(){
+    public void startWorkers(javax.swing.JSpinner spinnerGuion, javax.swing.JSpinner spinnerSprite, javax.swing.JSpinner spinnerNiveles, javax.swing.JSpinner spinnerProgramadores, javax.swing.JSpinner spinnerDLCs, javax.swing.JSpinner spinnerIntegradores){
         
         createWorkList();
+        //setSpinner(spinnerGuion, spinnerSprite, spinnerNiveles, spinnerProgramadores, spinnerDLCs, spinnerIntegradores);
         
         int i=0;
         Lista workers = this.workerList;
@@ -110,19 +113,50 @@ public class Studio {
             i++;
         }
         
+        
         this.manager.start();
         this.director.start();
         
         //pruebas lista
-        System.out.println("ANTES ELIMINAR");
-        System.out.println(workers.ObtenerInfo());
-        
-        System.out.println("");
-        workers.deleteNode("nivel");
-        System.out.println("DESPUES ELIMINAR");
-        System.out.println(workers.ObtenerInfo());
-        
-        
+//        System.out.println("ANTES ELIMINAR");
+//        System.out.println(workers.ObtenerInfo());
+//        
+//        System.out.println("");
+//        workers.deleteNode("nivel");
+//        System.out.println("DESPUES ELIMINAR");
+//        System.out.println(workers.ObtenerInfo());
+//        
+//        
+    }
+    
+//    public void setSpinner(javax.swing.JSpinner spinnerGuion, javax.swing.JSpinner spinnerSprite, javax.swing.JSpinner spinnerNiveles, javax.swing.JSpinner spinnerProgramadores, javax.swing.JSpinner spinnerDLCs, javax.swing.JSpinner spinnerIntegradores)
+//    {
+//        spinnerGuion.setValue(this.numGuionista);
+//        spinnerSprite.setValue(this.numSpriter);
+//        spinnerNiveles.setValue(this.numNiveler);
+//        spinnerProgramadores.setValue(this.numSystem);
+//        spinnerDLCs.setValue(this.numDlc);
+//        spinnerIntegradores.setValue(this.numIntegrador);
+//    }
+//    
+    public void addDeveloper(String type, int prodPosition)
+    {
+        if(this.workerList.getTamanho() < size)
+        {
+            Developer dev = new Developer(type, this.produccionArr[prodPosition],this.dayDuration,this.mutexDrive,10,this.drive);
+            Nodo nodito = new Nodo(dev);
+            this.workerList.addAtEnd(nodito);
+        }
+    }
+    
+    public void addIntegrator()
+    {
+        if(this.workerList.getTamanho() < size)
+        {
+            Integrator inte = new Integrator(0.5f, this.dayDuration, this.mutexDrive, 25, this.drive, this.game);
+            Nodo nodito = new Nodo(inte);
+            this.workerList.addAtEnd(nodito);
+        }
     }
 
     public int getStandardPrice() {
@@ -180,5 +214,34 @@ public class Studio {
     public void setWorkerList(Lista workerList) {
         this.workerList = workerList;
     }
+
+    public int getNumGuionista() {
+        return numGuionista;
+    }
+
+    public int getNumSpriter() {
+        return numSpriter;
+    }
+
+    public int getNumNiveler() {
+        return numNiveler;
+    }
+
+    public int getNumSystem() {
+        return numSystem;
+    }
+
+    public int getNumDlc() {
+        return numDlc;
+    }
+
+    public int getNumIntegrador() {
+        return numIntegrador;
+    }
+
+    public int getSize() {
+        return size;
+    }
+    
     
 }

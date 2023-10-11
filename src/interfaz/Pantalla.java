@@ -3,14 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package interfaz;
+
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.util.concurrent.Semaphore;
 import javax.swing.Action;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.event.ChangeListener;
 import trabajadores.Developer;
 import trabajadores.Drive;
 import trabajadores.Game;
+import trabajadores.Studio;
 
 /**
  *
@@ -21,20 +25,21 @@ public class Pantalla extends javax.swing.JFrame {
     /**
      * Creates new form Pantalla
      */
-    ImageIcon guionistaImage;
     Drive drive;
-    Semaphore mutex;
+    Semaphore mutexDrive;
+    Semaphore mutexCounter;
     Game game1;
-    
-    
+    Studio studio1;
+
     public Pantalla() {
         initComponents();
         this.setVisible(true);
         this.drive = new Drive();
-        this.mutex = new Semaphore(1);
+        this.mutexDrive = new Semaphore(1);
         this.game1 = new Game(2, 2, 2, 2, 2, 2);
-        this.guionesCounterB.setText("");
-        
+        float[] productionArr = {0.34f, 0.34f, 2, 3, 0.34f};
+        this.studio1 = new Studio(600, 700, 9, 13, 4, 2,
+                3, 1, 1, 2, game1, 1000, mutexCounter, mutexDrive, drive, productionArr);
 
     }
 
@@ -210,6 +215,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel111 = new javax.swing.JLabel();
         guionesCounterB = new javax.swing.JTextField();
         FONDO1 = new javax.swing.JLabel();
+        guionistasAuxCountB = new javax.swing.JTextField();
         SEPanel = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
@@ -1043,6 +1049,14 @@ public class Pantalla extends javax.swing.JFrame {
         FONDO1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bethesda.png"))); // NOI18N
         SEPanel1.add(FONDO1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 590));
 
+        guionistasAuxCountB.setText("jTextField1");
+        guionistasAuxCountB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistasAuxCountBActionPerformed(evt);
+            }
+        });
+        SEPanel1.add(guionistasAuxCountB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, -1));
+
         BPanel.add(SEPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, 590));
 
         tab.addTab("Bethesda", BPanel);
@@ -1423,8 +1437,7 @@ public class Pantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guionesCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionesCounterBActionPerformed
-        
-       
+
 
     }//GEN-LAST:event_guionesCounterBActionPerformed
 
@@ -1446,6 +1459,7 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void guionistasCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasCounterBActionPerformed
         // TODO add your handling code here:
+       this.guionSpinnerB.setValue(Integer.parseInt(this.guionistasCounterB.getText()));
     }//GEN-LAST:event_guionistasCounterBActionPerformed
 
     private void sistemasCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sistemasCounterBActionPerformed
@@ -1488,9 +1502,9 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dlcCounterBActionPerformed
 
-    private void narrativaSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {                                               
+    private void narrativaSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {
 
-    }                                              
+    }
 
     private void SALIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SALIRActionPerformed
         System.exit(0);
@@ -1572,8 +1586,10 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_updateTXTActionPerformed
 
+
     private void changeVALUESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeVALUESActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_changeVALUESActionPerformed
 
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
@@ -1585,20 +1601,25 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_dayDurationTXTActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-       
+
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void guionSpinnerBStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_guionSpinnerBStateChanged
-  
+       
+ 
     }//GEN-LAST:event_guionSpinnerBStateChanged
 
     private void guionesCounterBCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_guionesCounterBCaretUpdate
-     
+
     }//GEN-LAST:event_guionesCounterBCaretUpdate
 
     private void guionesCounterBComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_guionesCounterBComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_guionesCounterBComponentAdded
+
+    private void guionistasAuxCountBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasAuxCountBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionistasAuxCountBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1716,6 +1737,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField guionesCounterB;
     private javax.swing.JTextField guionesCounterS;
     private javax.swing.JLabel guionistaB5;
+    private javax.swing.JTextField guionistasAuxCountB;
     private javax.swing.JTextField guionistasCounterB;
     private javax.swing.JTextField guionistasCounterS;
     private javax.swing.JLabel icon1;

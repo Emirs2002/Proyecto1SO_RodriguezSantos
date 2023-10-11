@@ -17,6 +17,7 @@ public class Developer extends Thread {
     private final int paymentPerHour;
     private final Drive drive;
     
+    
 
     public Developer(String type, float productionPerDay, int dayDuration, Semaphore mutex, int payment, Drive drive) {
         this.type = type;
@@ -60,7 +61,7 @@ public class Developer extends Thread {
                 this.mutex.acquire(1); //equivalente a wait
                 
                 this.drive.addToDrive(type,(int)this.acumulado);
-                
+                                
                 this.acumulado = 0;
                 
                 this.mutex.release(); //equivalente a signal

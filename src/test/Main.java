@@ -21,7 +21,7 @@ public class Main {
         
         Studio studio1 = new Studio(600,700,9,13,4,2,
                 3,1,1,2,game1,1000,mutexCounter,mutexDrive, drive, produccionArr);
-        studio1.startWorkers();
+        //studio1.startWorkers();
        
         
        }
