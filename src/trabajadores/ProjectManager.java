@@ -57,9 +57,7 @@ public class ProjectManager extends Thread {
                 changeDaysLeft();
                 sleep((8 * this.dayDuration) / 24);
 
-                System.out.println("pago manager inicio: " + this.paymentPerDay);
                 this.paymentPerDay += 24 * this.paymentPerHour; //pago
-                System.out.println("Pago manager final: " + this.paymentPerDay);
 
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);

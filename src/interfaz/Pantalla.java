@@ -25,22 +25,21 @@ public class Pantalla extends javax.swing.JFrame {
     /**
      * Creates new form Pantalla
      */
-    Drive drive;
-    Semaphore mutexDrive;
-    Semaphore mutexCounter;
-    Game game1;
-    Studio studio1;
+    private Semaphore mutexDrive;
+    private Semaphore mutexCounter;
+    private Game gameB;
+    private Studio studio1;
 
     public Pantalla() {
         initComponents();
-        this.setVisible(true);
-        this.drive = new Drive();
         this.mutexDrive = new Semaphore(1);
-        this.game1 = new Game(2, 2, 2, 2, 2, 2);
-        float[] productionArr = {0.34f, 0.34f, 2, 3, 0.34f};
-        this.studio1 = new Studio(600, 700, 9, 13, 4, 2,
-                3, 1, 1, 2, game1, 1000, mutexCounter, mutexDrive, drive, productionArr);
-
+        this.mutexCounter =new Semaphore(1);
+        this.gameB = new Game(2, 2, 2, 2, 2, 2);
+        float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
+        
+        this.studio1 = new Studio(350000,700000,9,13,2,1,
+                2,2,2,3,gameB,1000,mutexCounter,mutexDrive, productionArrB);
+        studio1.start();
     }
 
     /**
@@ -1623,37 +1622,7 @@ public class Pantalla extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pantalla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Pantalla().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BDLCpriceTXT;

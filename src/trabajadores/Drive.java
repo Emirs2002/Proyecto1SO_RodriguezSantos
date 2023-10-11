@@ -18,9 +18,11 @@ public class Drive {
     public boolean hasSystems;
     public boolean hasDLCs;
     public int gameParts;
+    public int standardPrice;
+    public int dlcPrice;
     
 
-    public Drive() {
+    public Drive(int standardPrice, int dlcPrice) {
         this.script = 0; 
         this.level = 0;
         this.sprite = 0;
@@ -34,6 +36,8 @@ public class Drive {
         this.hasSystems = false;
         this.hasDLCs = false;
         this.gameParts = 0;
+        this.standardPrice = standardPrice;
+        this.dlcPrice = dlcPrice;
     }
     
     public void addToDrive(String type, int cantidadPartes){
@@ -169,18 +173,19 @@ public class Drive {
     
 
 //para director
-public void launchGames(){ //pasar Studio como parametro
+public int launchGames(){ 
     
-    //ganancia de los juegos
+    //calcular ganancia de los juegos
     
-//    int standardGameBenefit = this.standardGame*Studio.getstandardGamePrice;
-//    int dlcGameBenefit = this.dlcGame*dlcGamePrice;
-//    int totalBenefit = standardGameBenefit + dlcGameBenefit;
+    int standardGameBenefit = this.standardGame * this.standardPrice;
+    int dlcGameBenefit = this.dlcGame * this.dlcPrice;
+    int totalBenefit = standardGameBenefit + dlcGameBenefit;
     
     //enviar juegos a tiendas
     this.standardGame = 0;
     this.dlcGame = 0;
-            
+    
+    return totalBenefit;
 }
 
 
