@@ -9,28 +9,29 @@ import javax.swing.JOptionPane;
  * @author alesc
  */
 public class Studio {
-    private int dayDuration;
+    private final int dayDuration;
     private int standardPrice;
     private int DLCprice;
     private int costo;
     private int utilidad;
     private int benefit;
     private int deadline;
-    private int size;
+    private final int size;
     private Lista workerList;
-    private int numGuionista;
-    private int numSpriter;
-    private int numNiveler;
-    private int numSystem;
-    private int numDlc;
-    private int numIntegrador;
-    private Semaphore mutexDrive;
-    private Semaphore mutexCounter;
-    private Drive drive;
-    private Game game;
+    private final int numGuionista;
+    private final int numSpriter;
+    private final int numNiveler;
+    private final int numSystem;
+    private final int numDlc;
+    private final int numIntegrador;
+    private final Semaphore mutexDrive;
+    private final Semaphore mutexCounter;
+    private final Drive drive;
+    private final Game game;
     private ProjectManager manager;
     private Director director;
-    private float[] produccionArr;
+    private final float[] produccionArr;
+    private DayCounter counter;
     
     public Studio(int standardPrice, int DLCprice, int deadline, int size,int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, Semaphore mutexCounter, Semaphore mutexDrive, Drive drive, float[] produccionArr) {
         this.standardPrice = standardPrice;
@@ -50,7 +51,7 @@ public class Studio {
         this.drive = drive;
         this.dayDuration = dayDuration;
         this.produccionArr = produccionArr;
-       
+               
     }
     
     public void createWorkList(){
@@ -92,11 +93,14 @@ public class Studio {
             this.workerList.addAtEnd(nodito);
         }
         
-        this.manager = new ProjectManager(this.deadline, 20, this.dayDuration,this.mutexCounter);
-        this.director = new Director(this.manager, this.dayDuration,50,this.drive,this.mutexDrive,this.mutexCounter);
+        //inicializar counter, project manager y director
+        this.counter = new DayCounter(this.deadline);
+        this.manager = new ProjectManager( 20, this.dayDuration,this.mutexCounter, this.counter);
+        this.director = new Director(this.manager, this.dayDuration,50,this.drive,this.mutexDrive,this.mutexCounter, this.counter);
     }
     
-    public void startWorkers(javax.swing.JSpinner spinnerGuion, javax.swing.JSpinner spinnerSprite, javax.swing.JSpinner spinnerNiveles, javax.swing.JSpinner spinnerProgramadores, javax.swing.JSpinner spinnerDLCs, javax.swing.JSpinner spinnerIntegradores){
+    
+    public void startWorkers(){
         
         createWorkList();
         //setSpinner(spinnerGuion, spinnerSprite, spinnerNiveles, spinnerProgramadores, spinnerDLCs, spinnerIntegradores);
@@ -139,6 +143,8 @@ public class Studio {
 //        spinnerIntegradores.setValue(this.numIntegrador);
 //    }
 //    
+    
+    
     public void addDeveloper(String type, int prodPosition)
     {
         if(this.workerList.getTamanho() < size)
