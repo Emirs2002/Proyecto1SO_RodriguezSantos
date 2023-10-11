@@ -25,21 +25,28 @@ public class Pantalla extends javax.swing.JFrame {
     /**
      * Creates new form Pantalla
      */
-    private Semaphore mutexDrive;
-    private Semaphore mutexCounter;
     private Game gameB;
-    private Studio studio1;
+    private Game gameS;
+    private Studio studioB;
+    private Studio studioS;
+    private final int sizeB = 13; //carnet Emily 3 + 10
+    private final int sizeS = 15; //carnet Alejandra 5 + 10
 
     public Pantalla() {
         initComponents();
-        this.mutexDrive = new Semaphore(1);
-        this.mutexCounter =new Semaphore(1);
-        this.gameB = new Game(2, 2, 2, 2, 2, 2);
-        float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
         
-        this.studio1 = new Studio(350000,700000,9,13,2,1,
-                2,2,2,3,gameB,1000,mutexCounter,mutexDrive, productionArrB);
-        studio1.start();
+        this.gameB = new Game(2, 3, 4, 6, 5, 6);
+        this.gameS = new Game(1, 1, 2,4, 3, 2);
+        
+        float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
+        float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
+        
+        this.studioB = new Studio(450000,900000,17,this.sizeB,1,2,
+                2,1,1,3,gameB,1000, productionArrB);
+        
+        this.studioS = new Studio(350000,700000,5,this.sizeS,2,1,
+                2,1,2,3,gameS,1000, productionArrS);
+        
     }
 
     /**
@@ -119,7 +126,7 @@ public class Pantalla extends javax.swing.JFrame {
         SintegradoresTXTspinner = new javax.swing.JSpinner();
         BdeadlineSpinner = new javax.swing.JSpinner();
         BGuionistasTXT = new javax.swing.JTextField();
-        changeVALUES = new javax.swing.JButton();
+        iniciarSimu = new javax.swing.JButton();
         updateTXT = new javax.swing.JButton();
         CargarTxt = new javax.swing.JButton();
         SdlcsTXTspinner1 = new javax.swing.JSpinner();
@@ -594,13 +601,13 @@ public class Pantalla extends javax.swing.JFrame {
         BGuionistasTXT.setText("jTextField1");
         confPanel.add(BGuionistasTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 40, -1));
 
-        changeVALUES.setText("Iniciar simulación");
-        changeVALUES.addActionListener(new java.awt.event.ActionListener() {
+        iniciarSimu.setText("Iniciar simulación");
+        iniciarSimu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changeVALUESActionPerformed(evt);
+                iniciarSimuActionPerformed(evt);
             }
         });
-        confPanel.add(changeVALUES, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, 40));
+        confPanel.add(iniciarSimu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, 40));
 
         updateTXT.setText("Actualizar TXT");
         updateTXT.addActionListener(new java.awt.event.ActionListener() {
@@ -1004,16 +1011,22 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel111.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/standard.png"))); // NOI18N
         SEPanel1.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 100, 100));
 
-        guionistaSpinnerUpB.setText("∧");
+        guionistaSpinnerUpB.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        guionistaSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel1.add(guionistaSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 20));
 
-        guionistaSpinnerDownB.setText("∨");
+        guionistaSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        guionistaSpinnerDownB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistaSpinnerDownBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(guionistaSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 30, 20));
 
-        artistasSpinnerUpB.setText("∧");
+        artistasSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel1.add(artistasSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 30, 20));
 
-        artistasSpinnerDownB.setText("∨");
+        artistasSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel1.add(artistasSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
 
         guionesCounterB.setEditable(false);
@@ -1035,28 +1048,38 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel1.add(guionesCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 40, -1));
 
-        DesaNivelesSpinnerUpB.setText("∧");
+        DesaNivelesSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        DesaNivelesSpinnerUpB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerUpBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(DesaNivelesSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 30, 20));
 
-        DesaNivelesSpinnerDownB.setText("∨");
+        DesaNivelesSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel1.add(DesaNivelesSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 30, 20));
 
-        programadoresSpinnerUpB.setText("∧");
+        programadoresSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel1.add(programadoresSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 30, 20));
 
-        programadoresSpinnerDownB.setText("∨");
+        programadoresSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel1.add(programadoresSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 30, 20));
 
-        DesaDLCsSpinnerUpB.setText("∧");
+        DesaDLCsSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel1.add(DesaDLCsSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 30, 20));
 
-        DesaDLCsSpinnerDownB.setText("∨");
+        DesaDLCsSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        DesaDLCsSpinnerDownB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerDownBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(DesaDLCsSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 30, 20));
 
-        integradoresSpinnerUpB.setText("∧");
+        integradoresSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel1.add(integradoresSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 30, 20));
 
-        integradoresSpinnerDownB.setText("∨");
+        integradoresSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel1.add(integradoresSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 30, 20));
 
         FONDO1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bethesda.png"))); // NOI18N
@@ -1350,10 +1373,10 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(narrativaSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 40, 40));
 
-        guionistaSpinnerUpS.setText("∧");
+        guionistaSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel.add(guionistaSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 20));
 
-        guionistaSpinnerDownS.setText("∨");
+        guionistaSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel.add(guionistaSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 30, 20));
 
         spriteSpinnerS.setEditable(false);
@@ -1364,10 +1387,10 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(spriteSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 40, 40));
 
-        artistasSpinnerUpS.setText("∧");
+        artistasSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel.add(artistasSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 30, 20));
 
-        artistasSpinnerDownS.setText("∨");
+        artistasSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel.add(artistasSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
 
         DesaNivelesSpinnerS.setEditable(false);
@@ -1378,10 +1401,15 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(DesaNivelesSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 40, 40));
 
-        DesaNivelesSpinnerUpS.setText("∧");
+        DesaNivelesSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel.add(DesaNivelesSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 30, 20));
 
-        DesaNivelesSpinnerDownS.setText("∨");
+        DesaNivelesSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        DesaNivelesSpinnerDownS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerDownSActionPerformed(evt);
+            }
+        });
         SEPanel.add(DesaNivelesSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 30, 20));
 
         programadoresSpinnerS.setEditable(false);
@@ -1392,10 +1420,10 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(programadoresSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 40, 40));
 
-        programadoresSpinnerUpS.setText("∧");
+        programadoresSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel.add(programadoresSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 30, 20));
 
-        programadoresSpinnerDownS.setText("∨");
+        programadoresSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel.add(programadoresSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 30, 20));
 
         DesaDLCsSpinnerS.setEditable(false);
@@ -1414,16 +1442,16 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel.add(integradoresSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 40, 40));
 
-        DesaDLCsSpinnerUpS.setText("∧");
+        DesaDLCsSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel.add(DesaDLCsSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 30, 20));
 
-        DesaDLCsSpinnerDownS.setText("∨");
+        DesaDLCsSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel.add(DesaDLCsSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 30, 20));
 
-        integradoresSpinnerUpS.setText("∧");
+        integradoresSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
         SEPanel.add(integradoresSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 30, 20));
 
-        integradoresSpinnerDownS.setText("∨");
+        integradoresSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
         SEPanel.add(integradoresSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 30, 20));
 
         jLabel114.setForeground(new java.awt.Color(0, 0, 0));
@@ -1570,17 +1598,18 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_updateTXTActionPerformed
 
 
-    private void changeVALUESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeVALUESActionPerformed
-        // TODO add your handling code here:
+    private void iniciarSimuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSimuActionPerformed
+        this.studioB.start();
+//        studioS.start();
 
-    }//GEN-LAST:event_changeVALUESActionPerformed
+    }//GEN-LAST:event_iniciarSimuActionPerformed
 
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CargarTxtActionPerformed
 
     private void dayDurationTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayDurationTXTActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_dayDurationTXTActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -1618,6 +1647,22 @@ public class Pantalla extends javax.swing.JFrame {
     private void integradoresSpinnerSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerSActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_integradoresSpinnerSActionPerformed
+
+    private void guionistaSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerDownBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionistaSpinnerDownBActionPerformed
+
+    private void DesaNivelesSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerUpBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerUpBActionPerformed
+
+    private void DesaDLCsSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerDownBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaDLCsSpinnerDownBActionPerformed
+
+    private void DesaNivelesSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerDownSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerDownSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1696,7 +1741,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JButton artistasSpinnerDownS;
     private javax.swing.JButton artistasSpinnerUpB;
     private javax.swing.JButton artistasSpinnerUpS;
-    private javax.swing.JButton changeVALUES;
     private javax.swing.JPanel confPanel;
     private javax.swing.JTextField costosB;
     private javax.swing.JTextField costosS;
@@ -1729,6 +1773,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel icon7;
     private javax.swing.JLabel icon8;
     private javax.swing.JLabel icon9;
+    private javax.swing.JButton iniciarSimu;
     private javax.swing.JTextField integradoresSpinnerB;
     private javax.swing.JButton integradoresSpinnerDownB;
     private javax.swing.JButton integradoresSpinnerDownS;

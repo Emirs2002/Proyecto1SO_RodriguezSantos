@@ -34,7 +34,7 @@ public class Studio extends Thread {
     private final float[] produccionArr;
     private DayCounter counter;
 
-    public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, Semaphore mutexCounter, Semaphore mutexDrive, float[] produccionArr) {
+    public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr) {
         this.standardPrice = standardPrice;
         this.dlcPrice = dlcPrice;
         this.deadline = deadline;
@@ -47,8 +47,8 @@ public class Studio extends Thread {
         this.numDlc = numDlc;
         this.numIntegrador = numIntegrador;
         this.game = game;
-        this.mutexDrive = mutexDrive;
-        this.mutexCounter = mutexCounter;
+        this.mutexDrive = new Semaphore(1);
+        this.mutexCounter = new Semaphore(1);
         this.drive = new Drive(standardPrice,dlcPrice);
         this.dayDuration = dayDuration;
         this.produccionArr = produccionArr;
@@ -70,19 +70,19 @@ public class Studio extends Thread {
             try {
                 //costo operativo
                 this.costo += payAllWorkers();
-                System.out.println("COSTO OPERATIVO TOTAL: " + this.costo);
+                System.out.println("COSTO OPERATIVO TOTAL: " + this.costo/1000);
 
                 //beneficio
                 
                 this.benefit += this.director.getBenefit();
                 System.out.println("DIRECTOR BENEFIT: "+this.director.getBenefit());
                 this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
-                System.out.println("BENEFICIO JUEGOS: "+ this.benefit);
+                System.out.println("BENEFICIO JUEGOS: "+ this.benefit/1000);
                 
                 
                 //utilidad
                 this.utilidad += (this.benefit - this.costo);
-                System.out.println("UTILIDAD ESTUDIO: " + this.utilidad);
+                System.out.println("UTILIDAD ESTUDIO: " + this.utilidad/1000);
                 
                 sleep(this.dayDuration); //dormir un dia
             } catch (InterruptedException ex) {
@@ -212,7 +212,7 @@ public class Studio extends Thread {
         //pago project manager y director
         totalPayment += (this.manager.getPaymentPerDay() + this.director.getPaymentPerDay());
 
-        return totalPayment;
+        return totalPayment; //para que el numero se vea bonito
     }
 
     

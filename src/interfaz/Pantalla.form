@@ -879,12 +879,12 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JButton" name="changeVALUES">
+            <Component class="javax.swing.JButton" name="iniciarSimu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Iniciar simulaci&#xf3;n"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changeVALUESActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iniciarSimuActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2023,7 +2023,12 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="guionistaSpinnerUpB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="10" style="0"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2033,8 +2038,13 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="guionistaSpinnerDownB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guionistaSpinnerDownBActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="160" y="190" width="30" height="20"/>
@@ -2043,7 +2053,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="artistasSpinnerUpB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2053,7 +2065,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="artistasSpinnerDownB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2079,8 +2093,13 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="DesaNivelesSpinnerUpB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaNivelesSpinnerUpBActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="160" y="300" width="30" height="20"/>
@@ -2089,7 +2108,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="DesaNivelesSpinnerDownB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2099,7 +2120,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="programadoresSpinnerUpB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2109,7 +2132,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="programadoresSpinnerDownB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2119,7 +2144,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="DesaDLCsSpinnerUpB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2129,8 +2156,13 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="DesaDLCsSpinnerDownB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                    </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaDLCsSpinnerDownBActionPerformed"/>
+                  </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="160" y="460" width="30" height="20"/>
@@ -2139,7 +2171,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="integradoresSpinnerUpB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2149,7 +2183,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="integradoresSpinnerDownB">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                    </Property>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2979,7 +3015,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="guionistaSpinnerUpS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2989,7 +3027,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="guionistaSpinnerDownS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3012,7 +3052,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="artistasSpinnerUpS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3022,7 +3064,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="artistasSpinnerDownS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3045,7 +3089,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="DesaNivelesSpinnerUpS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3055,8 +3101,13 @@
             </Component>
             <Component class="javax.swing.JButton" name="DesaNivelesSpinnerDownS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaNivelesSpinnerDownSActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="160" y="320" width="30" height="20"/>
@@ -3078,7 +3129,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="programadoresSpinnerUpS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3088,7 +3141,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="programadoresSpinnerDownS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3124,7 +3179,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="DesaDLCsSpinnerUpS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3134,7 +3191,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="DesaDLCsSpinnerDownS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3144,7 +3203,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="integradoresSpinnerUpS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2227;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -3154,7 +3215,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="integradoresSpinnerDownS">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x2228;"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
+                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
