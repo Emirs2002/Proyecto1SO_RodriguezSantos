@@ -21,12 +21,12 @@ public class Studio extends Thread {
     private int deadline;
     private final int size;
     private Lista workerList;
-    private final int numGuionista;
-    private final int numSpriter;
-    private final int numNiveler;
-    private final int numSystem;
-    private final int numDlc;
-    private final int numIntegrador;
+    private  int numGuionista;
+    private  int numSpriter;
+    private  int numNiveler;
+    private  int numSystem;
+    private  int numDlc;
+    private  int numIntegrador;
     private final Semaphore mutexDrive;
     private final Semaphore mutexCounter;
     private final Drive drive;
@@ -197,6 +197,7 @@ public class Studio extends Thread {
         spinnerIntegradores.setText(Integer.toString(this.numIntegrador));
     }
     
+    
 
     public int addDeveloper(String type, int prodPosition) {
         int add = 0;
@@ -331,4 +332,30 @@ public class Studio extends Thread {
         return size;
     }
 
+    public void setNumGuionista(int numGuionista) {
+        this.numGuionista = numGuionista;
+    }
+
+    public void setNumSpriter(int numSpriter) {
+        this.numSpriter = numSpriter;
+    }
+
+    public void setNumNiveler(int numNiveler) {
+        this.numNiveler = numNiveler;
+    }
+
+    public void setNumSystem(int numSystem) {
+        this.numSystem = numSystem;
+    }
+
+    public void setNumDlc(int numDlc) {
+        this.numDlc = numDlc;
+    }
+
+    public void setNumIntegrador(int numIntegrador) {
+        this.numIntegrador = numIntegrador;
+    }
+    
+    
+    
 }

@@ -32,6 +32,8 @@ public class Pantalla extends javax.swing.JFrame {
     private final int sizeB = 13; //carnet Emily 3 + 10
     private final int sizeS = 15; //carnet Alejandra 5 + 10
     private String txtPath;
+    float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
+    float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
 //    private final ManejoArchivo file;
 
     public Pantalla() {
@@ -41,21 +43,6 @@ public class Pantalla extends javax.swing.JFrame {
 
         this.gameB = new Game(2, 3, 4, 6, 5, 6);
         this.gameS = new Game(1, 1, 2, 4, 3, 2);
-
-        float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
-        float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
-
-        this.studioB = new Studio(450000, 900000, 17, this.sizeB, 1, 2,
-                2, 1, 1, 3, gameB, 1000, productionArrB,
-                guionesCounterB, spritesCounterB, nivelesCounterB, sistemasCounterB,
-                dlcCounterB, listosStandardB, listosDLCB, DIRECTORB,
-                listosStandardB, listosDLCB, deadlineCounterB, faltasB, PMB, gananciasBrutoB, utilidadTotalB, costosB);
-
-        this.studioS = new Studio(350000, 700000, 5, this.sizeS, 2, 1,
-                2, 1, 2, 3, gameS, 1000, productionArrS,
-                guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS,
-                dlcCounterS, listosStandardS, listosDLCS, DIRECTORS,
-                listosStandardS, listosDLCS, deadlineCounterS, faltasS, PMS, gananciasBrutoS, utilidadTotalS, costosS);
 
 //        this.file = new ManejoArchivo();
     }
@@ -100,7 +87,6 @@ public class Pantalla extends javax.swing.JFrame {
         SdeadlineSpinner = new javax.swing.JSpinner();
         dayDurationSpinner = new javax.swing.JSpinner();
         BdeadlineSpinner = new javax.swing.JSpinner();
-        iniciarSimu = new javax.swing.JButton();
         updateTXT = new javax.swing.JButton();
         CargarTxt = new javax.swing.JButton();
         jLabel90 = new javax.swing.JLabel();
@@ -457,14 +443,6 @@ public class Pantalla extends javax.swing.JFrame {
 
         BdeadlineSpinner.setModel(new javax.swing.SpinnerNumberModel());
         confPanel.add(BdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, -1));
-
-        iniciarSimu.setText("Iniciar simulación");
-        iniciarSimu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iniciarSimuActionPerformed(evt);
-            }
-        });
-        confPanel.add(iniciarSimu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, -1, 40));
 
         updateTXT.setText("Actualizar TXT");
         updateTXT.addActionListener(new java.awt.event.ActionListener() {
@@ -1708,38 +1686,45 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_updateTXTActionPerformed
 
 
-    private void iniciarSimuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSimuActionPerformed
-        this.studioB.start();
-        this.studioS.start();
-        this.studioB.setTextfields(guionistasSpinnerB, artistasSpinnerB, DesaNivelesSpinnerB, programadoresSpinnerB, DesaDLCsSpinnerB, integradoresSpinnerB);
-        this.studioS.setTextfields(narrativaSpinnerS, spriteSpinnerS, DesaNivelesSpinnerS, programadoresSpinnerS, DesaDLCsSpinnerS, integradoresSpinnerS);
-        tab.setSelectedIndex(1);
-    }//GEN-LAST:event_iniciarSimuActionPerformed
-
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
         ManejoArchivo1 file = new ManejoArchivo1();
         // aqui se devuelve un array con la info a ponerse en los textfields
         String[] infoTxt = file.readTxt(txtPath);
-           
+
         dayDurationTXT.setText(infoTxt[0]);
-        
         guionistasSpinnerBTXT.setText(infoTxt[1]);
         artistasSpinnerBTXT.setText(infoTxt[2]);
         DesaNivelesSpinnerBTXT.setText(infoTxt[3]);
         programadoresSpinnerBTXT.setText(infoTxt[4]);
         DesaDLCsSpinnerBTXT.setText(infoTxt[5]);
         integradoresSpinnerBTXT.setText(infoTxt[6]);
-
         BdeadlineTXT.setText(infoTxt[7]);
-
         narrativaSpinnerSTXT.setText(infoTxt[8]);
         spriteSpinnerSTXT.setText(infoTxt[9]);
         DesaNivelesSpinnerSTXT.setText(infoTxt[10]);
         programadoresSpinnerSTXT.setText(infoTxt[11]);
         DesaDLCsSpinnerSTXT.setText(infoTxt[12]);
         integradoresSpinnerSTXT.setText(infoTxt[13]);
-
         SdeadlineTXT.setText(infoTxt[14]);
+
+        this.studioB = new Studio(450000, 900000, Integer.parseInt(infoTxt[7]), this.sizeB, Integer.parseInt(infoTxt[1]), Integer.parseInt(infoTxt[2]),
+                Integer.parseInt(infoTxt[3]), Integer.parseInt(infoTxt[4]), Integer.parseInt(infoTxt[5]), Integer.parseInt(infoTxt[6]), gameB, Integer.parseInt(infoTxt[0]), productionArrB,
+                guionesCounterB, spritesCounterB, nivelesCounterB, sistemasCounterB,
+                dlcCounterB, listosStandardB, listosDLCB, DIRECTORB,
+                listosStandardB, listosDLCB, deadlineCounterB, faltasB, PMB, gananciasBrutoB, utilidadTotalB, costosB);
+
+        this.studioS = new Studio(350000, 700000, Integer.parseInt(infoTxt[14]), this.sizeS, Integer.parseInt(infoTxt[8]), Integer.parseInt(infoTxt[9]),
+                Integer.parseInt(infoTxt[10]), Integer.parseInt(infoTxt[11]), Integer.parseInt(infoTxt[12]), Integer.parseInt(infoTxt[13]), gameS, Integer.parseInt(infoTxt[0]), productionArrS,
+                guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS,
+                dlcCounterS, listosStandardS, listosDLCS, DIRECTORS,
+                listosStandardS, listosDLCS, deadlineCounterS, faltasS, PMS, gananciasBrutoS, utilidadTotalS, costosS);
+        
+        this.studioB.start();
+        this.studioS.start();
+        this.studioB.setTextfields(guionistasSpinnerB, artistasSpinnerB, DesaNivelesSpinnerB, programadoresSpinnerB, DesaDLCsSpinnerB, integradoresSpinnerB);
+        this.studioS.setTextfields(narrativaSpinnerS, spriteSpinnerS, DesaNivelesSpinnerS, programadoresSpinnerS, DesaDLCsSpinnerS, integradoresSpinnerS);
+        tab.setSelectedIndex(1);
+
 
     }//GEN-LAST:event_CargarTxtActionPerformed
 
@@ -2217,7 +2202,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel icon7;
     private javax.swing.JLabel icon8;
     private javax.swing.JLabel icon9;
-    private javax.swing.JButton iniciarSimu;
     private javax.swing.JTextField integradoresSpinnerB;
     private javax.swing.JTextField integradoresSpinnerBTXT;
     private javax.swing.JButton integradoresSpinnerDownB;
