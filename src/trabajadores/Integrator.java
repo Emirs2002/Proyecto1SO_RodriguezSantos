@@ -17,6 +17,7 @@ public class Integrator extends Thread
     private final int paymentPerHour;
     private final Drive drive;
     private final Game companyName;
+    private final String type;
 
     
 
@@ -27,6 +28,7 @@ public class Integrator extends Thread
         this.paymentPerHour = payment;
         this.drive = drive;
         this.companyName = companyName;
+        this.type= "integrador";
 
     }
     
@@ -61,6 +63,7 @@ public class Integrator extends Thread
             try {
 //                se activa el semaforo
                 this.mutex.acquire(1); //wait
+                System.out.println("");
                 System.out.println("integrador entro drive");
                 int cantidadPartes = this.drive.glueParts(this.companyName);
                 this.drive.addToDrive("integrador", cantidadPartes);
@@ -75,10 +78,18 @@ public class Integrator extends Thread
             
         }
         
-           
-        
-        
     }
     
+    public String getType() {
+        return type;
+    }
+
+    public int getPaymentPerDay() {
+        return paymentPerDay;
+    }
+
+    public void setPaymentPerDay(int paymentPerDay) {
+        this.paymentPerDay = paymentPerDay;
+    }
     
 }
