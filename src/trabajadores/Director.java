@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,9 +22,17 @@ public class Director extends Thread {
     private Semaphore mutexStudio;
     private DayCounter counter;
     private int benefit = 0;
+    public ImageIcon trabajando;
+    public ImageIcon chismeando;
+    public javax.swing.JLabel directorStatus;
+    public javax.swing.JTextField juegosStandard;
+    public javax.swing.JTextField juegosDLC;
+
+
     
 
-    public Director(ProjectManager manager, int dayDuration, int paymentPerHour, Drive drive, Semaphore mutexDrive, Semaphore mutexStudio, DayCounter counter) {
+    public Director(ProjectManager manager, int dayDuration, int paymentPerHour, Drive drive, Semaphore mutexDrive, Semaphore mutexStudio,
+            DayCounter counter, javax.swing.JLabel directorStatus,  javax.swing.JTextField juegosS, javax.swing.JTextField juegosD) {
         this.manager = manager;
         this.dayDuration = dayDuration;
         this.paymentPerHour = paymentPerHour;
@@ -32,6 +41,12 @@ public class Director extends Thread {
         this.mutexDrive = mutexDrive;
         this.mutexStudio = mutexStudio;
         this.counter = counter;
+        this.trabajando = new ImageIcon(getClass().getResource("/imagenes/DIRECTOR_WORKING.png"));
+        this.chismeando = new ImageIcon(getClass().getResource("/imagenes/DIRECTOR_CHISMEANDO.png"));
+        this.directorStatus = directorStatus;
+        this.juegosStandard = juegosS;
+        this.juegosDLC = juegosD;
+        
     }
 
     @Override
@@ -51,7 +66,9 @@ public class Director extends Thread {
         int daysLeft = this.counter.getDaysLeft();//checar estado del counter
         
         if (daysLeft == 0) {
-
+            this.isWorking = true;
+            this.directorStatus.setIcon(this.trabajando);
+                
             //mandar todos los juegos a las tiendas
             launchGames();
             
@@ -73,9 +90,13 @@ public class Director extends Thread {
 
             try {
                 this.isWorking = true;
+                this.directorStatus.setIcon(this.trabajando);
+//                this.directorStatus.setText("trabajando");
                 System.out.println("");
                 System.out.println("director trabaja");
                 sleep(hour);//trabaja normal hasta esta hora
+                
+                
 
                 //revisa que hace el PM
                 checkOnPM();
@@ -98,6 +119,8 @@ public class Director extends Thread {
     public void checkOnPM() {
         System.out.println("director va a chismear al PM");
         this.isWorking = false;
+        this.directorStatus.setIcon(this.chismeando);
+//        this.directorStatus.setText("chismneando");
 
         //Lo vigila durante 25 minutos
         try {
@@ -135,6 +158,8 @@ public class Director extends Thread {
                 this.mutexDrive.release(); //signal
                 System.out.println("juegos enviados");
                 
+                this.juegosStandard.setText(Integer.toString(this.drive.standardGame));
+                this.juegosDLC.setText(Integer.toString(this.drive.dlcGame));
                 sleep(this.dayDuration); //spends 24 hours
 
             } catch (InterruptedException ex) {

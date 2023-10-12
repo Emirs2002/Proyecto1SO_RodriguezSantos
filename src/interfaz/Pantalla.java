@@ -8,10 +8,13 @@ import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.util.concurrent.Semaphore;
 import javax.swing.Action;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeListener;
 import trabajadores.*;
+import trabajadores.ManejoArchivo;
+import javax.swing.ImageIcon;
+
+import interfaz.ManejoArchivo1;
 
 /**
  *
@@ -28,13 +31,11 @@ public class Pantalla extends javax.swing.JFrame {
     private Studio studioS;
     private final int sizeB = 13; //carnet Emily 3 + 10
     private final int sizeS = 15; //carnet Alejandra 5 + 10
-    String txtPath;
-    ManejoArchivo file;
+    private String txtPath;
+//    private final ManejoArchivo file;
 
     public Pantalla() {
         initComponents();
-
-
 
         this.txtPath ="OperativosProyecto1.txt";
 
@@ -44,20 +45,20 @@ public class Pantalla extends javax.swing.JFrame {
         float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
         float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
 
-
         this.studioB = new Studio(450000, 900000, 17, this.sizeB, 1, 2,
-                2, 1, 1, 3, gameB, 1000, productionArrB);
+                2, 1, 1, 3, gameB, 1000, productionArrB, 
+                guionesCounterB, spritesCounterB, nivelesCounterB, sistemasCounterB, 
+                dlcCounterB, listosStandardB, listosDLCB, DIRECTORB,
+                listosStandardB, listosDLCB);
 
         this.studioS = new Studio(350000, 700000, 5, this.sizeS, 2, 1,
-                2, 1, 2, 3, gameS, 1000, productionArrS);
-
-
-        this.studioB = new Studio(450000,900000,17,this.sizeB,1,2,
-                2,1,1,3,gameB,1000, productionArrB);
+                2, 1, 2, 3, gameS, 1000, productionArrS, 
+                guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS, 
+                dlcCounterS, listosStandardS, listosDLCS, DIRECTORS,
+                listosStandardS, listosDLCS);
         
-        this.studioS = new Studio(350000,700000,5,this.sizeS,2,1,
-                2,1,2,3,gameS,1000, productionArrS);
-        this.file = new ManejoArchivo();
+        
+//        this.file = new ManejoArchivo();
 
     }
 
@@ -167,7 +168,7 @@ public class Pantalla extends javax.swing.JFrame {
         jSeparator14 = new javax.swing.JSeparator();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
+        DIRECTORB = new javax.swing.JLabel();
         utilidadTotalB = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -193,7 +194,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         listosStandardB = new javax.swing.JTextField();
         artistasSpinnerB = new javax.swing.JTextField();
-        spritesSpinnerB = new javax.swing.JTextField();
+        spritesCounterB = new javax.swing.JTextField();
         nivelesCounterB = new javax.swing.JTextField();
         sistemasCounterB = new javax.swing.JTextField();
         jLabel102 = new javax.swing.JLabel();
@@ -235,7 +236,7 @@ public class Pantalla extends javax.swing.JFrame {
         jSeparator7 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        DIRECTORS = new javax.swing.JLabel();
         utilidadTotalS = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -743,11 +744,11 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
 
         listosDLCB.setEditable(false);
-        listosDLCB.setText("jTextField1");
+        listosDLCB.setToolTipText("");
         SEPanel1.add(listosDLCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 40, 20));
 
         dlcCounterB.setEditable(false);
-        dlcCounterB.setText("jTextField2");
+        dlcCounterB.setToolTipText("");
         dlcCounterB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dlcCounterBActionPerformed(evt);
@@ -766,12 +767,11 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1280px-Bethesda_Game_Studios_logo.svg (1).png"))); // NOI18N
         SEPanel1.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 200, 93));
 
-        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel46.setText("foto");
-        SEPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 160, 100));
+        DIRECTORB.setForeground(new java.awt.Color(0, 0, 0));
+        SEPanel1.add(DIRECTORB, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 260, 160, 100));
 
         utilidadTotalB.setEditable(false);
-        utilidadTotalB.setText("DEADLINE");
+        utilidadTotalB.setToolTipText("");
         utilidadTotalB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 utilidadTotalBActionPerformed(evt);
@@ -782,7 +782,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(0, 0, 0));
         jLabel47.setText("¿Qué hace el Director?");
-        SEPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 240, 30));
+        SEPanel1.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 240, 30));
 
         jLabel48.setBackground(new java.awt.Color(0, 0, 0));
         jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -823,7 +823,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(deadlineCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 80, 40, 30));
 
         gananciasBrutoB.setEditable(false);
-        gananciasBrutoB.setText("DEADLINE");
+        gananciasBrutoB.setToolTipText("");
         gananciasBrutoB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gananciasBrutoBActionPerformed(evt);
@@ -832,7 +832,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(gananciasBrutoB, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 80, 90));
 
         costosB.setEditable(false);
-        costosB.setText("DEADLINE");
+        costosB.setToolTipText("");
         costosB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 costosBActionPerformed(evt);
@@ -870,7 +870,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, -1, -1));
 
         faltasB.setEditable(false);
-        faltasB.setText("jTextField1");
+        faltasB.setToolTipText("");
         SEPanel1.add(faltasB, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 40, 20));
 
         jLabel94.setForeground(new java.awt.Color(0, 0, 0));
@@ -890,7 +890,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 60, 40));
 
         listosStandardB.setEditable(false);
-        listosStandardB.setText("jTextField2");
+        listosStandardB.setToolTipText("");
         listosStandardB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listosStandardBActionPerformed(evt);
@@ -906,17 +906,16 @@ public class Pantalla extends javax.swing.JFrame {
         });
         SEPanel1.add(artistasSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 40, 40));
 
-        spritesSpinnerB.setEditable(false);
-        spritesSpinnerB.setText("jTextField2");
-        spritesSpinnerB.addActionListener(new java.awt.event.ActionListener() {
+        spritesCounterB.setEditable(false);
+        spritesCounterB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                spritesSpinnerBActionPerformed(evt);
+                spritesCounterBActionPerformed(evt);
             }
         });
-        SEPanel1.add(spritesSpinnerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 40, -1));
+        SEPanel1.add(spritesCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 40, -1));
 
         nivelesCounterB.setEditable(false);
-        nivelesCounterB.setText("jTextField2");
+        nivelesCounterB.setToolTipText("");
         nivelesCounterB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nivelesCounterBActionPerformed(evt);
@@ -925,7 +924,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(nivelesCounterB, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 40, -1));
 
         sistemasCounterB.setEditable(false);
-        sistemasCounterB.setText("jTextField2");
+        sistemasCounterB.setToolTipText("");
         sistemasCounterB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sistemasCounterBActionPerformed(evt);
@@ -1052,7 +1051,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(artistasSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
 
         guionesCounterB.setEditable(false);
-        guionesCounterB.setText("jTextField2");
+        guionesCounterB.setToolTipText("");
         guionesCounterB.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 guionesCounterBComponentAdded(evt);
@@ -1158,7 +1157,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, -1));
 
         listosDLCS.setEditable(false);
-        listosDLCS.setText("jTextField1");
+        listosDLCS.setToolTipText("");
         SEPanel.add(listosDLCS, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 40, 20));
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -1172,12 +1171,11 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Square_Enix-Logo.wine (1).png"))); // NOI18N
         SEPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 400, 80));
 
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("foto");
-        SEPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 180, 90));
+        DIRECTORS.setForeground(new java.awt.Color(51, 51, 51));
+        SEPanel.add(DIRECTORS, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, 180, 90));
 
         utilidadTotalS.setEditable(false);
-        utilidadTotalS.setText("DEADLINE");
+        utilidadTotalS.setToolTipText("");
         utilidadTotalS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 utilidadTotalSActionPerformed(evt);
@@ -1218,7 +1216,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 430, -1, -1));
 
         deadlineCounterS.setEditable(false);
-        deadlineCounterS.setText("DEADLINE");
+        deadlineCounterS.setToolTipText("");
         deadlineCounterS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deadlineCounterSActionPerformed(evt);
@@ -1227,7 +1225,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(deadlineCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 70, 40, 30));
 
         gananciasBrutoS.setEditable(false);
-        gananciasBrutoS.setText("DEADLINE");
+        gananciasBrutoS.setToolTipText("");
         gananciasBrutoS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gananciasBrutoSActionPerformed(evt);
@@ -1236,7 +1234,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(gananciasBrutoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 80, 90));
 
         costosS.setEditable(false);
-        costosS.setText("DEADLINE");
+        costosS.setToolTipText("");
         costosS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 costosSActionPerformed(evt);
@@ -1245,7 +1243,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(costosS, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 80, 90));
 
         listosStandardS.setEditable(false);
-        listosStandardS.setText("jTextField2");
+        listosStandardS.setToolTipText("");
         listosStandardS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listosStandardSActionPerformed(evt);
@@ -1254,7 +1252,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(listosStandardS, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 40, -1));
 
         faltasS.setEditable(false);
-        faltasS.setText("jTextField1");
+        faltasS.setToolTipText("");
         SEPanel.add(faltasS, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 360, 40, 20));
 
         jLabel91.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1332,7 +1330,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 240, -1, -1));
 
         guionesCounterS.setEditable(false);
-        guionesCounterS.setText("jTextField2");
+        guionesCounterS.setToolTipText("");
         guionesCounterS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guionesCounterSActionPerformed(evt);
@@ -1341,7 +1339,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(guionesCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 40, -1));
 
         spritesCounterS.setEditable(false);
-        spritesCounterS.setText("jTextField2");
+        spritesCounterS.setToolTipText("");
         spritesCounterS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 spritesCounterSActionPerformed(evt);
@@ -1358,7 +1356,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, -1, -1));
 
         nivelesCounterS.setEditable(false);
-        nivelesCounterS.setText("jTextField2");
+        nivelesCounterS.setToolTipText("");
         nivelesCounterS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nivelesCounterSActionPerformed(evt);
@@ -1367,7 +1365,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(nivelesCounterS, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 40, -1));
 
         sistemasCounterS.setEditable(false);
-        sistemasCounterS.setText("jTextField2");
+        sistemasCounterS.setToolTipText("");
         sistemasCounterS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sistemasCounterSActionPerformed(evt);
@@ -1380,7 +1378,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 460, -1, -1));
 
         dlcCounterS.setEditable(false);
-        dlcCounterS.setText("jTextField2");
+        dlcCounterS.setToolTipText("");
         dlcCounterS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dlcCounterSActionPerformed(evt);
@@ -1616,9 +1614,9 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nivelesCounterBActionPerformed
 
-    private void spritesSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spritesSpinnerBActionPerformed
+    private void spritesCounterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spritesCounterBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_spritesSpinnerBActionPerformed
+    }//GEN-LAST:event_spritesCounterBActionPerformed
 
     private void artistasSpinnerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerBActionPerformed
         // TODO add your handling code here:
@@ -1704,6 +1702,7 @@ public class Pantalla extends javax.swing.JFrame {
         /*se debe colocar toda la info de los textfield en un array en el orden 
          del txt
         */
+        ManejoArchivo file = new ManejoArchivo();
         String[] infoTextfields ={"1000", "1","3","1","2","1","4","17","2","1","1","2","2","4","10"};
         
         file.writeTxt(txtPath, infoTextfields);
@@ -1715,11 +1714,11 @@ public class Pantalla extends javax.swing.JFrame {
         this.studioS.start();
         this.studioB.setTextfields(guionistasSpinnerB, artistasSpinnerB, DesaNivelesSpinnerB, programadoresSpinnerB, DesaDLCsSpinnerB, integradoresSpinnerB);
         this.studioS.setTextfields(narrativaSpinnerS, spriteSpinnerS, DesaNivelesSpinnerS, programadoresSpinnerS, DesaDLCsSpinnerS, integradoresSpinnerS);
-
+        
     }//GEN-LAST:event_iniciarSimuActionPerformed
 
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
-        
+        ManejoArchivo1 file = new ManejoArchivo1();
         // aqui se devuelve un array con la info a ponerse en los textfields
         String[] infoTxt = file.readTxt(txtPath);
         
@@ -2115,6 +2114,8 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField BdeadlineTXT;
     private javax.swing.JTextField BmaxDesarrolladoresTXT;
     private javax.swing.JButton CargarTxt;
+    private javax.swing.JLabel DIRECTORB;
+    private javax.swing.JLabel DIRECTORS;
     private javax.swing.JTextField DesaDLCsSpinnerB;
     private javax.swing.JTextField DesaDLCsSpinnerBTXT;
     private javax.swing.JButton DesaDLCsSpinnerDownB;
@@ -2229,7 +2230,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -2256,7 +2256,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
@@ -2341,8 +2340,8 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField sistemasCounterS;
     private javax.swing.JTextField spriteSpinnerS;
     private javax.swing.JTextField spriteSpinnerSTXT;
+    private javax.swing.JTextField spritesCounterB;
     private javax.swing.JTextField spritesCounterS;
-    private javax.swing.JTextField spritesSpinnerB;
     private javax.swing.JTabbedPane tab;
     private javax.swing.JButton updateTXT;
     private javax.swing.JTextField utilidadTotalB;

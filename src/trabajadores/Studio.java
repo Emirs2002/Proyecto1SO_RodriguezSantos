@@ -3,6 +3,8 @@ package trabajadores;
 import interfaz.Pantalla;
 import java.util.concurrent.Semaphore;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+
 
 /**
  *
@@ -33,8 +35,13 @@ public class Studio extends Thread {
     private Director director;
     private final float[] produccionArr;
     private DayCounter counter;
+    public javax.swing.JLabel directorStatus;
+    public javax.swing.JTextField standardLabel;
+    public javax.swing.JTextField dlcLabel;
 
-    public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr) {
+    public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr, 
+            javax.swing.JTextField guiones, javax.swing.JTextField sprites, javax.swing.JTextField niveles, javax.swing.JTextField sistemas, javax.swing.JTextField dlcs, javax.swing.JTextField standardGames, javax.swing.JTextField dlcGames, 
+            javax.swing.JLabel directorStatus, javax.swing.JTextField standardLabel, javax.swing.JTextField dlcLabel) {
         this.standardPrice = standardPrice;
         this.dlcPrice = dlcPrice;
         this.deadline = deadline;
@@ -49,9 +56,12 @@ public class Studio extends Thread {
         this.game = game;
         this.mutexDrive = new Semaphore(1);
         this.mutexCounter = new Semaphore(1);
-        this.drive = new Drive(standardPrice, dlcPrice);
+        this.drive = new Drive(standardPrice, dlcPrice, guiones, sprites, niveles, sistemas, dlcs, standardGames, dlcGames);
         this.dayDuration = dayDuration;
         this.produccionArr = produccionArr;
+        this.directorStatus = directorStatus;
+        this.standardLabel = standardLabel;
+        this.dlcLabel = dlcLabel;
 
     }
 
@@ -126,7 +136,7 @@ public class Studio extends Thread {
         //inicializar counter, project manager y director
         this.counter = new DayCounter(this.deadline);
         this.manager = new ProjectManager(20, this.dayDuration, this.mutexCounter, this.counter);
-        this.director = new Director(this.manager, this.dayDuration, 50, this.drive, this.mutexDrive, this.mutexCounter, this.counter);
+        this.director = new Director(this.manager, this.dayDuration, 50, this.drive, this.mutexDrive, this.mutexCounter, this.counter, this.directorStatus, this.standardLabel, this.dlcLabel);
     }
 
     public void startWorkers() {
