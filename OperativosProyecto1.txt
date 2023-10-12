@@ -1,0 +1,17 @@
+Dia,1000;
+Bethesda
+guionista,1;
+sprites,3;
+niveles,1;
+programador,2;
+dlc,1;
+integrador,4;
+deadline,17;
+SquareEnix
+guionista,2;
+sprites,1;
+niveles,1;
+programador,2;
+dlc,2;
+integrador,4;
+deadline,10;

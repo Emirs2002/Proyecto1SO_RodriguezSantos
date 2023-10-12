@@ -11,10 +11,7 @@ import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeListener;
-import trabajadores.Developer;
-import trabajadores.Drive;
-import trabajadores.Game;
-import trabajadores.Studio;
+import trabajadores.*;
 
 /**
  *
@@ -31,9 +28,15 @@ public class Pantalla extends javax.swing.JFrame {
     private Studio studioS;
     private final int sizeB = 13; //carnet Emily 3 + 10
     private final int sizeS = 15; //carnet Alejandra 5 + 10
+    String txtPath;
+    ManejoArchivo file;
 
     public Pantalla() {
         initComponents();
+
+
+
+        this.txtPath ="OperativosProyecto1.txt";
 
         this.gameB = new Game(2, 3, 4, 6, 5, 6);
         this.gameS = new Game(1, 1, 2, 4, 3, 2);
@@ -41,11 +44,20 @@ public class Pantalla extends javax.swing.JFrame {
         float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
         float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
 
+
         this.studioB = new Studio(450000, 900000, 17, this.sizeB, 1, 2,
                 2, 1, 1, 3, gameB, 1000, productionArrB);
 
         this.studioS = new Studio(350000, 700000, 5, this.sizeS, 2, 1,
                 2, 1, 2, 3, gameS, 1000, productionArrS);
+
+
+        this.studioB = new Studio(450000,900000,17,this.sizeB,1,2,
+                2,1,1,3,gameB,1000, productionArrB);
+        
+        this.studioS = new Studio(350000,700000,5,this.sizeS,2,1,
+                2,1,2,3,gameS,1000, productionArrS);
+        this.file = new ManejoArchivo();
 
     }
 
@@ -70,18 +82,11 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel70 = new javax.swing.JLabel();
         BdeadlineTXT = new javax.swing.JTextField();
         BmaxDesarrolladoresTXT = new javax.swing.JTextField();
-        BSpritesTXT = new javax.swing.JTextField();
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
         jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
-        BguionesProduction = new javax.swing.JTextField();
-        BspritaProduction = new javax.swing.JTextField();
-        BnivelesProduction = new javax.swing.JTextField();
-        BsystemsProduction = new javax.swing.JTextField();
-        SintegradoresProduction = new javax.swing.JTextField();
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
@@ -89,59 +94,54 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
         SALIR = new javax.swing.JButton();
-        jLabel88 = new javax.swing.JLabel();
-        SguionesProduction = new javax.swing.JTextField();
-        jLabel96 = new javax.swing.JLabel();
-        jLabel95 = new javax.swing.JLabel();
-        BstandardPriceTXT = new javax.swing.JTextField();
-        BDLCpriceTXT = new javax.swing.JTextField();
-        SspritesProduction = new javax.swing.JTextField();
-        SlevesProduction = new javax.swing.JTextField();
-        SsystemProduction = new javax.swing.JTextField();
-        SdlcProduction = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
         SmaxDesarrolladoresTXT = new javax.swing.JTextField();
-        jLabel97 = new javax.swing.JLabel();
-        jLabel98 = new javax.swing.JLabel();
-        SstandardPriceTXT = new javax.swing.JTextField();
-        jLabel99 = new javax.swing.JLabel();
         jLabel92 = new javax.swing.JLabel();
         SdeadlineTXT = new javax.swing.JTextField();
-        SdlcPriceTXT = new javax.swing.JTextField();
-        jLabel100 = new javax.swing.JLabel();
-        BspritesTXTspinner = new javax.swing.JSpinner();
-        BsystemsTXTspinner = new javax.swing.JSpinner();
-        BLevelsTXT = new javax.swing.JTextField();
-        BlevelTXTspinner = new javax.swing.JSpinner();
-        BProgramadorTXT = new javax.swing.JTextField();
         SdeadlineSpinner = new javax.swing.JSpinner();
-        SintegradoresTXT = new javax.swing.JTextField();
-        SguionistasTXT = new javax.swing.JTextField();
-        SspritesTXT = new javax.swing.JTextField();
-        SlevelsTXT = new javax.swing.JTextField();
-        SProgramadorTXT = new javax.swing.JTextField();
-        SDLCsTXT = new javax.swing.JTextField();
-        BguionistasTXTspinner = new javax.swing.JSpinner();
         dayDurationSpinner = new javax.swing.JSpinner();
-        SintegradoresTXTspinner = new javax.swing.JSpinner();
         BdeadlineSpinner = new javax.swing.JSpinner();
-        BGuionistasTXT = new javax.swing.JTextField();
         iniciarSimu = new javax.swing.JButton();
         updateTXT = new javax.swing.JButton();
         CargarTxt = new javax.swing.JButton();
-        SdlcsTXTspinner1 = new javax.swing.JSpinner();
-        SsystemsTXTspinner1 = new javax.swing.JSpinner();
-        SlevelTXTspinner1 = new javax.swing.JSpinner();
-        SspritesTXTspinner1 = new javax.swing.JSpinner();
         jLabel90 = new javax.swing.JLabel();
-        BintegradoresTXTspinner = new javax.swing.JSpinner();
-        BintegradoresTXT = new javax.swing.JTextField();
-        BintegradorProduction = new javax.swing.JTextField();
-        SguionistasTXTspinner1 = new javax.swing.JSpinner();
+        guionistasSpinnerBTXT = new javax.swing.JTextField();
+        guionistaSpinnerUpBTXT = new javax.swing.JButton();
+        guionistaSpinnerDownBTXT = new javax.swing.JButton();
+        artistasSpinnerBTXT = new javax.swing.JTextField();
+        artistasSpinnerUpBTXT = new javax.swing.JButton();
+        artistasSpinnerDownBTXT = new javax.swing.JButton();
+        DesaNivelesSpinnerBTXT = new javax.swing.JTextField();
+        DesaNivelesSpinnerUpBTXT = new javax.swing.JButton();
+        DesaNivelesSpinnerDownBTXT = new javax.swing.JButton();
+        programadoresSpinnerBTXT = new javax.swing.JTextField();
+        programadoresSpinnerUpBTXT = new javax.swing.JButton();
+        programadoresSpinnerDownBTXT = new javax.swing.JButton();
+        DesaDLCsSpinnerBTXT = new javax.swing.JTextField();
+        DesaDLCsSpinnerUpBTXT = new javax.swing.JButton();
+        DesaDLCsSpinnerDownBTXT = new javax.swing.JButton();
+        integradoresSpinnerBTXT = new javax.swing.JTextField();
+        integradoresSpinnerUpBTXT = new javax.swing.JButton();
+        integradoresSpinnerDownBTXT = new javax.swing.JButton();
+        narrativaSpinnerSTXT = new javax.swing.JTextField();
+        guionistaSpinnerUpSTXT = new javax.swing.JButton();
+        guionistaSpinnerDownSTXT = new javax.swing.JButton();
+        spriteSpinnerSTXT = new javax.swing.JTextField();
+        artistasSpinnerUpSTXT = new javax.swing.JButton();
+        artistasSpinnerDownSTXT = new javax.swing.JButton();
+        DesaNivelesSpinnerSTXT = new javax.swing.JTextField();
+        DesaNivelesSpinnerUpSTXT = new javax.swing.JButton();
+        DesaNivelesSpinnerDownSTXT = new javax.swing.JButton();
+        programadoresSpinnerSTXT = new javax.swing.JTextField();
+        programadoresSpinnerUpSTXT = new javax.swing.JButton();
+        programadoresSpinnerDownSTXT = new javax.swing.JButton();
+        DesaDLCsSpinnerSTXT = new javax.swing.JTextField();
+        DesaDLCsSpinnerUpSTXT = new javax.swing.JButton();
+        DesaDLCsSpinnerDownSTXT = new javax.swing.JButton();
+        integradoresSpinnerSTXT = new javax.swing.JTextField();
+        integradoresSpinnerUpSTXT = new javax.swing.JButton();
+        integradoresSpinnerDownSTXT = new javax.swing.JButton();
         jLabel116 = new javax.swing.JLabel();
-        BdlcsTXTspinner2 = new javax.swing.JSpinner();
-        BDLCsTXT2 = new javax.swing.JTextField();
-        BdlcProduction2 = new javax.swing.JTextField();
         FONDO3 = new javax.swing.JLabel();
         BPanel = new javax.swing.JPanel();
         SEPanel1 = new javax.swing.JPanel();
@@ -315,13 +315,13 @@ public class Pantalla extends javax.swing.JFrame {
 
         jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel72.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel72.setText("Deadline de entrega:");
-        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, 30));
+        jLabel72.setText("Deadline de entrega (Square Enix)");
+        confPanel.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, -1, 30));
 
         jLabel71.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(255, 255, 255));
         jLabel71.setText("Duración de un día:");
-        confPanel.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        confPanel.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         dayDurationTXT.setEditable(false);
         dayDurationTXT.setText("0");
@@ -330,14 +330,14 @@ public class Pantalla extends javax.swing.JFrame {
                 dayDurationTXTActionPerformed(evt);
             }
         });
-        confPanel.add(dayDurationTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 80, 40));
+        confPanel.add(dayDurationTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 80, 30));
 
         jLabel65.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(204, 204, 204));
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel65.setText("SQUARE ENIX");
         jLabel65.setToolTipText("");
-        confPanel.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 210, 40));
+        confPanel.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 210, 40));
 
         jLabel73.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel73.setForeground(new java.awt.Color(204, 204, 204));
@@ -351,97 +351,69 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel74.setText("BETHESDA");
         jLabel74.setToolTipText("");
-        confPanel.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 210, 40));
+        confPanel.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 210, 40));
 
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
         jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel75.setText("Cantidad máxima de desarrolladores:");
         jLabel75.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        confPanel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 210, 20));
+        confPanel.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 210, 20));
 
         jLabel70.setForeground(new java.awt.Color(255, 255, 255));
         jLabel70.setText("Integradores");
-        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, -1));
+        confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, -1, -1));
 
         BdeadlineTXT.setEditable(false);
         BdeadlineTXT.setText("jTextField1");
-        confPanel.add(BdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 50, 20));
+        confPanel.add(BdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 50, 20));
 
         BmaxDesarrolladoresTXT.setEditable(false);
         BmaxDesarrolladoresTXT.setText("jTextField1");
-        confPanel.add(BmaxDesarrolladoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
-
-        BSpritesTXT.setEditable(false);
-        BSpritesTXT.setText("jTextField1");
-        confPanel.add(BSpritesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 40, -1));
+        confPanel.add(BmaxDesarrolladoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
 
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
         jLabel76.setText("Guionistas");
-        confPanel.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
+        confPanel.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         jLabel77.setForeground(new java.awt.Color(255, 255, 255));
         jLabel77.setText("Artistas de sprites");
-        confPanel.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        confPanel.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         jLabel78.setForeground(new java.awt.Color(255, 255, 255));
         jLabel78.setText("Diseñador niveles");
-        confPanel.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+        confPanel.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
         jLabel79.setText("Programador lógica");
-        confPanel.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
-
-        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel80.setText("Producción diaria");
-        confPanel.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
+        confPanel.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
 
         jLabel81.setForeground(new java.awt.Color(255, 255, 255));
         jLabel81.setText("Cantidad");
-        confPanel.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
-
-        BguionesProduction.setEditable(false);
-        BguionesProduction.setText("jTextField1");
-        confPanel.add(BguionesProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
-
-        BspritaProduction.setEditable(false);
-        BspritaProduction.setText("jTextField1");
-        confPanel.add(BspritaProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, -1, -1));
-
-        BnivelesProduction.setEditable(false);
-        BnivelesProduction.setText("jTextField1");
-        confPanel.add(BnivelesProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, -1, -1));
-
-        BsystemsProduction.setEditable(false);
-        BsystemsProduction.setText("jTextField1");
-        confPanel.add(BsystemsProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 390, -1, -1));
-
-        SintegradoresProduction.setEditable(false);
-        SintegradoresProduction.setText("jTextField1");
-        confPanel.add(SintegradoresProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 460, -1, -1));
+        confPanel.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
         jLabel82.setForeground(new java.awt.Color(255, 255, 255));
         jLabel82.setText("Guionistas");
-        confPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, -1, -1));
+        confPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, -1, -1));
 
         jLabel83.setForeground(new java.awt.Color(255, 255, 255));
         jLabel83.setText("Artistas de sprites");
-        confPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, -1, -1));
+        confPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, -1, -1));
 
         jLabel84.setForeground(new java.awt.Color(255, 255, 255));
         jLabel84.setText("Diseñador niveles");
-        confPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, -1, -1));
+        confPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, -1, -1));
 
         jLabel85.setForeground(new java.awt.Color(255, 255, 255));
         jLabel85.setText("Programador lógica");
-        confPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
+        confPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, -1, -1));
 
         jLabel86.setForeground(new java.awt.Color(255, 255, 255));
         jLabel86.setText("Desarrollador DLC");
-        confPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 430, -1, -1));
+        confPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 460, -1, -1));
 
         jLabel87.setForeground(new java.awt.Color(255, 255, 255));
         jLabel87.setText("Cantidad");
-        confPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 240, -1, -1));
+        confPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 160, -1, -1));
 
         SALIR.setText("Salir");
         SALIR.addActionListener(new java.awt.event.ActionListener() {
@@ -451,78 +423,20 @@ public class Pantalla extends javax.swing.JFrame {
         });
         confPanel.add(SALIR, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 30, 60, 30));
 
-        jLabel88.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel88.setText("Producción diaria");
-        confPanel.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 240, -1, -1));
-
-        SguionesProduction.setEditable(false);
-        SguionesProduction.setText("jTextField1");
-        confPanel.add(SguionesProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, -1, -1));
-
-        jLabel96.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel96.setText("Con DLC");
-        confPanel.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 530, -1, -1));
-
-        jLabel95.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel95.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel95.setText("Precio juegos");
-        confPanel.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, -1));
-
-        BstandardPriceTXT.setEditable(false);
-        BstandardPriceTXT.setText("jTextField1");
-        confPanel.add(BstandardPriceTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, -1, -1));
-
-        BDLCpriceTXT.setEditable(false);
-        BDLCpriceTXT.setText("jTextField1");
-        confPanel.add(BDLCpriceTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, -1, -1));
-
-        SspritesProduction.setEditable(false);
-        SspritesProduction.setText("jTextField1");
-        confPanel.add(SspritesProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 310, -1, -1));
-
-        SlevesProduction.setEditable(false);
-        SlevesProduction.setText("jTextField1");
-        confPanel.add(SlevesProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, -1, -1));
-
-        SsystemProduction.setEditable(false);
-        SsystemProduction.setText("jTextField1");
-        confPanel.add(SsystemProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 390, -1, -1));
-
-        SdlcProduction.setEditable(false);
-        SdlcProduction.setText("jTextField1");
-        confPanel.add(SdlcProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, -1, -1));
-
         jLabel89.setForeground(new java.awt.Color(255, 255, 255));
         jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel89.setText("Cantidad máxima de desarrolladores:");
         jLabel89.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        confPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 210, 20));
+        confPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 210, 20));
 
         SmaxDesarrolladoresTXT.setEditable(false);
         SmaxDesarrolladoresTXT.setText("jTextField1");
-        confPanel.add(SmaxDesarrolladoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 200, -1, -1));
-
-        jLabel97.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel97.setText("Estándar");
-        confPanel.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, -1, -1));
-
-        jLabel98.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel98.setText("Precio juegos");
-        confPanel.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, -1, -1));
-
-        SstandardPriceTXT.setEditable(false);
-        SstandardPriceTXT.setText("jTextField1");
-        confPanel.add(SstandardPriceTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 550, -1, -1));
-
-        jLabel99.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel99.setText("Estándar");
-        confPanel.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, -1, -1));
+        confPanel.add(SmaxDesarrolladoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 130, -1, -1));
 
         jLabel92.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel92.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel92.setText("Deadline de entrega:");
-        confPanel.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, -1, 30));
+        jLabel92.setText("Deadline de entrega (Bethesda)");
+        confPanel.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, 30));
 
         SdeadlineTXT.setEditable(false);
         SdeadlineTXT.setText("jTextField1");
@@ -531,75 +445,16 @@ public class Pantalla extends javax.swing.JFrame {
                 SdeadlineTXTActionPerformed(evt);
             }
         });
-        confPanel.add(SdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 490, 50, 20));
-
-        SdlcPriceTXT.setEditable(false);
-        SdlcPriceTXT.setText("jTextField1");
-        confPanel.add(SdlcPriceTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 550, -1, -1));
-
-        jLabel100.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel100.setText("Con DLC");
-        confPanel.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 530, -1, -1));
-
-        BspritesTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BspritesTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 310, 50, -1));
-
-        BsystemsTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BsystemsTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 50, -1));
-
-        BLevelsTXT.setEditable(false);
-        BLevelsTXT.setText("jTextField1");
-        confPanel.add(BLevelsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 40, -1));
-
-        BlevelTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BlevelTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 50, -1));
-
-        BProgramadorTXT.setEditable(false);
-        BProgramadorTXT.setText("jTextField1");
-        confPanel.add(BProgramadorTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 40, -1));
+        confPanel.add(SdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 50, 20));
 
         SdeadlineSpinner.setModel(new javax.swing.SpinnerNumberModel());
-        confPanel.add(SdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 490, 50, -1));
-
-        SintegradoresTXT.setEditable(false);
-        SintegradoresTXT.setText("jTextField1");
-        confPanel.add(SintegradoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 460, 40, -1));
-
-        SguionistasTXT.setEditable(false);
-        SguionistasTXT.setText("jTextField1");
-        confPanel.add(SguionistasTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, 40, -1));
-
-        SspritesTXT.setEditable(false);
-        SspritesTXT.setText("jTextField1");
-        confPanel.add(SspritesTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 310, 40, -1));
-
-        SlevelsTXT.setEditable(false);
-        SlevelsTXT.setText("jTextField1");
-        confPanel.add(SlevelsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 350, 40, -1));
-
-        SProgramadorTXT.setEditable(false);
-        SProgramadorTXT.setText("jTextField1");
-        confPanel.add(SProgramadorTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 390, 40, -1));
-
-        SDLCsTXT.setEditable(false);
-        SDLCsTXT.setText("jTextField1");
-        confPanel.add(SDLCsTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 430, 40, -1));
-
-        BguionistasTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BguionistasTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 270, 50, -1));
+        confPanel.add(SdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 50, -1));
 
         dayDurationSpinner.setModel(new javax.swing.SpinnerNumberModel(1000, 1000, null, 100));
-        confPanel.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 80, -1));
-
-        SintegradoresTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(SintegradoresTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 460, 50, -1));
+        confPanel.add(dayDurationSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 80, -1));
 
         BdeadlineSpinner.setModel(new javax.swing.SpinnerNumberModel());
-        confPanel.add(BdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 50, -1));
-
-        BGuionistasTXT.setEditable(false);
-        BGuionistasTXT.setText("jTextField1");
-        confPanel.add(BGuionistasTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 40, -1));
+        confPanel.add(BdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, 50, -1));
 
         iniciarSimu.setText("Iniciar simulación");
         iniciarSimu.addActionListener(new java.awt.event.ActionListener() {
@@ -607,7 +462,7 @@ public class Pantalla extends javax.swing.JFrame {
                 iniciarSimuActionPerformed(evt);
             }
         });
-        confPanel.add(iniciarSimu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, 40));
+        confPanel.add(iniciarSimu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 470, -1, 40));
 
         updateTXT.setText("Actualizar TXT");
         updateTXT.addActionListener(new java.awt.event.ActionListener() {
@@ -615,7 +470,7 @@ public class Pantalla extends javax.swing.JFrame {
                 updateTXTActionPerformed(evt);
             }
         });
-        confPanel.add(updateTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, -1, 40));
+        confPanel.add(updateTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 520, -1, 40));
 
         CargarTxt.setText("Cargar TXT");
         CargarTxt.addActionListener(new java.awt.event.ActionListener() {
@@ -623,52 +478,204 @@ public class Pantalla extends javax.swing.JFrame {
                 CargarTxtActionPerformed(evt);
             }
         });
-        confPanel.add(CargarTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, 40));
-
-        SdlcsTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(SdlcsTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 430, 50, -1));
-
-        SsystemsTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(SsystemsTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 390, 50, -1));
-
-        SlevelTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(SlevelTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, 50, -1));
-
-        SspritesTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(SspritesTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 310, 50, -1));
+        confPanel.add(CargarTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 520, 120, 40));
 
         jLabel90.setForeground(new java.awt.Color(255, 255, 255));
         jLabel90.setText("Integradores");
-        confPanel.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
+        confPanel.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
 
-        BintegradoresTXTspinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BintegradoresTXTspinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 50, -1));
+        guionistasSpinnerBTXT.setEditable(false);
+        guionistasSpinnerBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistasSpinnerBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(guionistasSpinnerBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 40, 40));
 
-        BintegradoresTXT.setEditable(false);
-        BintegradoresTXT.setText("jTextField1");
-        confPanel.add(BintegradoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 40, -1));
+        guionistaSpinnerUpBTXT.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        guionistaSpinnerUpBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(guionistaSpinnerUpBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 30, 20));
 
-        BintegradorProduction.setEditable(false);
-        BintegradorProduction.setText("jTextField1");
-        confPanel.add(BintegradorProduction, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, -1, -1));
+        guionistaSpinnerDownBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        guionistaSpinnerDownBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistaSpinnerDownBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(guionistaSpinnerDownBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 30, 20));
 
-        SguionistasTXTspinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(SguionistasTXTspinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 50, -1));
+        artistasSpinnerBTXT.setEditable(false);
+        artistasSpinnerBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistasSpinnerBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(artistasSpinnerBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 40, 40));
+
+        artistasSpinnerUpBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(artistasSpinnerUpBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 30, 20));
+
+        artistasSpinnerDownBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(artistasSpinnerDownBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 30, 20));
+
+        DesaNivelesSpinnerBTXT.setEditable(false);
+        DesaNivelesSpinnerBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaNivelesSpinnerBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 40, 40));
+
+        DesaNivelesSpinnerUpBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        DesaNivelesSpinnerUpBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerUpBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaNivelesSpinnerUpBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 30, 20));
+
+        DesaNivelesSpinnerDownBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(DesaNivelesSpinnerDownBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 30, 20));
+
+        programadoresSpinnerBTXT.setEditable(false);
+        programadoresSpinnerBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(programadoresSpinnerBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 40, 40));
+
+        programadoresSpinnerUpBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(programadoresSpinnerUpBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 30, 20));
+
+        programadoresSpinnerDownBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(programadoresSpinnerDownBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 30, 20));
+
+        DesaDLCsSpinnerBTXT.setEditable(false);
+        DesaDLCsSpinnerBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaDLCsSpinnerBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 40, 40));
+
+        DesaDLCsSpinnerUpBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(DesaDLCsSpinnerUpBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 30, 20));
+
+        DesaDLCsSpinnerDownBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        DesaDLCsSpinnerDownBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerDownBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaDLCsSpinnerDownBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 30, 20));
+
+        integradoresSpinnerBTXT.setEditable(false);
+        integradoresSpinnerBTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerBTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(integradoresSpinnerBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 40, 40));
+
+        integradoresSpinnerUpBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(integradoresSpinnerUpBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 30, 20));
+
+        integradoresSpinnerDownBTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(integradoresSpinnerDownBTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, 30, 20));
+
+        narrativaSpinnerSTXT.setEditable(false);
+        narrativaSpinnerSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                narrativaSpinnerSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(narrativaSpinnerSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 40, 40));
+
+        guionistaSpinnerUpSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(guionistaSpinnerUpSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 180, 30, 20));
+
+        guionistaSpinnerDownSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(guionistaSpinnerDownSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 200, 30, 20));
+
+        spriteSpinnerSTXT.setEditable(false);
+        spriteSpinnerSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                spriteSpinnerSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(spriteSpinnerSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 240, 40, 40));
+
+        artistasSpinnerUpSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(artistasSpinnerUpSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 240, 30, 20));
+
+        artistasSpinnerDownSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(artistasSpinnerDownSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 260, 30, 20));
+
+        DesaNivelesSpinnerSTXT.setEditable(false);
+        DesaNivelesSpinnerSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaNivelesSpinnerSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 310, 40, 40));
+
+        DesaNivelesSpinnerUpSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(DesaNivelesSpinnerUpSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 310, 30, 20));
+
+        DesaNivelesSpinnerDownSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        DesaNivelesSpinnerDownSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerDownSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaNivelesSpinnerDownSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 330, 30, 20));
+
+        programadoresSpinnerSTXT.setEditable(false);
+        programadoresSpinnerSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(programadoresSpinnerSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 40, 40));
+
+        programadoresSpinnerUpSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(programadoresSpinnerUpSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 380, 30, 20));
+
+        programadoresSpinnerDownSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(programadoresSpinnerDownSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 400, 30, 20));
+
+        DesaDLCsSpinnerSTXT.setEditable(false);
+        DesaDLCsSpinnerSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(DesaDLCsSpinnerSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 40, 40));
+
+        DesaDLCsSpinnerUpSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(DesaDLCsSpinnerUpSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, 30, 20));
+
+        DesaDLCsSpinnerDownSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(DesaDLCsSpinnerDownSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 470, 30, 20));
+
+        integradoresSpinnerSTXT.setEditable(false);
+        integradoresSpinnerSTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerSTXTActionPerformed(evt);
+            }
+        });
+        confPanel.add(integradoresSpinnerSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 520, 40, 40));
+
+        integradoresSpinnerUpSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        confPanel.add(integradoresSpinnerUpSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 520, 30, 20));
+
+        integradoresSpinnerDownSTXT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        confPanel.add(integradoresSpinnerDownSTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 540, 30, 20));
 
         jLabel116.setForeground(new java.awt.Color(255, 255, 255));
         jLabel116.setText("Desarrollador DLC");
-        confPanel.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
-
-        BdlcsTXTspinner2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
-        confPanel.add(BdlcsTXTspinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 50, -1));
-
-        BDLCsTXT2.setEditable(false);
-        BDLCsTXT2.setText("jTextField1");
-        confPanel.add(BDLCsTXT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 40, -1));
-
-        BdlcProduction2.setEditable(false);
-        BdlcProduction2.setText("jTextField1");
-        confPanel.add(BdlcProduction2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, -1, -1));
+        confPanel.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
 
         FONDO3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/wallhaven-zmzqjg.png"))); // NOI18N
         FONDO3.setText("jLabel90");
@@ -1694,7 +1701,12 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_SdeadlineTXTActionPerformed
 
     private void updateTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTXTActionPerformed
-        // TODO add your handling code here:
+        /*se debe colocar toda la info de los textfield en un array en el orden 
+         del txt
+        */
+        String[] infoTextfields ={"1000", "1","3","1","2","1","4","17","2","1","1","2","2","4","10"};
+        
+        file.writeTxt(txtPath, infoTextfields);
     }//GEN-LAST:event_updateTXTActionPerformed
 
 
@@ -1707,7 +1719,13 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarSimuActionPerformed
 
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
-        // TODO add your handling code here:
+        
+        // aqui se devuelve un array con la info a ponerse en los textfields
+        String[] infoTxt = file.readTxt(txtPath);
+        
+        for (int i = 0; i < infoTxt.length; i++) {
+            System.out.println(infoTxt[i]);
+        }
     }//GEN-LAST:event_CargarTxtActionPerformed
 
     private void dayDurationTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayDurationTXTActionPerformed
@@ -1796,6 +1814,7 @@ public class Pantalla extends javax.swing.JFrame {
             DesaNivelesSpinnerS.setText(Integer.toString(value - 1));
         }
     }//GEN-LAST:event_DesaNivelesSpinnerDownSActionPerformed
+
 
     private void guionistaSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerUpBActionPerformed
         // TODO add your handling code here:
@@ -2021,82 +2040,124 @@ public class Pantalla extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_integradoresSpinnerDownSActionPerformed
 
+    private void guionistasSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasSpinnerBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionistasSpinnerBTXTActionPerformed
+
+    private void guionistaSpinnerDownBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerDownBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guionistaSpinnerDownBTXTActionPerformed
+
+    private void artistasSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_artistasSpinnerBTXTActionPerformed
+
+    private void DesaNivelesSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerBTXTActionPerformed
+
+    private void DesaNivelesSpinnerUpBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerUpBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerUpBTXTActionPerformed
+
+    private void programadoresSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_programadoresSpinnerBTXTActionPerformed
+
+    private void DesaDLCsSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaDLCsSpinnerBTXTActionPerformed
+
+    private void DesaDLCsSpinnerDownBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerDownBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaDLCsSpinnerDownBTXTActionPerformed
+
+    private void integradoresSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerBTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_integradoresSpinnerBTXTActionPerformed
+
+    private void narrativaSpinnerSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_narrativaSpinnerSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_narrativaSpinnerSTXTActionPerformed
+
+    private void spriteSpinnerSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spriteSpinnerSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_spriteSpinnerSTXTActionPerformed
+
+    private void DesaNivelesSpinnerSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerSTXTActionPerformed
+
+    private void DesaNivelesSpinnerDownSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerDownSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaNivelesSpinnerDownSTXTActionPerformed
+
+    private void programadoresSpinnerSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_programadoresSpinnerSTXTActionPerformed
+
+    private void DesaDLCsSpinnerSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DesaDLCsSpinnerSTXTActionPerformed
+
+    private void integradoresSpinnerSTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerSTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_integradoresSpinnerSTXTActionPerformed
+
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField BDLCpriceTXT;
-    private javax.swing.JTextField BDLCsTXT2;
-    private javax.swing.JTextField BGuionistasTXT;
-    private javax.swing.JTextField BLevelsTXT;
     private javax.swing.JPanel BPanel;
-    private javax.swing.JTextField BProgramadorTXT;
-    private javax.swing.JTextField BSpritesTXT;
     private javax.swing.JSpinner BdeadlineSpinner;
     private javax.swing.JTextField BdeadlineTXT;
-    private javax.swing.JTextField BdlcProduction2;
-    private javax.swing.JSpinner BdlcsTXTspinner2;
-    private javax.swing.JTextField BguionesProduction;
-    private javax.swing.JSpinner BguionistasTXTspinner;
-    private javax.swing.JTextField BintegradorProduction;
-    private javax.swing.JTextField BintegradoresTXT;
-    private javax.swing.JSpinner BintegradoresTXTspinner;
-    private javax.swing.JSpinner BlevelTXTspinner;
     private javax.swing.JTextField BmaxDesarrolladoresTXT;
-    private javax.swing.JTextField BnivelesProduction;
-    private javax.swing.JTextField BspritaProduction;
-    private javax.swing.JSpinner BspritesTXTspinner;
-    private javax.swing.JTextField BstandardPriceTXT;
-    private javax.swing.JTextField BsystemsProduction;
-    private javax.swing.JSpinner BsystemsTXTspinner;
     private javax.swing.JButton CargarTxt;
     private javax.swing.JTextField DesaDLCsSpinnerB;
+    private javax.swing.JTextField DesaDLCsSpinnerBTXT;
     private javax.swing.JButton DesaDLCsSpinnerDownB;
+    private javax.swing.JButton DesaDLCsSpinnerDownBTXT;
     private javax.swing.JButton DesaDLCsSpinnerDownS;
+    private javax.swing.JButton DesaDLCsSpinnerDownSTXT;
     private javax.swing.JTextField DesaDLCsSpinnerS;
+    private javax.swing.JTextField DesaDLCsSpinnerSTXT;
     private javax.swing.JButton DesaDLCsSpinnerUpB;
+    private javax.swing.JButton DesaDLCsSpinnerUpBTXT;
     private javax.swing.JButton DesaDLCsSpinnerUpS;
+    private javax.swing.JButton DesaDLCsSpinnerUpSTXT;
     private javax.swing.JTextField DesaNivelesSpinnerB;
+    private javax.swing.JTextField DesaNivelesSpinnerBTXT;
     private javax.swing.JButton DesaNivelesSpinnerDownB;
+    private javax.swing.JButton DesaNivelesSpinnerDownBTXT;
     private javax.swing.JButton DesaNivelesSpinnerDownS;
+    private javax.swing.JButton DesaNivelesSpinnerDownSTXT;
     private javax.swing.JTextField DesaNivelesSpinnerS;
+    private javax.swing.JTextField DesaNivelesSpinnerSTXT;
     private javax.swing.JButton DesaNivelesSpinnerUpB;
+    private javax.swing.JButton DesaNivelesSpinnerUpBTXT;
     private javax.swing.JButton DesaNivelesSpinnerUpS;
+    private javax.swing.JButton DesaNivelesSpinnerUpSTXT;
     private javax.swing.JLabel FONDO;
     private javax.swing.JLabel FONDO1;
     private javax.swing.JLabel FONDO3;
     private javax.swing.JButton SALIR;
-    private javax.swing.JTextField SDLCsTXT;
     private javax.swing.JPanel SEPanel;
     private javax.swing.JPanel SEPanel1;
-    private javax.swing.JTextField SProgramadorTXT;
     private javax.swing.JSpinner SdeadlineSpinner;
     private javax.swing.JTextField SdeadlineTXT;
-    private javax.swing.JTextField SdlcPriceTXT;
-    private javax.swing.JTextField SdlcProduction;
-    private javax.swing.JSpinner SdlcsTXTspinner1;
-    private javax.swing.JTextField SguionesProduction;
-    private javax.swing.JTextField SguionistasTXT;
-    private javax.swing.JSpinner SguionistasTXTspinner1;
-    private javax.swing.JTextField SintegradoresProduction;
-    private javax.swing.JTextField SintegradoresTXT;
-    private javax.swing.JSpinner SintegradoresTXTspinner;
-    private javax.swing.JSpinner SlevelTXTspinner1;
-    private javax.swing.JTextField SlevelsTXT;
-    private javax.swing.JTextField SlevesProduction;
     private javax.swing.JTextField SmaxDesarrolladoresTXT;
-    private javax.swing.JTextField SspritesProduction;
-    private javax.swing.JTextField SspritesTXT;
-    private javax.swing.JSpinner SspritesTXTspinner1;
-    private javax.swing.JTextField SstandardPriceTXT;
-    private javax.swing.JTextField SsystemProduction;
-    private javax.swing.JSpinner SsystemsTXTspinner1;
     private javax.swing.JTextField artistasSpinnerB;
+    private javax.swing.JTextField artistasSpinnerBTXT;
     private javax.swing.JButton artistasSpinnerDownB;
+    private javax.swing.JButton artistasSpinnerDownBTXT;
     private javax.swing.JButton artistasSpinnerDownS;
+    private javax.swing.JButton artistasSpinnerDownSTXT;
     private javax.swing.JButton artistasSpinnerUpB;
+    private javax.swing.JButton artistasSpinnerUpBTXT;
     private javax.swing.JButton artistasSpinnerUpS;
+    private javax.swing.JButton artistasSpinnerUpSTXT;
     private javax.swing.JPanel confPanel;
     private javax.swing.JTextField costosB;
     private javax.swing.JTextField costosS;
@@ -2113,10 +2174,15 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField guionesCounterB;
     private javax.swing.JTextField guionesCounterS;
     private javax.swing.JButton guionistaSpinnerDownB;
+    private javax.swing.JButton guionistaSpinnerDownBTXT;
     private javax.swing.JButton guionistaSpinnerDownS;
+    private javax.swing.JButton guionistaSpinnerDownSTXT;
     private javax.swing.JButton guionistaSpinnerUpB;
+    private javax.swing.JButton guionistaSpinnerUpBTXT;
     private javax.swing.JButton guionistaSpinnerUpS;
+    private javax.swing.JButton guionistaSpinnerUpSTXT;
     private javax.swing.JTextField guionistasSpinnerB;
+    private javax.swing.JTextField guionistasSpinnerBTXT;
     private javax.swing.JLabel icon1;
     private javax.swing.JLabel icon10;
     private javax.swing.JLabel icon11;
@@ -2131,13 +2197,18 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel icon9;
     private javax.swing.JButton iniciarSimu;
     private javax.swing.JTextField integradoresSpinnerB;
+    private javax.swing.JTextField integradoresSpinnerBTXT;
     private javax.swing.JButton integradoresSpinnerDownB;
+    private javax.swing.JButton integradoresSpinnerDownBTXT;
     private javax.swing.JButton integradoresSpinnerDownS;
+    private javax.swing.JButton integradoresSpinnerDownSTXT;
     private javax.swing.JTextField integradoresSpinnerS;
+    private javax.swing.JTextField integradoresSpinnerSTXT;
     private javax.swing.JButton integradoresSpinnerUpB;
+    private javax.swing.JButton integradoresSpinnerUpBTXT;
     private javax.swing.JButton integradoresSpinnerUpS;
+    private javax.swing.JButton integradoresSpinnerUpSTXT;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
@@ -2218,7 +2289,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
@@ -2226,7 +2296,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
@@ -2234,11 +2303,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
@@ -2258,17 +2322,25 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JTextField listosStandardB;
     private javax.swing.JTextField listosStandardS;
     private javax.swing.JTextField narrativaSpinnerS;
+    private javax.swing.JTextField narrativaSpinnerSTXT;
     private javax.swing.JTextField nivelesCounterB;
     private javax.swing.JTextField nivelesCounterS;
     private javax.swing.JTextField programadoresSpinnerB;
+    private javax.swing.JTextField programadoresSpinnerBTXT;
     private javax.swing.JButton programadoresSpinnerDownB;
+    private javax.swing.JButton programadoresSpinnerDownBTXT;
     private javax.swing.JButton programadoresSpinnerDownS;
+    private javax.swing.JButton programadoresSpinnerDownSTXT;
     private javax.swing.JTextField programadoresSpinnerS;
+    private javax.swing.JTextField programadoresSpinnerSTXT;
     private javax.swing.JButton programadoresSpinnerUpB;
+    private javax.swing.JButton programadoresSpinnerUpBTXT;
     private javax.swing.JButton programadoresSpinnerUpS;
+    private javax.swing.JButton programadoresSpinnerUpSTXT;
     private javax.swing.JTextField sistemasCounterB;
     private javax.swing.JTextField sistemasCounterS;
     private javax.swing.JTextField spriteSpinnerS;
+    private javax.swing.JTextField spriteSpinnerSTXT;
     private javax.swing.JTextField spritesCounterS;
     private javax.swing.JTextField spritesSpinnerB;
     private javax.swing.JTabbedPane tab;
