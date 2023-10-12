@@ -51,7 +51,7 @@ public class Developer extends Thread {
         //produccion del dia
         this.acumulado += this.productionPerDay;
         
-        this.paymentPerDay += 24 * this.paymentPerHour;//pago desarrollador
+        this.paymentPerDay = 24 * this.paymentPerHour;//pago desarrollador
         
         //producto listo, guardar en drive
         if(this.acumulado >= 1){

@@ -58,7 +58,7 @@ public class Director extends Thread {
             work();
 
             //pago
-            this.paymentPerDay += 24 * this.paymentPerHour;
+            this.paymentPerDay = 24 * this.paymentPerHour;
 
         }
     }

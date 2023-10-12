@@ -41,11 +41,17 @@ public class Studio extends Thread {
     public javax.swing.JTextField deadlineField;
     public javax.swing.JTextField faltas;
     public javax.swing.JLabel pm;
+    public javax.swing.JTextField beneficio;
+    public javax.swing.JTextField ganaciaReal;
+    public javax.swing.JTextField gasto;
+    
+    
 
 
     public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr, 
             javax.swing.JTextField guiones, javax.swing.JTextField sprites, javax.swing.JTextField niveles, javax.swing.JTextField sistemas, javax.swing.JTextField dlcs, javax.swing.JTextField standardGames, javax.swing.JTextField dlcGames, 
-            javax.swing.JLabel directorStatus, javax.swing.JTextField standardLabel, javax.swing.JTextField dlcLabel, javax.swing.JTextField deadlineField, javax.swing.JTextField faltas, javax.swing.JLabel pm) {
+            javax.swing.JLabel directorStatus, javax.swing.JTextField standardLabel, javax.swing.JTextField dlcLabel, javax.swing.JTextField deadlineField, javax.swing.JTextField faltas, javax.swing.JLabel pm,
+            javax.swing.JTextField beneficio, javax.swing.JTextField gananciaReal, javax.swing.JTextField gasto) {
         this.standardPrice = standardPrice;
         this.dlcPrice = dlcPrice;
         this.deadline = deadline;
@@ -69,6 +75,9 @@ public class Studio extends Thread {
         this.deadlineField = deadlineField;
         this.faltas = faltas;
         this.pm = pm;
+        this.beneficio = beneficio;
+        this.ganaciaReal = gananciaReal;
+        this.gasto = gasto;
 
     }
 
@@ -87,18 +96,20 @@ public class Studio extends Thread {
             try {
                 //costo operativo
                 this.costo += payAllWorkers();
-                System.out.println("COSTO OPERATIVO TOTAL: " + this.costo / 1000);
+                this.gasto.setText(Integer.toString(costo/1000));
+                //System.out.println("COSTO OPERATIVO TOTAL: " + this.costo / 1000);
 
                 //beneficio
                 this.benefit += this.director.getBenefit();
                 System.out.println("DIRECTOR BENEFIT: " + this.director.getBenefit());
                 this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
-                System.out.println("BENEFICIO JUEGOS: " + this.benefit / 1000);
+                this.beneficio.setText(Integer.toString(benefit/1000));
+                //System.out.println("BENEFICIO JUEGOS: " + this.benefit / 1000);
 
                 //utilidad
                 this.utilidad += (this.benefit - this.costo);
                 System.out.println("UTILIDAD ESTUDIO: " + this.utilidad / 1000);
-
+                this.ganaciaReal.setText(Integer.toString(utilidad/1000));
                 sleep(this.dayDuration); //dormir un dia
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);

@@ -66,7 +66,7 @@ public class ProjectManager extends Thread {
                 this.pmStatus.setIcon(trabajando);
                 sleep((8 * this.dayDuration) / 24);
 
-                this.paymentPerDay += 24 * this.paymentPerHour; //pago
+                this.paymentPerDay = 24 * this.paymentPerHour; //pago
 
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);

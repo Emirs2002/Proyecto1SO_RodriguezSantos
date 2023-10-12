@@ -55,7 +55,7 @@ public class Integrator extends Thread
         //produccion del dia
         this.acumulado += this.productionPerDay;
         
-        this.paymentPerDay += 24 * this.paymentPerHour;//pago integrador
+        this.paymentPerDay = 24 * this.paymentPerHour;//pago integrador
         
         //producto listo, guardar en drive
         if(this.acumulado >= 1){

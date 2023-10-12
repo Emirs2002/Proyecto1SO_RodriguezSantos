@@ -37,7 +37,7 @@ public class Pantalla extends javax.swing.JFrame {
     public Pantalla() {
         initComponents();
 
-        this.txtPath ="OperativosProyecto1.txt";
+        this.txtPath = "OperativosProyecto1.txt";
 
         this.gameB = new Game(2, 3, 4, 6, 5, 6);
         this.gameS = new Game(1, 1, 2, 4, 3, 2);
@@ -46,20 +46,18 @@ public class Pantalla extends javax.swing.JFrame {
         float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
 
         this.studioB = new Studio(450000, 900000, 17, this.sizeB, 1, 2,
-                2, 1, 1, 3, gameB, 1000, productionArrB, 
-                guionesCounterB, spritesCounterB, nivelesCounterB, sistemasCounterB, 
+                2, 1, 1, 3, gameB, 1000, productionArrB,
+                guionesCounterB, spritesCounterB, nivelesCounterB, sistemasCounterB,
                 dlcCounterB, listosStandardB, listosDLCB, DIRECTORB,
-                listosStandardB, listosDLCB, deadlineCounterB, faltasB, PMB);
+                listosStandardB, listosDLCB, deadlineCounterB, faltasB, PMB, gananciasBrutoB, utilidadTotalB, costosB);
 
         this.studioS = new Studio(350000, 700000, 5, this.sizeS, 2, 1,
-                2, 1, 2, 3, gameS, 1000, productionArrS, 
-                guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS, 
+                2, 1, 2, 3, gameS, 1000, productionArrS,
+                guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS,
                 dlcCounterS, listosStandardS, listosDLCS, DIRECTORS,
-                listosStandardS, listosDLCS, deadlineCounterS, faltasS, PMS);
-        
-        
-//        this.file = new ManejoArchivo();
+                listosStandardS, listosDLCS, deadlineCounterS, faltasS, PMS, gananciasBrutoS, utilidadTotalS, costosS);
 
+//        this.file = new ManejoArchivo();
     }
 
     /**
@@ -365,11 +363,10 @@ public class Pantalla extends javax.swing.JFrame {
         confPanel.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, -1, -1));
 
         BdeadlineTXT.setEditable(false);
-        BdeadlineTXT.setText("jTextField1");
-        confPanel.add(BdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 50, 20));
+        confPanel.add(BdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 50, 20));
 
         BmaxDesarrolladoresTXT.setEditable(false);
-        BmaxDesarrolladoresTXT.setText("jTextField1");
+        BmaxDesarrolladoresTXT.setText("13");
         confPanel.add(BmaxDesarrolladoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
 
         jLabel76.setForeground(new java.awt.Color(255, 255, 255));
@@ -431,7 +428,12 @@ public class Pantalla extends javax.swing.JFrame {
         confPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 210, 20));
 
         SmaxDesarrolladoresTXT.setEditable(false);
-        SmaxDesarrolladoresTXT.setText("jTextField1");
+        SmaxDesarrolladoresTXT.setText("15");
+        SmaxDesarrolladoresTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SmaxDesarrolladoresTXTActionPerformed(evt);
+            }
+        });
         confPanel.add(SmaxDesarrolladoresTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 130, -1, -1));
 
         jLabel92.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -440,13 +442,12 @@ public class Pantalla extends javax.swing.JFrame {
         confPanel.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, -1, 30));
 
         SdeadlineTXT.setEditable(false);
-        SdeadlineTXT.setText("jTextField1");
         SdeadlineTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SdeadlineTXTActionPerformed(evt);
             }
         });
-        confPanel.add(SdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 50, 20));
+        confPanel.add(SdeadlineTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 50, 20));
 
         SdeadlineSpinner.setModel(new javax.swing.SpinnerNumberModel());
         confPanel.add(SdeadlineSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 50, -1));
@@ -1194,7 +1195,7 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 210, 50));
 
         PMS.setForeground(new java.awt.Color(51, 51, 51));
-        SEPanel.add(PMS, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 180, 90));
+        SEPanel.add(PMS, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 180, 90));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
@@ -1699,10 +1700,10 @@ public class Pantalla extends javax.swing.JFrame {
     private void updateTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTXTActionPerformed
         /*se debe colocar toda la info de los textfield en un array en el orden 
          del txt
-        */
+         */
         ManejoArchivo file = new ManejoArchivo();
-        String[] infoTextfields ={"1000", "1","3","1","2","1","4","17","2","1","1","2","2","4","10"};
-        
+        String[] infoTextfields = {"1000", "1", "3", "1", "2", "1", "4", "17", "2", "1", "1", "2", "2", "4", "10"};
+
         file.writeTxt(txtPath, infoTextfields);
     }//GEN-LAST:event_updateTXTActionPerformed
 
@@ -1719,10 +1720,27 @@ public class Pantalla extends javax.swing.JFrame {
         ManejoArchivo1 file = new ManejoArchivo1();
         // aqui se devuelve un array con la info a ponerse en los textfields
         String[] infoTxt = file.readTxt(txtPath);
+           
+        dayDurationTXT.setText(infoTxt[0]);
         
-        for (int i = 0; i < infoTxt.length; i++) {
-            System.out.println(infoTxt[i]);
-        }
+        guionistasSpinnerBTXT.setText(infoTxt[1]);
+        artistasSpinnerBTXT.setText(infoTxt[2]);
+        DesaNivelesSpinnerBTXT.setText(infoTxt[3]);
+        programadoresSpinnerBTXT.setText(infoTxt[4]);
+        DesaDLCsSpinnerBTXT.setText(infoTxt[5]);
+        integradoresSpinnerBTXT.setText(infoTxt[6]);
+
+        BdeadlineTXT.setText(infoTxt[7]);
+
+        narrativaSpinnerSTXT.setText(infoTxt[8]);
+        spriteSpinnerSTXT.setText(infoTxt[9]);
+        DesaNivelesSpinnerSTXT.setText(infoTxt[10]);
+        programadoresSpinnerSTXT.setText(infoTxt[11]);
+        DesaDLCsSpinnerSTXT.setText(infoTxt[12]);
+        integradoresSpinnerSTXT.setText(infoTxt[13]);
+
+        SdeadlineTXT.setText(infoTxt[14]);
+
     }//GEN-LAST:event_CargarTxtActionPerformed
 
     private void dayDurationTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayDurationTXTActionPerformed
@@ -2101,6 +2119,9 @@ public class Pantalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_integradoresSpinnerSTXTActionPerformed
 
+    private void SmaxDesarrolladoresTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmaxDesarrolladoresTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SmaxDesarrolladoresTXTActionPerformed
 
     /**
      * @param args the command line arguments
