@@ -173,9 +173,11 @@ public class Lista {
                 for(int i = 0; i <= anterior ; i++){
                     if(i == anterior)
                     {
-                        temp.setPnext(nodoProximo);
+                        temp.setPnext(nodoProximo);                        
                         nodoBorrar.setPnext(null);
-                    }
+                        
+                    } 
+                    
                 temp = temp.getPnext();
                 }
 

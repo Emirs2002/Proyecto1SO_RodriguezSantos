@@ -199,10 +199,10 @@ public class Studio extends Thread {
     
     
 
-    public int addDeveloper(String type, int prodPosition) {
+    public int addDeveloper(String type, int prodPosition, int payment) {
         int add = 0;
         if (this.workerList.getTamanho() < size) {
-            Developer dev = new Developer(type, this.produccionArr[prodPosition], this.dayDuration, this.mutexDrive, 10, this.drive);
+            Developer dev = new Developer(type, this.produccionArr[prodPosition], this.dayDuration, this.mutexDrive, payment, this.drive);
             Nodo nodito = new Nodo(dev);
             this.workerList.addAtEnd(nodito);
             add += 1;
@@ -237,8 +237,13 @@ public class Studio extends Thread {
             } else {
                 totalPayment += ((Integrator) dev).getPaymentPerDay();
             }
-
-            temp = workers.proximoNodo(temp);
+            
+            if(workers.proximoNodo(temp)!= null)
+            {
+                temp = workers.proximoNodo(temp);
+            }else{
+                break;
+            }
         }
 
         //pago project manager y director

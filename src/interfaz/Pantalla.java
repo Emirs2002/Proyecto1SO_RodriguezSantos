@@ -47,6 +47,26 @@ public class Pantalla extends javax.swing.JFrame {
 //        this.file = new ManejoArchivo();
     }
 
+    public void Up(String type, int productionPos, int payment, javax.swing.JTextField textfield, Studio studio) {
+        int value = Integer.parseInt(textfield.getText());
+        int add = studio.addDeveloper(type, productionPos, payment);
+        if (add == 1) {
+            textfield.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }
+
+    public void Down(javax.swing.JTextField textfield, Studio studio, String type) {
+        int value = Integer.parseInt(textfield.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            studio.getWorkerList().deleteNode(type);
+            textfield.setText(Integer.toString(value - 1));
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1718,7 +1738,7 @@ public class Pantalla extends javax.swing.JFrame {
                 guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS,
                 dlcCounterS, listosStandardS, listosDLCS, DIRECTORS,
                 listosStandardS, listosDLCS, deadlineCounterS, faltasS, PMS, gananciasBrutoS, utilidadTotalS, costosS);
-        
+
         this.studioB.start();
         this.studioS.start();
         this.studioB.setTextfields(guionistasSpinnerB, artistasSpinnerB, DesaNivelesSpinnerB, programadoresSpinnerB, DesaDLCsSpinnerB, integradoresSpinnerB);
@@ -1770,97 +1790,54 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void guionistaSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerDownBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(guionistasSpinnerB.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioB.getWorkerList().deleteNode("guion");
-            guionistasSpinnerB.setText(Integer.toString(value - 1));
-        }
+        this.Down(this.guionistasSpinnerB, studioB, "guion");
 //        System.out.println("Cambios: ");
 //        System.out.println(this.studioB.getWorkerList().ObtenerInfo());
     }//GEN-LAST:event_guionistaSpinnerDownBActionPerformed
 
     private void DesaNivelesSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerUpBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaNivelesSpinnerB.getText());
-        int add = this.studioB.addDeveloper("nivel", 1);
-        if (add == 1) {
-            DesaNivelesSpinnerB.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("nivel", 1, 13, DesaNivelesSpinnerB, studioB);
+
 
     }//GEN-LAST:event_DesaNivelesSpinnerUpBActionPerformed
 
     private void DesaDLCsSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerDownBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaDLCsSpinnerB.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioB.getWorkerList().deleteNode("guion");
-            DesaDLCsSpinnerB.setText(Integer.toString(value - 1));
-        }
+        this.Down(DesaDLCsSpinnerB, studioB, "dlc");
+
+        
+
     }//GEN-LAST:event_DesaDLCsSpinnerDownBActionPerformed
 
     private void DesaNivelesSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerDownSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaNivelesSpinnerS.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioS.getWorkerList().deleteNode("guion");
-            DesaNivelesSpinnerS.setText(Integer.toString(value - 1));
-        }
+       this.Down(DesaNivelesSpinnerS, studioS, "nivel");
+
     }//GEN-LAST:event_DesaNivelesSpinnerDownSActionPerformed
 
 
     private void guionistaSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerUpBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(guionistasSpinnerB.getText());
-        int add = this.studioB.addDeveloper("guion", 0);
-        if (add == 1) {
-            guionistasSpinnerB.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("guion", 0, 10, guionistasSpinnerB, studioB);
 //        System.out.println("Cambios: ");
 //        System.out.println(this.studioB.getWorkerList().ObtenerInfo());
     }//GEN-LAST:event_guionistaSpinnerUpBActionPerformed
 
     private void artistasSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerUpBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(artistasSpinnerB.getText());
-        int add = this.studioB.addDeveloper("sprite", 2);
-        if (add == 1) {
-            artistasSpinnerB.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("sprite", 2, 20, artistasSpinnerB, studioB);
+
     }//GEN-LAST:event_artistasSpinnerUpBActionPerformed
 
     private void programadoresSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerUpBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(programadoresSpinnerB.getText());
-        int add = this.studioB.addDeveloper("progrmador", 3);
-        if (add == 1) {
-            programadoresSpinnerB.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
-
+        this.Up("programador", 3, 8, programadoresSpinnerB, studioB);
     }//GEN-LAST:event_programadoresSpinnerUpBActionPerformed
 
     private void DesaDLCsSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerUpBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaDLCsSpinnerB.getText());
-        int add = this.studioB.addDeveloper("dlc", 4);
-        if (add == 1) {
-            DesaDLCsSpinnerB.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("dlc", 4, 17, DesaDLCsSpinnerB, studioB);
 
     }//GEN-LAST:event_DesaDLCsSpinnerUpBActionPerformed
 
@@ -1888,156 +1865,84 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void DesaDLCsSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerUpSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaDLCsSpinnerS.getText());
-        int add = this.studioS.addDeveloper("dlc", 4);
-        if (add == 1) {
-            DesaDLCsSpinnerS.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("dlc", 4, 17, DesaDLCsSpinnerS, studioS);
+
     }//GEN-LAST:event_DesaDLCsSpinnerUpSActionPerformed
 
     private void programadoresSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerUpSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(programadoresSpinnerS.getText());
-        int add = this.studioS.addDeveloper("progrmador", 3);
-        if (add == 1) {
-            programadoresSpinnerS.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("programador", 3, 8, programadoresSpinnerS, studioS);
     }//GEN-LAST:event_programadoresSpinnerUpSActionPerformed
 
     private void DesaNivelesSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerUpSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaNivelesSpinnerS.getText());
-        int add = this.studioS.addDeveloper("nivel", 1);
-        if (add == 1) {
-            DesaNivelesSpinnerS.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("nivel", 1, 13, DesaNivelesSpinnerS, studioS);
     }//GEN-LAST:event_DesaNivelesSpinnerUpSActionPerformed
 
     private void artistasSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerUpSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(spriteSpinnerS.getText());
-        int add = this.studioS.addDeveloper("sprite", 2);
-        if (add == 1) {
-            spriteSpinnerS.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("sprite", 1, 20, spriteSpinnerS, studioS);
+
+
     }//GEN-LAST:event_artistasSpinnerUpSActionPerformed
 
     private void guionistaSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerUpSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(narrativaSpinnerS.getText());
-        int add = this.studioS.addDeveloper("guion", 0);
-        if (add == 1) {
-            narrativaSpinnerS.setText(Integer.toString(value + 1));
-        } else {
-            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
-        }
+        this.Up("guion", 0, 10, narrativaSpinnerS, studioS);
     }//GEN-LAST:event_guionistaSpinnerUpSActionPerformed
 
     private void artistasSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerDownBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(artistasSpinnerB.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioB.getWorkerList().deleteNode("guion");
-            artistasSpinnerB.setText(Integer.toString(value - 1));
-        }
+        this.Down(artistasSpinnerB, studioB, "sprite");
+
     }//GEN-LAST:event_artistasSpinnerDownBActionPerformed
 
     private void DesaNivelesSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerDownBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaNivelesSpinnerB.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioB.getWorkerList().deleteNode("guion");
-            DesaNivelesSpinnerB.setText(Integer.toString(value - 1));
-        }
+        this.Down(DesaNivelesSpinnerB, studioB, "nivel");
+
     }//GEN-LAST:event_DesaNivelesSpinnerDownBActionPerformed
 
     private void programadoresSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerDownBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(programadoresSpinnerB.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioB.getWorkerList().deleteNode("guion");
-            programadoresSpinnerB.setText(Integer.toString(value - 1));
-        }
+        this.Down(programadoresSpinnerB, studioB, "programador");
+
     }//GEN-LAST:event_programadoresSpinnerDownBActionPerformed
 
     private void integradoresSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerDownBActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(integradoresSpinnerB.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioB.getWorkerList().deleteNode("guion");
-            integradoresSpinnerB.setText(Integer.toString(value - 1));
-        }
+        this.Down(integradoresSpinnerB, studioB, "integrador");
+
     }//GEN-LAST:event_integradoresSpinnerDownBActionPerformed
 
     private void guionistaSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerDownSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(narrativaSpinnerS.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioS.getWorkerList().deleteNode("guion");
-            narrativaSpinnerS.setText(Integer.toString(value - 1));
-        }
+       this.Down(narrativaSpinnerS, studioS, "guion");
+
     }//GEN-LAST:event_guionistaSpinnerDownSActionPerformed
 
     private void artistasSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerDownSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(spriteSpinnerS.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioS.getWorkerList().deleteNode("guion");
-            spriteSpinnerS.setText(Integer.toString(value - 1));
-        }
+       this.Down(spriteSpinnerS, studioS, "sprite");
+
     }//GEN-LAST:event_artistasSpinnerDownSActionPerformed
 
     private void programadoresSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerDownSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(programadoresSpinnerS.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioS.getWorkerList().deleteNode("guion");
-            programadoresSpinnerS.setText(Integer.toString(value - 1));
-        }
+       this.Down(programadoresSpinnerS, studioS, "programador");
+
     }//GEN-LAST:event_programadoresSpinnerDownSActionPerformed
 
     private void DesaDLCsSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerDownSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(DesaDLCsSpinnerS.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioS.getWorkerList().deleteNode("guion");
-            DesaDLCsSpinnerS.setText(Integer.toString(value - 1));
-        }
+        this.Down(DesaDLCsSpinnerS, studioS, "dlc");
+
     }//GEN-LAST:event_DesaDLCsSpinnerDownSActionPerformed
 
     private void integradoresSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerDownSActionPerformed
         // TODO add your handling code here:
-        int value = Integer.parseInt(integradoresSpinnerS.getText());
-        if (value == 1) {
-            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
-        } else {
-            this.studioS.getWorkerList().deleteNode("guion");
-            integradoresSpinnerS.setText(Integer.toString(value - 1));
-        }
+        this.Down(integradoresSpinnerS, studioS, "integrador");
+
     }//GEN-LAST:event_integradoresSpinnerDownSActionPerformed
 
     private void guionistasSpinnerBTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistasSpinnerBTXTActionPerformed
