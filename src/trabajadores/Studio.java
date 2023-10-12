@@ -49,7 +49,7 @@ public class Studio extends Thread {
         this.game = game;
         this.mutexDrive = new Semaphore(1);
         this.mutexCounter = new Semaphore(1);
-        this.drive = new Drive(standardPrice,dlcPrice);
+        this.drive = new Drive(standardPrice, dlcPrice);
         this.dayDuration = dayDuration;
         this.produccionArr = produccionArr;
 
@@ -70,20 +70,18 @@ public class Studio extends Thread {
             try {
                 //costo operativo
                 this.costo += payAllWorkers();
-                System.out.println("COSTO OPERATIVO TOTAL: " + this.costo/1000);
+                System.out.println("COSTO OPERATIVO TOTAL: " + this.costo / 1000);
 
                 //beneficio
-                
                 this.benefit += this.director.getBenefit();
-                System.out.println("DIRECTOR BENEFIT: "+this.director.getBenefit());
+                System.out.println("DIRECTOR BENEFIT: " + this.director.getBenefit());
                 this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
-                System.out.println("BENEFICIO JUEGOS: "+ this.benefit/1000);
-                
-                
+                System.out.println("BENEFICIO JUEGOS: " + this.benefit / 1000);
+
                 //utilidad
                 this.utilidad += (this.benefit - this.costo);
-                System.out.println("UTILIDAD ESTUDIO: " + this.utilidad/1000);
-                
+                System.out.println("UTILIDAD ESTUDIO: " + this.utilidad / 1000);
+
                 sleep(this.dayDuration); //dormir un dia
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -134,7 +132,6 @@ public class Studio extends Thread {
     public void startWorkers() {
 
         createWorkList();
-        //setSpinner(spinnerGuion, spinnerSprite, spinnerNiveles, spinnerProgramadores, spinnerDLCs, spinnerIntegradores);
 
         int i = 0;
         Lista workers = this.workerList;
@@ -163,30 +160,36 @@ public class Studio extends Thread {
 //        
     }
 
-//    public void setSpinner(javax.swing.JSpinner spinnerGuion, javax.swing.JSpinner spinnerSprite, javax.swing.JSpinner spinnerNiveles, javax.swing.JSpinner spinnerProgramadores, javax.swing.JSpinner spinnerDLCs, javax.swing.JSpinner spinnerIntegradores)
-//    {
-//        spinnerGuion.setValue(this.numGuionista);
-//        spinnerSprite.setValue(this.numSpriter);
-//        spinnerNiveles.setValue(this.numNiveler);
-//        spinnerProgramadores.setValue(this.numSystem);
-//        spinnerDLCs.setValue(this.numDlc);
-//        spinnerIntegradores.setValue(this.numIntegrador);
-//    }
-//    
-    public void addDeveloper(String type, int prodPosition) {
+    public void setTextfields(javax.swing.JTextField spinnerGuion, javax.swing.JTextField spinnerSprite, javax.swing.JTextField spinnerNiveles, javax.swing.JTextField spinnerProgramadores, javax.swing.JTextField spinnerDLCs, javax.swing.JTextField spinnerIntegradores) {
+        spinnerGuion.setText(Integer.toString(this.numGuionista));
+        spinnerSprite.setText(Integer.toString(this.numSpriter));
+        spinnerNiveles.setText(Integer.toString(this.numNiveler));
+        spinnerProgramadores.setText(Integer.toString(this.numNiveler));
+        spinnerDLCs.setText(Integer.toString(this.numDlc));
+        spinnerIntegradores.setText(Integer.toString(this.numIntegrador));
+    }
+    
+
+    public int addDeveloper(String type, int prodPosition) {
+        int add = 0;
         if (this.workerList.getTamanho() < size) {
             Developer dev = new Developer(type, this.produccionArr[prodPosition], this.dayDuration, this.mutexDrive, 10, this.drive);
             Nodo nodito = new Nodo(dev);
             this.workerList.addAtEnd(nodito);
+            add += 1;
         }
+        return add;
     }
 
-    public void addIntegrator() {
+    public int addIntegrator() {
+        int add = 0;
         if (this.workerList.getTamanho() < size) {
             Integrator inte = new Integrator(0.5f, this.dayDuration, this.mutexDrive, 25, this.drive, this.game);
             Nodo nodito = new Nodo(inte);
             this.workerList.addAtEnd(nodito);
+            add+=1;
         }
+        return add;
     }
 
     public int payAllWorkers() {
@@ -215,7 +218,6 @@ public class Studio extends Thread {
         return totalPayment; //para que el numero se vea bonito
     }
 
-    
     //GETTERS Y SETTERS
     public int getStandardPrice() {
         return standardPrice;

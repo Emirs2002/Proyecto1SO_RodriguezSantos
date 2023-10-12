@@ -34,19 +34,19 @@ public class Pantalla extends javax.swing.JFrame {
 
     public Pantalla() {
         initComponents();
-        
+
         this.gameB = new Game(2, 3, 4, 6, 5, 6);
-        this.gameS = new Game(1, 1, 2,4, 3, 2);
-        
+        this.gameS = new Game(1, 1, 2, 4, 3, 2);
+
         float[] productionArrB = {0.34f, 0.34f, 2, 3, 0.34f};
         float[] productionArrS = {0.34f, 0.34f, 2, 5, 0.5f};
-        
-        this.studioB = new Studio(450000,900000,17,this.sizeB,1,2,
-                2,1,1,3,gameB,1000, productionArrB);
-        
-        this.studioS = new Studio(350000,700000,5,this.sizeS,2,1,
-                2,1,2,3,gameS,1000, productionArrS);
-        
+
+        this.studioB = new Studio(450000, 900000, 17, this.sizeB, 1, 2,
+                2, 1, 1, 3, gameB, 1000, productionArrB);
+
+        this.studioS = new Studio(350000, 700000, 5, this.sizeS, 2, 1,
+                2, 1, 2, 3, gameS, 1000, productionArrS);
+
     }
 
     /**
@@ -1013,6 +1013,11 @@ public class Pantalla extends javax.swing.JFrame {
 
         guionistaSpinnerUpB.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         guionistaSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        guionistaSpinnerUpB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistaSpinnerUpBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(guionistaSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 20));
 
         guionistaSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
@@ -1024,9 +1029,19 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(guionistaSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 30, 20));
 
         artistasSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        artistasSpinnerUpB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistasSpinnerUpBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(artistasSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 30, 20));
 
         artistasSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        artistasSpinnerDownB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistasSpinnerDownBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(artistasSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
 
         guionesCounterB.setEditable(false);
@@ -1057,15 +1072,35 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(DesaNivelesSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 30, 20));
 
         DesaNivelesSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        DesaNivelesSpinnerDownB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerDownBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(DesaNivelesSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 30, 20));
 
         programadoresSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        programadoresSpinnerUpB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerUpBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(programadoresSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 30, 20));
 
         programadoresSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        programadoresSpinnerDownB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerDownBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(programadoresSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 30, 20));
 
         DesaDLCsSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        DesaDLCsSpinnerUpB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerUpBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(DesaDLCsSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 30, 20));
 
         DesaDLCsSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
@@ -1077,9 +1112,19 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel1.add(DesaDLCsSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 30, 20));
 
         integradoresSpinnerUpB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        integradoresSpinnerUpB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerUpBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(integradoresSpinnerUpB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 30, 20));
 
         integradoresSpinnerDownB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        integradoresSpinnerDownB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerDownBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(integradoresSpinnerDownB, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 30, 20));
 
         FONDO1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/bethesda.png"))); // NOI18N
@@ -1374,9 +1419,19 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(narrativaSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 40, 40));
 
         guionistaSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        guionistaSpinnerUpS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistaSpinnerUpSActionPerformed(evt);
+            }
+        });
         SEPanel.add(guionistaSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 30, 20));
 
         guionistaSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        guionistaSpinnerDownS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guionistaSpinnerDownSActionPerformed(evt);
+            }
+        });
         SEPanel.add(guionistaSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 30, 20));
 
         spriteSpinnerS.setEditable(false);
@@ -1388,9 +1443,19 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(spriteSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 40, 40));
 
         artistasSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        artistasSpinnerUpS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistasSpinnerUpSActionPerformed(evt);
+            }
+        });
         SEPanel.add(artistasSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 30, 20));
 
         artistasSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        artistasSpinnerDownS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                artistasSpinnerDownSActionPerformed(evt);
+            }
+        });
         SEPanel.add(artistasSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 30, 20));
 
         DesaNivelesSpinnerS.setEditable(false);
@@ -1402,6 +1467,11 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(DesaNivelesSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 40, 40));
 
         DesaNivelesSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        DesaNivelesSpinnerUpS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaNivelesSpinnerUpSActionPerformed(evt);
+            }
+        });
         SEPanel.add(DesaNivelesSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 30, 20));
 
         DesaNivelesSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
@@ -1421,9 +1491,19 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(programadoresSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 40, 40));
 
         programadoresSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        programadoresSpinnerUpS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerUpSActionPerformed(evt);
+            }
+        });
         SEPanel.add(programadoresSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 30, 20));
 
         programadoresSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        programadoresSpinnerDownS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                programadoresSpinnerDownSActionPerformed(evt);
+            }
+        });
         SEPanel.add(programadoresSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 30, 20));
 
         DesaDLCsSpinnerS.setEditable(false);
@@ -1443,15 +1523,35 @@ public class Pantalla extends javax.swing.JFrame {
         SEPanel.add(integradoresSpinnerS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 40, 40));
 
         DesaDLCsSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        DesaDLCsSpinnerUpS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerUpSActionPerformed(evt);
+            }
+        });
         SEPanel.add(DesaDLCsSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 30, 20));
 
         DesaDLCsSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        DesaDLCsSpinnerDownS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesaDLCsSpinnerDownSActionPerformed(evt);
+            }
+        });
         SEPanel.add(DesaDLCsSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 30, 20));
 
         integradoresSpinnerUpS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegar-flecha-hacia-arriba.png"))); // NOI18N
+        integradoresSpinnerUpS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerUpSActionPerformed(evt);
+            }
+        });
         SEPanel.add(integradoresSpinnerUpS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 30, 20));
 
         integradoresSpinnerDownS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flecha-hacia-abajo-para-navegar.png"))); // NOI18N
+        integradoresSpinnerDownS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                integradoresSpinnerDownSActionPerformed(evt);
+            }
+        });
         SEPanel.add(integradoresSpinnerDownS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, 30, 20));
 
         jLabel114.setForeground(new java.awt.Color(0, 0, 0));
@@ -1600,7 +1700,9 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void iniciarSimuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSimuActionPerformed
         this.studioB.start();
-//        studioS.start();
+        this.studioS.start();
+        this.studioB.setTextfields(guionistasSpinnerB, artistasSpinnerB, DesaNivelesSpinnerB, programadoresSpinnerB, DesaDLCsSpinnerB, integradoresSpinnerB);
+        this.studioS.setTextfields(narrativaSpinnerS, spriteSpinnerS, DesaNivelesSpinnerS, programadoresSpinnerS, DesaDLCsSpinnerS, integradoresSpinnerS);
 
     }//GEN-LAST:event_iniciarSimuActionPerformed
 
@@ -1609,7 +1711,7 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_CargarTxtActionPerformed
 
     private void dayDurationTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayDurationTXTActionPerformed
-        
+
     }//GEN-LAST:event_dayDurationTXTActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -1650,24 +1752,278 @@ public class Pantalla extends javax.swing.JFrame {
 
     private void guionistaSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerDownBActionPerformed
         // TODO add your handling code here:
+        int value = Integer.parseInt(guionistasSpinnerB.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioB.getWorkerList().deleteNode("guion");
+            guionistasSpinnerB.setText(Integer.toString(value - 1));
+        }
+//        System.out.println("Cambios: ");
+//        System.out.println(this.studioB.getWorkerList().ObtenerInfo());
     }//GEN-LAST:event_guionistaSpinnerDownBActionPerformed
 
     private void DesaNivelesSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerUpBActionPerformed
         // TODO add your handling code here:
+        int value = Integer.parseInt(DesaNivelesSpinnerB.getText());
+        int add = this.studioB.addDeveloper("nivel", 1);
+        if (add == 1) {
+            DesaNivelesSpinnerB.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+
     }//GEN-LAST:event_DesaNivelesSpinnerUpBActionPerformed
 
     private void DesaDLCsSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerDownBActionPerformed
         // TODO add your handling code here:
+        int value = Integer.parseInt(DesaDLCsSpinnerB.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioB.getWorkerList().deleteNode("guion");
+            DesaDLCsSpinnerB.setText(Integer.toString(value - 1));
+        }
     }//GEN-LAST:event_DesaDLCsSpinnerDownBActionPerformed
 
     private void DesaNivelesSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerDownSActionPerformed
         // TODO add your handling code here:
+        int value = Integer.parseInt(DesaNivelesSpinnerS.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioS.getWorkerList().deleteNode("guion");
+            DesaNivelesSpinnerS.setText(Integer.toString(value - 1));
+        }
     }//GEN-LAST:event_DesaNivelesSpinnerDownSActionPerformed
+
+    private void guionistaSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerUpBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(guionistasSpinnerB.getText());
+        int add = this.studioB.addDeveloper("guion", 0);
+        if (add == 1) {
+            guionistasSpinnerB.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+//        System.out.println("Cambios: ");
+//        System.out.println(this.studioB.getWorkerList().ObtenerInfo());
+    }//GEN-LAST:event_guionistaSpinnerUpBActionPerformed
+
+    private void artistasSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerUpBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(artistasSpinnerB.getText());
+        int add = this.studioB.addDeveloper("sprite", 2);
+        if (add == 1) {
+            artistasSpinnerB.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_artistasSpinnerUpBActionPerformed
+
+    private void programadoresSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerUpBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(programadoresSpinnerB.getText());
+        int add = this.studioB.addDeveloper("progrmador", 3);
+        if (add == 1) {
+            programadoresSpinnerB.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+
+    }//GEN-LAST:event_programadoresSpinnerUpBActionPerformed
+
+    private void DesaDLCsSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerUpBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(DesaDLCsSpinnerB.getText());
+        int add = this.studioB.addDeveloper("dlc", 4);
+        if (add == 1) {
+            DesaDLCsSpinnerB.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+
+    }//GEN-LAST:event_DesaDLCsSpinnerUpBActionPerformed
+
+    private void integradoresSpinnerUpBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerUpBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(integradoresSpinnerB.getText());
+        int add = this.studioB.addIntegrator();
+        if (add == 1) {
+            integradoresSpinnerB.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_integradoresSpinnerUpBActionPerformed
+
+    private void integradoresSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerUpSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(integradoresSpinnerS.getText());
+        int add = this.studioS.addIntegrator();
+        if (add == 1) {
+            integradoresSpinnerS.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_integradoresSpinnerUpSActionPerformed
+
+    private void DesaDLCsSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerUpSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(DesaDLCsSpinnerS.getText());
+        int add = this.studioS.addDeveloper("dlc", 4);
+        if (add == 1) {
+            DesaDLCsSpinnerS.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_DesaDLCsSpinnerUpSActionPerformed
+
+    private void programadoresSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerUpSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(programadoresSpinnerS.getText());
+        int add = this.studioS.addDeveloper("progrmador", 3);
+        if (add == 1) {
+            programadoresSpinnerS.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_programadoresSpinnerUpSActionPerformed
+
+    private void DesaNivelesSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerUpSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(DesaNivelesSpinnerS.getText());
+        int add = this.studioS.addDeveloper("nivel", 1);
+        if (add == 1) {
+            DesaNivelesSpinnerS.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_DesaNivelesSpinnerUpSActionPerformed
+
+    private void artistasSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerUpSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(spriteSpinnerS.getText());
+        int add = this.studioS.addDeveloper("sprite", 2);
+        if (add == 1) {
+            spriteSpinnerS.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_artistasSpinnerUpSActionPerformed
+
+    private void guionistaSpinnerUpSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerUpSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(narrativaSpinnerS.getText());
+        int add = this.studioS.addDeveloper("guion", 0);
+        if (add == 1) {
+            narrativaSpinnerS.setText(Integer.toString(value + 1));
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de trabajadores alcanzado");
+        }
+    }//GEN-LAST:event_guionistaSpinnerUpSActionPerformed
+
+    private void artistasSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerDownBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(artistasSpinnerB.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioB.getWorkerList().deleteNode("guion");
+            artistasSpinnerB.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_artistasSpinnerDownBActionPerformed
+
+    private void DesaNivelesSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaNivelesSpinnerDownBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(DesaNivelesSpinnerB.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioB.getWorkerList().deleteNode("guion");
+            DesaNivelesSpinnerB.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_DesaNivelesSpinnerDownBActionPerformed
+
+    private void programadoresSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerDownBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(programadoresSpinnerB.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioB.getWorkerList().deleteNode("guion");
+            programadoresSpinnerB.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_programadoresSpinnerDownBActionPerformed
+
+    private void integradoresSpinnerDownBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerDownBActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(integradoresSpinnerB.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioB.getWorkerList().deleteNode("guion");
+            integradoresSpinnerB.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_integradoresSpinnerDownBActionPerformed
+
+    private void guionistaSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guionistaSpinnerDownSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(narrativaSpinnerS.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioS.getWorkerList().deleteNode("guion");
+            narrativaSpinnerS.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_guionistaSpinnerDownSActionPerformed
+
+    private void artistasSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_artistasSpinnerDownSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(spriteSpinnerS.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioS.getWorkerList().deleteNode("guion");
+            spriteSpinnerS.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_artistasSpinnerDownSActionPerformed
+
+    private void programadoresSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_programadoresSpinnerDownSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(programadoresSpinnerS.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioS.getWorkerList().deleteNode("guion");
+            programadoresSpinnerS.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_programadoresSpinnerDownSActionPerformed
+
+    private void DesaDLCsSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesaDLCsSpinnerDownSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(DesaDLCsSpinnerS.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioS.getWorkerList().deleteNode("guion");
+            DesaDLCsSpinnerS.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_DesaDLCsSpinnerDownSActionPerformed
+
+    private void integradoresSpinnerDownSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_integradoresSpinnerDownSActionPerformed
+        // TODO add your handling code here:
+        int value = Integer.parseInt(integradoresSpinnerS.getText());
+        if (value == 1) {
+            JOptionPane.showMessageDialog(null, "Solo hay un trabajador de este tipo");
+        } else {
+            this.studioS.getWorkerList().deleteNode("guion");
+            integradoresSpinnerS.setText(Integer.toString(value - 1));
+        }
+    }//GEN-LAST:event_integradoresSpinnerDownSActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BDLCpriceTXT;
