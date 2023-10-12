@@ -11,10 +11,7 @@ import javax.swing.Action;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.event.ChangeListener;
-import trabajadores.Developer;
-import trabajadores.Drive;
-import trabajadores.Game;
-import trabajadores.Studio;
+import trabajadores.*;
 
 /**
  *
@@ -31,10 +28,12 @@ public class Pantalla extends javax.swing.JFrame {
     private Studio studioS;
     private final int sizeB = 13; //carnet Emily 3 + 10
     private final int sizeS = 15; //carnet Alejandra 5 + 10
+    String txtPath;
+    ManejoArchivo file;
 
     public Pantalla() {
         initComponents();
-        
+        this.txtPath ="OperativosProyecto1.txt";
         this.gameB = new Game(2, 3, 4, 6, 5, 6);
         this.gameS = new Game(1, 1, 2,4, 3, 2);
         
@@ -46,7 +45,7 @@ public class Pantalla extends javax.swing.JFrame {
         
         this.studioS = new Studio(350000,700000,5,this.sizeS,2,1,
                 2,1,2,3,gameS,1000, productionArrS);
-        
+        this.file = new ManejoArchivo();
     }
 
     /**
@@ -1594,7 +1593,12 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_SdeadlineTXTActionPerformed
 
     private void updateTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTXTActionPerformed
-        // TODO add your handling code here:
+        /*se debe colocar toda la info de los textfield en un array en el orden 
+         del txt
+        */
+        String[] infoTextfields ={"1000", "1","3","1","2","1","4","17","2","1","1","2","2","4","10"};
+        
+        file.writeTxt(txtPath, infoTextfields);
     }//GEN-LAST:event_updateTXTActionPerformed
 
 
@@ -1605,7 +1609,13 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarSimuActionPerformed
 
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
-        // TODO add your handling code here:
+        
+        // aqui se devuelve un array con la info a ponerse en los textfields
+        String[] infoTxt = file.readTxt(txtPath);
+        
+        for (int i = 0; i < infoTxt.length; i++) {
+            System.out.println(infoTxt[i]);
+        }
     }//GEN-LAST:event_CargarTxtActionPerformed
 
     private void dayDurationTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayDurationTXTActionPerformed

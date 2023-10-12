@@ -12,8 +12,7 @@ public class Main {
 
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
-        
-      
+
 //        Semaphore mutexDrive = new Semaphore(1);
 //        Semaphore mutexCounter = new Semaphore(1);
 //        Game gameB = new Game(2, 2, 2, 2, 2, 2);
@@ -23,6 +22,17 @@ public class Main {
 //                2, 2, 2, 3, gameB, 1000, mutexCounter, mutexDrive, productionArrB);
 //        
 //        studio1.start();
+
+//        String[] contenido = {"1500", "1","3","1","2","1","4","17","2","1","1","2","2","4","10"};
+//        String path = "OperativosProyecto1.txt";
+//        ManejoArchivo file = new ManejoArchivo();
+//        file.writeTxt(path, contenido);
+//        
+//        String[] nya = file.readTxt(path);
+//        for (int i = 0; i < nya.length; i++) {
+//            System.out.println(nya[i]);
+//        }
+        
     }
 
 }
