@@ -49,13 +49,13 @@ public class Pantalla extends javax.swing.JFrame {
                 2, 1, 1, 3, gameB, 1000, productionArrB, 
                 guionesCounterB, spritesCounterB, nivelesCounterB, sistemasCounterB, 
                 dlcCounterB, listosStandardB, listosDLCB, DIRECTORB,
-                listosStandardB, listosDLCB);
+                listosStandardB, listosDLCB, deadlineCounterB, faltasB, PMB);
 
         this.studioS = new Studio(350000, 700000, 5, this.sizeS, 2, 1,
                 2, 1, 2, 3, gameS, 1000, productionArrS, 
                 guionesCounterS, spritesCounterS, nivelesCounterS, sistemasCounterS, 
                 dlcCounterS, listosStandardS, listosDLCS, DIRECTORS,
-                listosStandardS, listosDLCS);
+                listosStandardS, listosDLCS, deadlineCounterS, faltasS, PMS);
         
         
 //        this.file = new ManejoArchivo();
@@ -172,7 +172,7 @@ public class Pantalla extends javax.swing.JFrame {
         utilidadTotalB = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
+        PMB = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
@@ -240,7 +240,7 @@ public class Pantalla extends javax.swing.JFrame {
         utilidadTotalS = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        PMS = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -790,9 +790,8 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel48.setText("¿Qué hace el Project Manager?");
         SEPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 270, 50));
 
-        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel49.setText("foto");
-        SEPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 160, 100));
+        PMB.setForeground(new java.awt.Color(0, 0, 0));
+        SEPanel1.add(PMB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 160, 100));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(0, 0, 0));
@@ -1187,16 +1186,15 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("¿Qué hace el Director?");
-        SEPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 210, 30));
+        SEPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 210, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("¿Qué hace el Project Manager?");
         SEPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 210, 50));
 
-        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel18.setText("foto");
-        SEPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 180, 90));
+        PMS.setForeground(new java.awt.Color(51, 51, 51));
+        SEPanel.add(PMS, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 180, 90));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
@@ -1714,7 +1712,7 @@ public class Pantalla extends javax.swing.JFrame {
         this.studioS.start();
         this.studioB.setTextfields(guionistasSpinnerB, artistasSpinnerB, DesaNivelesSpinnerB, programadoresSpinnerB, DesaDLCsSpinnerB, integradoresSpinnerB);
         this.studioS.setTextfields(narrativaSpinnerS, spriteSpinnerS, DesaNivelesSpinnerS, programadoresSpinnerS, DesaDLCsSpinnerS, integradoresSpinnerS);
-        
+        tab.setSelectedIndex(1);
     }//GEN-LAST:event_iniciarSimuActionPerformed
 
     private void CargarTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarTxtActionPerformed
@@ -2143,6 +2141,8 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel FONDO;
     private javax.swing.JLabel FONDO1;
     private javax.swing.JLabel FONDO3;
+    private javax.swing.JLabel PMB;
+    private javax.swing.JLabel PMS;
     private javax.swing.JButton SALIR;
     private javax.swing.JPanel SEPanel;
     private javax.swing.JPanel SEPanel1;
@@ -2233,7 +2233,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel205;
@@ -2258,7 +2257,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;

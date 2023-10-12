@@ -38,10 +38,14 @@ public class Studio extends Thread {
     public javax.swing.JLabel directorStatus;
     public javax.swing.JTextField standardLabel;
     public javax.swing.JTextField dlcLabel;
+    public javax.swing.JTextField deadlineField;
+    public javax.swing.JTextField faltas;
+    public javax.swing.JLabel pm;
+
 
     public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr, 
             javax.swing.JTextField guiones, javax.swing.JTextField sprites, javax.swing.JTextField niveles, javax.swing.JTextField sistemas, javax.swing.JTextField dlcs, javax.swing.JTextField standardGames, javax.swing.JTextField dlcGames, 
-            javax.swing.JLabel directorStatus, javax.swing.JTextField standardLabel, javax.swing.JTextField dlcLabel) {
+            javax.swing.JLabel directorStatus, javax.swing.JTextField standardLabel, javax.swing.JTextField dlcLabel, javax.swing.JTextField deadlineField, javax.swing.JTextField faltas, javax.swing.JLabel pm) {
         this.standardPrice = standardPrice;
         this.dlcPrice = dlcPrice;
         this.deadline = deadline;
@@ -62,6 +66,9 @@ public class Studio extends Thread {
         this.directorStatus = directorStatus;
         this.standardLabel = standardLabel;
         this.dlcLabel = dlcLabel;
+        this.deadlineField = deadlineField;
+        this.faltas = faltas;
+        this.pm = pm;
 
     }
 
@@ -134,9 +141,9 @@ public class Studio extends Thread {
         }
 
         //inicializar counter, project manager y director
-        this.counter = new DayCounter(this.deadline);
-        this.manager = new ProjectManager(20, this.dayDuration, this.mutexCounter, this.counter);
-        this.director = new Director(this.manager, this.dayDuration, 50, this.drive, this.mutexDrive, this.mutexCounter, this.counter, this.directorStatus, this.standardLabel, this.dlcLabel);
+        this.counter = new DayCounter(this.deadline, this.deadlineField);
+        this.manager = new ProjectManager(20, this.dayDuration, this.mutexCounter, this.counter, pm);
+        this.director = new Director(this.manager, this.dayDuration, 50, this.drive, this.mutexDrive, this.mutexCounter, this.counter, this.directorStatus, this.standardLabel, this.dlcLabel, this.faltas);
     }
 
     public void startWorkers() {

@@ -11,10 +11,12 @@ package trabajadores;
 public class DayCounter {
     private final int deadline;
     private int daysLeft;
+    public javax.swing.JTextField deadlineField;
 
-    public DayCounter(int deadline) {
+    public DayCounter(int deadline,javax.swing.JTextField deadlineField) {
         this.deadline = deadline;
         this.daysLeft = deadline;
+        this.deadlineField = deadlineField;
     }
     
      public void updateCounter(String type){
@@ -34,7 +36,7 @@ public class DayCounter {
             System.out.println("DIAS QUE FALTAN: " + this.daysLeft);
             
         }
-        
+        this.deadlineField.setText(Integer.toString(daysLeft));
     }
 
     public int getDaysLeft() {

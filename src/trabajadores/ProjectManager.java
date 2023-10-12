@@ -1,6 +1,7 @@
 package trabajadores;
 
 import java.util.concurrent.Semaphore;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -15,13 +16,19 @@ public class ProjectManager extends Thread {
     private int fault = 0;
     private Semaphore mutexStudio;
     private DayCounter counter;
+    public ImageIcon trabajando;
+    public ImageIcon flojeando;
+    public javax.swing.JLabel pmStatus;
 
-    public ProjectManager(int paymentPerHour, int dayDuration, Semaphore mutexStudio, DayCounter counter) {
+    public ProjectManager(int paymentPerHour, int dayDuration, Semaphore mutexStudio, DayCounter counter, javax.swing.JLabel pm) {
         this.isWorking = true;
         this.paymentPerHour = paymentPerHour;
         this.dayDuration = dayDuration;
         this.mutexStudio = mutexStudio;
         this.counter = counter;
+        this.trabajando = new ImageIcon(getClass().getResource("/imagenes/PMWORKING.png"));
+        this.flojeando = new ImageIcon(getClass().getResource("/imagenes/pmnotworking.png"));
+        this.pmStatus = pm;
     }
 
     @Override
@@ -37,6 +44,7 @@ public class ProjectManager extends Thread {
 
                     //mira streams
                     this.isWorking = false;
+                    this.pmStatus.setIcon(flojeando);
 
                     sleep(timeSleep);
 
@@ -55,6 +63,7 @@ public class ProjectManager extends Thread {
             try {
                 this.isWorking = true;
                 changeDaysLeft();
+                this.pmStatus.setIcon(trabajando);
                 sleep((8 * this.dayDuration) / 24);
 
                 this.paymentPerDay += 24 * this.paymentPerHour; //pago

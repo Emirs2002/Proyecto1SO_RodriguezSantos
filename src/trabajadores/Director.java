@@ -27,12 +27,13 @@ public class Director extends Thread {
     public javax.swing.JLabel directorStatus;
     public javax.swing.JTextField juegosStandard;
     public javax.swing.JTextField juegosDLC;
+    public javax.swing.JTextField faltas;
 
 
     
 
     public Director(ProjectManager manager, int dayDuration, int paymentPerHour, Drive drive, Semaphore mutexDrive, Semaphore mutexStudio,
-            DayCounter counter, javax.swing.JLabel directorStatus,  javax.swing.JTextField juegosS, javax.swing.JTextField juegosD) {
+            DayCounter counter, javax.swing.JLabel directorStatus,  javax.swing.JTextField juegosS, javax.swing.JTextField juegosD, javax.swing.JTextField faltas) {
         this.manager = manager;
         this.dayDuration = dayDuration;
         this.paymentPerHour = paymentPerHour;
@@ -46,6 +47,7 @@ public class Director extends Thread {
         this.directorStatus = directorStatus;
         this.juegosStandard = juegosS;
         this.juegosDLC = juegosD;
+        this.faltas = faltas;
         
     }
 
@@ -132,6 +134,7 @@ public class Director extends Thread {
             } else {
                 //penalizar al PM
                 this.manager.setFault(this.manager.getFault() + 1);
+                this.faltas.setText(Integer.toString(this.manager.getFault()));
                 this.manager.setPaymentPerDay(this.manager.getPaymentPerDay() - 50);
 
                 System.out.println("");
