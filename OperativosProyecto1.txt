@@ -1,4 +1,4 @@
-Dia,1500;
+Dia,1000;
 Bethesda
 guionista,1;
 sprites,3;
