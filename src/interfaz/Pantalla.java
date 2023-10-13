@@ -92,7 +92,7 @@ public class Pantalla extends javax.swing.JFrame {
 
     public void DownTXT(javax.swing.JTextField text) {
         int value = Integer.parseInt(text.getText());
-        if(value > 0){
+        if(value > 1){
             text.setText(Integer.toString(value - 1));
         }
     }
