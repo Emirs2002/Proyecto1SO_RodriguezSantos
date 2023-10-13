@@ -178,7 +178,11 @@
             <Component class="javax.swing.JTextField" name="BdeadlineTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="5"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BdeadlineTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="520" y="360" width="50" height="20"/>
@@ -400,6 +404,7 @@
             <Component class="javax.swing.JTextField" name="SdeadlineTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="5"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SdeadlineTXTActionPerformed"/>
@@ -413,12 +418,15 @@
             <Component class="javax.swing.JSpinner" name="SdeadlineSpinner">
               <Properties>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                  <SpinnerModel initial="5" minimum="5" numberType="java.lang.Integer" stepSize="1" type="number"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="SdeadlineSpinnerStateChanged"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="450" y="360" width="50" height="-1"/>
+                  <AbsoluteConstraints x="450" y="430" width="50" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -428,6 +436,9 @@
                   <SpinnerModel initial="1000" minimum="1000" numberType="java.lang.Integer" stepSize="100" type="number"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="dayDurationSpinnerStateChanged"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="40" y="50" width="80" height="-1"/>
@@ -437,12 +448,15 @@
             <Component class="javax.swing.JSpinner" name="BdeadlineSpinner">
               <Properties>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                  <SpinnerModel initial="5" minimum="5" numberType="java.lang.Integer" stepSize="1" type="number"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="BdeadlineSpinnerStateChanged"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="450" y="430" width="50" height="-1"/>
+                  <AbsoluteConstraints x="450" y="360" width="50" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -488,6 +502,7 @@
             <Component class="javax.swing.JTextField" name="guionistasSpinnerBTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guionistasSpinnerBTXTActionPerformed"/>
@@ -507,6 +522,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guionistaSpinnerUpBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="190" width="30" height="20"/>
@@ -531,6 +549,7 @@
             <Component class="javax.swing.JTextField" name="artistasSpinnerBTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="artistasSpinnerBTXTActionPerformed"/>
@@ -547,6 +566,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="artistasSpinnerUpBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="250" width="30" height="20"/>
@@ -559,6 +581,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="artistasSpinnerDownBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="270" width="30" height="20"/>
@@ -568,6 +593,7 @@
             <Component class="javax.swing.JTextField" name="DesaNivelesSpinnerBTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaNivelesSpinnerBTXTActionPerformed"/>
@@ -599,6 +625,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaNivelesSpinnerDownBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="340" width="30" height="20"/>
@@ -608,6 +637,7 @@
             <Component class="javax.swing.JTextField" name="programadoresSpinnerBTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programadoresSpinnerBTXTActionPerformed"/>
@@ -624,6 +654,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programadoresSpinnerUpBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="390" width="30" height="20"/>
@@ -636,6 +669,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programadoresSpinnerDownBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="410" width="30" height="20"/>
@@ -645,6 +681,7 @@
             <Component class="javax.swing.JTextField" name="DesaDLCsSpinnerBTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaDLCsSpinnerBTXTActionPerformed"/>
@@ -661,6 +698,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaDLCsSpinnerUpBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="460" width="30" height="20"/>
@@ -685,6 +725,7 @@
             <Component class="javax.swing.JTextField" name="integradoresSpinnerBTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="integradoresSpinnerBTXTActionPerformed"/>
@@ -701,6 +742,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="integradoresSpinnerUpBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="530" width="30" height="20"/>
@@ -713,6 +757,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="integradoresSpinnerDownBTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="550" width="30" height="20"/>
@@ -722,6 +769,7 @@
             <Component class="javax.swing.JTextField" name="narrativaSpinnerSTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="narrativaSpinnerSTXTActionPerformed"/>
@@ -738,6 +786,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guionistaSpinnerUpSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="180" width="30" height="20"/>
@@ -750,6 +801,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="guionistaSpinnerDownSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="200" width="30" height="20"/>
@@ -759,6 +813,7 @@
             <Component class="javax.swing.JTextField" name="spriteSpinnerSTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="spriteSpinnerSTXTActionPerformed"/>
@@ -775,6 +830,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="artistasSpinnerUpSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="240" width="30" height="20"/>
@@ -787,6 +845,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="artistasSpinnerDownSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="260" width="30" height="20"/>
@@ -796,6 +857,7 @@
             <Component class="javax.swing.JTextField" name="DesaNivelesSpinnerSTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaNivelesSpinnerSTXTActionPerformed"/>
@@ -812,6 +874,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaNivelesSpinnerUpSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="310" width="30" height="20"/>
@@ -836,6 +901,7 @@
             <Component class="javax.swing.JTextField" name="programadoresSpinnerSTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programadoresSpinnerSTXTActionPerformed"/>
@@ -852,6 +918,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programadoresSpinnerUpSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="380" width="30" height="20"/>
@@ -864,6 +933,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="programadoresSpinnerDownSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="400" width="30" height="20"/>
@@ -873,6 +945,7 @@
             <Component class="javax.swing.JTextField" name="DesaDLCsSpinnerSTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaDLCsSpinnerSTXTActionPerformed"/>
@@ -889,6 +962,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaDLCsSpinnerUpSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="450" width="30" height="20"/>
@@ -901,6 +977,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesaDLCsSpinnerDownSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="470" width="30" height="20"/>
@@ -910,6 +989,7 @@
             <Component class="javax.swing.JTextField" name="integradoresSpinnerSTXT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="integradoresSpinnerSTXTActionPerformed"/>
@@ -926,6 +1006,9 @@
                   <Image iconType="3" name="/imagenes/navegar-flecha-hacia-arriba.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="integradoresSpinnerUpSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="520" width="30" height="20"/>
@@ -938,6 +1021,9 @@
                   <Image iconType="3" name="/imagenes/flecha-hacia-abajo-para-navegar.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="integradoresSpinnerDownSTXTActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="890" y="540" width="30" height="20"/>
