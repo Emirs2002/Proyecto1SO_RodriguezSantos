@@ -97,19 +97,18 @@ public class Studio extends Thread {
                 //costo operativo
                 this.costo += payAllWorkers();
                 this.gasto.setText(Integer.toString(costo/1000));
-                //System.out.println("COSTO OPERATIVO TOTAL: " + this.costo / 1000);
 
                 //beneficio
                 this.benefit += this.director.getBenefit();
-                System.out.println("DIRECTOR BENEFIT: " + this.director.getBenefit());
-                this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
                 this.beneficio.setText(Integer.toString(benefit/1000));
-                //System.out.println("BENEFICIO JUEGOS: " + this.benefit / 1000);
-
+                
                 //utilidad
-                this.utilidad += (this.benefit - this.costo);
-                System.out.println("UTILIDAD ESTUDIO: " + this.utilidad / 1000);
-                this.ganaciaReal.setText(Integer.toString(utilidad/1000));
+                if(this.director.getBenefit() > 0){
+                    this.utilidad = (this.benefit - this.costo);
+                    this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
+                    this.ganaciaReal.setText(Integer.toString(utilidad/1000));
+                }
+                
                 sleep(this.dayDuration); //dormir un dia
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -142,7 +141,6 @@ public class Studio extends Thread {
         for (int i = 0; i < this.numDlc; i++) {
             Developer dev = new Developer("dlc", this.produccionArr[4], this.dayDuration, this.mutexDrive, 17, this.drive);
             Nodo nodito = new Nodo(dev);
-            System.out.println("dlcer creado");
             this.workerList.addAtEnd(nodito);
         }
         for (int i = 0; i < this.numIntegrador; i++) {
@@ -176,16 +174,6 @@ public class Studio extends Thread {
         this.manager.start();
         this.director.start();
 
-        //pruebas lista
-//        System.out.println("ANTES ELIMINAR");
-//        System.out.println(workers.ObtenerInfo());
-//        
-//        System.out.println("");
-//        workers.deleteNode("nivel");
-//        System.out.println("DESPUES ELIMINAR");
-//        System.out.println(workers.ObtenerInfo());
-//        
-//        
     }
 
     public void setTextfields(javax.swing.JTextField spinnerGuion, javax.swing.JTextField spinnerSprite, javax.swing.JTextField spinnerNiveles, javax.swing.JTextField spinnerProgramadores, javax.swing.JTextField spinnerDLCs, javax.swing.JTextField spinnerIntegradores) {
