@@ -159,7 +159,6 @@ public class Director extends Thread {
                 this.benefit = this.drive.launchGames();
 
                 this.mutexDrive.release(); //signal
-                System.out.println("juegos enviados");
                 
                 this.juegosStandard.setText(Integer.toString(this.drive.standardGame));
                 this.juegosDLC.setText(Integer.toString(this.drive.dlcGame));

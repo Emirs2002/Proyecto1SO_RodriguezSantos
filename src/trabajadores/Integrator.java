@@ -18,6 +18,7 @@ public class Integrator extends Thread
     private final Drive drive;
     private final Game companyName;
     private final String type;
+    public boolean exit = false;
 
     
 
@@ -35,7 +36,7 @@ public class Integrator extends Thread
     
     @Override
     public void run(){
-        while(true){
+        while(!exit){
             //aqui va el trabajo como tal
             
             work();
@@ -48,6 +49,10 @@ public class Integrator extends Thread
             }
            
         }
+    }
+    
+    public void stopThread(){
+        exit = true;
     }
     
     public void work(){

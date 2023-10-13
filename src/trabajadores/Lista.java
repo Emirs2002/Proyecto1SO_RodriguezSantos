@@ -166,16 +166,25 @@ public class Lista {
             Nodo temp = this.getPfirst();
             Nodo nodoBorrar = Buscar(type);
             Nodo nodoProximo = nodoBorrar.getPnext();
+            
+             if((nodoBorrar.getData().getClass().getSimpleName()).equals("Developer")){
+                    
+                    ((Developer) nodoBorrar.getData()).stopThread();
+                    
+                    
+                }else{
+                    ((Integrator) nodoBorrar.getData()).stopThread();                    
+                }
+            
             int actual = this.getIndex(nodoBorrar);
             
             if(actual>0){
                 int anterior = actual - 1;
                 for(int i = 0; i <= anterior ; i++){
-                    if(i == anterior)
+                    if(i == anterior && nodoBorrar.getPnext() != null)
                     {
                         temp.setPnext(nodoProximo);                        
-                        nodoBorrar.setPnext(null);
-                        
+                        nodoBorrar.setPnext(null);                       
                     } 
                     
                 temp = temp.getPnext();

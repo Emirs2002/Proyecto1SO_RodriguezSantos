@@ -16,6 +16,7 @@ public class Developer extends Thread {
     private int paymentPerDay = 0;
     private final int paymentPerHour;
     private final Drive drive;
+    private boolean exit =false;
     
     
 
@@ -31,7 +32,7 @@ public class Developer extends Thread {
     
     @Override
     public void run(){
-        while(true){
+        while(!exit){
             //aqui va el trabajo como tal
             
             work();
@@ -44,6 +45,11 @@ public class Developer extends Thread {
             }
            
         }
+    }
+    
+   
+    public void stopThread(){
+        exit = true;
     }
     
     public void work(){

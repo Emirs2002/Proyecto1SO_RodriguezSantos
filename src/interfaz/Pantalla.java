@@ -914,6 +914,11 @@ public class Pantalla extends javax.swing.JFrame {
 
         listosDLCB.setEditable(false);
         listosDLCB.setToolTipText("");
+        listosDLCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listosDLCBActionPerformed(evt);
+            }
+        });
         SEPanel1.add(listosDLCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 40, 20));
 
         dlcCounterB.setEditable(false);
@@ -1932,6 +1937,8 @@ public class Pantalla extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "No se ha cargado el archivo de texto");
         }
+        
+        System.exit(0);
     }//GEN-LAST:event_updateTXTActionPerformed
 
 
@@ -2375,6 +2382,10 @@ public class Pantalla extends javax.swing.JFrame {
     private void BdeadlineTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BdeadlineTXTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BdeadlineTXTActionPerformed
+
+    private void listosDLCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listosDLCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listosDLCBActionPerformed
 
     /**
      * @param args the command line arguments

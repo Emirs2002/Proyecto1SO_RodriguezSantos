@@ -1,12 +1,12 @@
 Dia,1000;
 Bethesda
-guionista,1;
-sprites,3;
-niveles,2;
+guionista,2;
+sprites,1;
+niveles,3;
 programador,2;
-dlc,1;
+dlc,2;
 integrador,3;
-deadline,15;
+deadline,30;
 SquareEnix
 guionista,2;
 sprites,1;

@@ -193,8 +193,11 @@ public class Studio extends Thread {
             Developer dev = new Developer(type, this.produccionArr[prodPosition], this.dayDuration, this.mutexDrive, payment, this.drive);
             Nodo nodito = new Nodo(dev);
             this.workerList.addAtEnd(nodito);
+            dev.start();
             add += 1;
+           
         }
+        
         return add;
     }
 
@@ -204,6 +207,7 @@ public class Studio extends Thread {
             Integrator inte = new Integrator(0.5f, this.dayDuration, this.mutexDrive, 25, this.drive, this.game);
             Nodo nodito = new Nodo(inte);
             this.workerList.addAtEnd(nodito);
+            inte.start();
             add+=1;
         }
         return add;
