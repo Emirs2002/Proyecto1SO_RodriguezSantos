@@ -17,6 +17,7 @@ public class Drive {
     public boolean hasSprites;
     public boolean hasSystems;
     public boolean hasDLCs;
+    public int hasStandard;
     public int gameParts;
     public int standardPrice;
     public int dlcPrice;
@@ -35,6 +36,7 @@ public class Drive {
         this.hasSprites = false;
         this.hasSystems = false;
         this.hasDLCs = false;
+        this.hasStandard = 0;
         this.gameParts = 0;
         this.standardPrice = standardPrice;
         this.dlcPrice = dlcPrice;
@@ -106,6 +108,7 @@ public class Drive {
                     this.hasSystems = false;
                     this.hasDLCs = false;
                     this.interfaz.dlcGame.setText(Integer.toString(this.dlcGame));
+                    
                     System.out.println("Juegos DLC hechos: " + this.dlcGame);
                 }else if(cantidadPartes == 4)
                 {
@@ -117,6 +120,7 @@ public class Drive {
                     this.hasSystems = false;
                     this.hasDLCs = false;
                     this.interfaz.standardGame.setText(Integer.toString(this.standardGame));
+                    this.hasStandard += 1;
                     System.out.println("Juegos standard hechos: " + this.standardGame);
                 }
         }
@@ -169,11 +173,13 @@ public class Drive {
         
         if(this.hasDLCs == false)
         {
-            if(this.standardGame >= game.getNeededStandardGames() && this.dlc >= game.getNeededDLCs()) //restriccion numero de juegos standard necesitados antes de anadir dlc
+            if(this.hasStandard >= game.getNeededStandardGames() && this.dlc >= game.getNeededDLCs() ) //restriccion numero de juegos standard necesitados antes de anadir dlc
             {
                 this.gameParts += 1;
                 this.dlc -= game.getNeededDLCs();
                 this.hasDLCs = true;
+                this.hasStandard = 0;
+               
             }
         }
         

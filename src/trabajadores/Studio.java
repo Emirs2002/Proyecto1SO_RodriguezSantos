@@ -5,7 +5,6 @@ import java.util.concurrent.Semaphore;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 
-
 /**
  *
  * @author alesc
@@ -21,12 +20,12 @@ public class Studio extends Thread {
     private int deadline;
     private final int size;
     private Lista workerList;
-    private  int numGuionista;
-    private  int numSpriter;
-    private  int numNiveler;
-    private  int numSystem;
-    private  int numDlc;
-    private  int numIntegrador;
+    private int numGuionista;
+    private int numSpriter;
+    private int numNiveler;
+    private int numSystem;
+    private int numDlc;
+    private int numIntegrador;
     private final Semaphore mutexDrive;
     private final Semaphore mutexCounter;
     private final Drive drive;
@@ -44,12 +43,9 @@ public class Studio extends Thread {
     public javax.swing.JTextField beneficio;
     public javax.swing.JTextField ganaciaReal;
     public javax.swing.JTextField gasto;
-    
-    
 
-
-    public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr, 
-            javax.swing.JTextField guiones, javax.swing.JTextField sprites, javax.swing.JTextField niveles, javax.swing.JTextField sistemas, javax.swing.JTextField dlcs, javax.swing.JTextField standardGames, javax.swing.JTextField dlcGames, 
+    public Studio(int standardPrice, int dlcPrice, int deadline, int size, int numGuionista, int numSpriter, int numNiveler, int numSystem, int numDlc, int numIntegrador, Game game, int dayDuration, float[] produccionArr,
+            javax.swing.JTextField guiones, javax.swing.JTextField sprites, javax.swing.JTextField niveles, javax.swing.JTextField sistemas, javax.swing.JTextField dlcs, javax.swing.JTextField standardGames, javax.swing.JTextField dlcGames,
             javax.swing.JLabel directorStatus, javax.swing.JTextField standardLabel, javax.swing.JTextField dlcLabel, javax.swing.JTextField deadlineField, javax.swing.JTextField faltas, javax.swing.JLabel pm,
             javax.swing.JTextField beneficio, javax.swing.JTextField gananciaReal, javax.swing.JTextField gasto) {
         this.standardPrice = standardPrice;
@@ -96,19 +92,17 @@ public class Studio extends Thread {
             try {
                 //costo operativo
                 this.costo += payAllWorkers();
-                this.gasto.setText(Integer.toString(costo/1000));
+                this.gasto.setText(Integer.toString(costo / 1000));
 
                 //beneficio
                 this.benefit += this.director.getBenefit();
-                this.beneficio.setText(Integer.toString(benefit/1000));
-                
+                this.beneficio.setText(Integer.toString(benefit / 1000));
+
                 //utilidad
-                if(this.director.getBenefit() > 0){
-                    this.utilidad = (this.benefit - this.costo);
-                    this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
-                    this.ganaciaReal.setText(Integer.toString(utilidad/1000));
-                }
-                
+                this.utilidad = (this.benefit - this.costo);
+                this.director.setBenefit(0); //para que al obtener un beneficio este no se sume por el resto de dias, solo una vez
+                this.ganaciaReal.setText(Integer.toString(utilidad / 1000));
+
                 sleep(this.dayDuration); //dormir un dia
             } catch (InterruptedException ex) {
                 ex.printStackTrace(System.out);
@@ -184,8 +178,6 @@ public class Studio extends Thread {
         spinnerDLCs.setText(Integer.toString(this.numDlc));
         spinnerIntegradores.setText(Integer.toString(this.numIntegrador));
     }
-    
-    
 
     public int addDeveloper(String type, int prodPosition, int payment) {
         int add = 0;
@@ -195,9 +187,9 @@ public class Studio extends Thread {
             this.workerList.addAtEnd(nodito);
             dev.start();
             add += 1;
-           
+
         }
-        
+
         return add;
     }
 
@@ -208,7 +200,7 @@ public class Studio extends Thread {
             Nodo nodito = new Nodo(inte);
             this.workerList.addAtEnd(nodito);
             inte.start();
-            add+=1;
+            add += 1;
         }
         return add;
     }
@@ -229,11 +221,10 @@ public class Studio extends Thread {
             } else {
                 totalPayment += ((Integrator) dev).getPaymentPerDay();
             }
-            
-            if(workers.proximoNodo(temp)!= null)
-            {
+
+            if (workers.proximoNodo(temp) != null) {
                 temp = workers.proximoNodo(temp);
-            }else{
+            } else {
                 break;
             }
         }
@@ -352,7 +343,5 @@ public class Studio extends Thread {
     public void setNumIntegrador(int numIntegrador) {
         this.numIntegrador = numIntegrador;
     }
-    
-    
-    
+
 }

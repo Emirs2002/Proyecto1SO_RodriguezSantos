@@ -10,8 +10,8 @@ deadline,30;
 SquareEnix
 guionista,2;
 sprites,1;
-niveles,1;
-programador,2;
-dlc,2;
-integrador,4;
-deadline,11;
+niveles,2;
+programador,3;
+dlc,3;
+integrador,3;
+deadline,9;
